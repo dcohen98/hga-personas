@@ -129,6 +129,9 @@ ul.dot li:before{content:"";position:absolute;left:6px;top:15px;width:6px;height
 .quote q{color:var(--txt);display:block}
 .quote small{color:var(--dim)}
 .voice q{display:block;color:#dfe6f5;font-style:italic;padding:4px 0}
+.rcv-note{color:var(--dim);font-size:13px;margin:.2em 0 .6em}
+.rcv .quote{margin:0}
+.pr-top .ess-src{font-size:12.5px;color:var(--dim);margin-top:4px}
 .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .mbox{padding:14px 16px;border-radius:12px;background:rgba(0,0,0,.22);border:1px solid var(--line)}
 .mbox h4{margin-top:0!important}
@@ -191,7 +194,7 @@ footer .src code{font:12px ui-monospace,Menlo,monospace;padding:3px 8px;border-r
     <div class="glass pad how"><h3 style="font-size:18px">Reading the badges</h3>
       <p style="color:var(--mut);margin:.2em 0 .8em">Evidence: <span class="pill strong">strong</span> <span class="pill moderate">moderate</span> <span class="pill thin">thin evidence</span></p>
       <p style="color:var(--mut);margin:.2em 0 .8em">Side: <span class="pill sports">Sports</span> <span class="pill tcg">TCG</span> <span class="pill both">Both</span> · <b style="color:var(--txt)">★ Larger audience</b> marks the bigger side.</p>
-      <p style="color:var(--mut);margin:0">Quotes under <b style="color:var(--txt)">"From the sources"</b> are verbatim, with their source. Everything under <b style="color:var(--txt)">"In their words"</b> is in-character narrative. Numbers come only from the research files.</p>
+      <p style="color:var(--mut);margin:0">Names and stories are fictional composites. Every quote on this page (the header line and <b style="color:var(--txt)">"Real collector voices"</b>) is a verbatim post by a real collector, linked to its source; they represent the persona, not the fictional person speaking. Numbers come only from the research files.</p>
     </div>
   </div>
 </section>
@@ -220,7 +223,7 @@ footer .src code{font:12px ui-monospace,Menlo,monospace;padding:3px 8px;border-r
       <li>You book your return date (booking opens Jan 18; grading starts Feb 1).</li><li>Presale orders: 30-day turnaround.</li>
       <li>Every grade is explained (confirm report and subgrades with ops).</li><li>"Chip" (not NFT, not RFID).</li></ul></div>
     <div class="glass pad"><h3 style="font-size:18px">Don't say</h3><ul class="clean dont">
-      <li>Resale beats PSA / sells for more.</li><li>"1M cards graded."</li><li>"Up to 80% more resale value."</li>
+      <li>Resale beats PSA / sells for more.</li><li>"Up to 80% more resale value."</li>
       <li>"Made in USA" (the frame is made in China).</li><li>UV protection.</li><li>Final presale / Black Friday prices · Poly as confirmed · naming PSA without counsel.</li></ul></div>
   </div>
 </section>
@@ -310,16 +313,16 @@ PROFILES.push({
   id:"marcus", persona:"p1", side:"sports", hue:200,
   name:"Marcus Delgado", age:46, city:"San Antonio, TX", job:"Facilities operations manager at a hospital",
   family:"Married to Elena. Son Mateo (13), daughter Sofia (9). Lifelong Spurs household.",
-  essence:"Some cards aren't for sale. They're for the wall, and someday they're for Mateo.",
+  essence:"It’s official, I’m going to TAG. I’ll take the value hit, particularly for the ones I plan to hold onto.", essenceSrc:{"who": "rotoblueprint", "sub": "sportscards", "url": "https://www.reddit.com/r/sportscards/comments/1td6f8p/grade_today_to_get_your_cards_back_in_2027/olt82jk/"},
   evidence:"strong",
   origin:"Marcus started with gas-station packs as a kid and quit when college and bills took over. In 2020, stuck at home, he bought a retail blaster to give Mateo something to do. They opened it at the kitchen table, Mateo screamed at a Spurs rookie, and Saturday-morning card runs have been their thing ever since. Marcus doesn't flip much. He sells the occasional duplicate to fund the hobby. The rest goes in what he calls \"the case,\" a lit cabinet in the den that Elena tolerates because the kids love it.",
   cards:[
-    {name:"1997-98 Topps Chrome Tim Duncan Refractor rookie", why:"The first serious card he ever bought for himself, at a show in a convention hall. It's in a PSA slab he describes as \"fine, but it looks like every other slab on every other shelf.\""},
-    {name:"2023-24 Panini Prizm Victor Wembanyama Silver rookie", why:"Mateo pulled it from a blaster. It sits raw in a one-touch on Marcus's desk because he refuses to mail it \"into a five-month black hole.\" It's the card the whole family associates with the hobby."},
-    {name:"His late father's 1971 Topps Roberto Clemente", why:"Creased, soft corners, worth more to him than anything in the case. He'd grade it even knowing it comes back low. His words: \"I'd send it in if it came back a 1, it's about keeping it safe.\""},
+    {name:"1997-98 Topps Chrome Tim Duncan Refractor rookie", why:"The first serious card he ever bought for himself, at a show in a convention hall. It's in a PSA slab he finds fine, but it looks like every other slab on every other shelf."},
+    {name:"2023-24 Panini Prizm Victor Wembanyama Silver rookie", why:"Mateo pulled it from a blaster. It sits raw in a one-touch on Marcus's desk because he refuses to mail it into a five-month black hole. It's the card the whole family associates with the hobby."},
+    {name:"His late father's 1971 Topps Roberto Clemente", why:"Creased, soft corners, worth more to him than anything in the case. He'd grade it even knowing it comes back low, because it's about keeping it safe."},
     {name:"Two Manu Ginóbili rookies in SGC tuxedo slabs", why:"He picked SGC for the black label because it looked right. Then in September 2026 SGC's floor went to $50 and the cheap, good-looking option was gone."}
   ],
-  trigger:"Mateo asked when the Wemby could go \"in the case for real.\" The same week, a collector Marcus follows posted a shelf of clear slabs that \"looked like the cards were floating.\" He wants the moment of putting his son's card on display, and he wants it to survive long enough for Mateo to own it.",
+  trigger:"Mateo asked when the Wemby could go in the case for real. The same week, a collector Marcus follows posted a shelf of clear slabs where the cards looked like they were floating. He wants the moment of putting his son's card on display, and he wants it to survive long enough for Mateo to own it.",
   history:"<b>PSA:</b> the Duncan came back with a fine grade after a long wait, in a slab he finds sterile. He keeps PSA for the rare card he might sell. <b>SGC:</b> his go-to for looks until the $50 floor in September 2026. <b>TAG:</b> he wanted the translucent slab, but TAG's Basic, Standard and Express tiers have been paused since May 2026. <b>Old HGA:</b> he never submitted, but he remembers the 2021 color-match labels and the threads that came after (\"Ask everyone from the Covid era about HGA\"). That is the root of his worry about whether we'll last.",
   week:[
     "<b>Saturday AM:</b> card shop run with Mateo, the local LCS off the highway. He talks slabs with the owner more than he buys.",
@@ -330,15 +333,16 @@ PROFILES.push({
   ],
   hangouts:{online:["r/sportscards","r/baseballcards (for his dad's vintage)","A Spurs collectors' Discord"], creators:["Slab-reveal / return-day YouTubers","Shelf-tour and display creators","Card-show vloggers"], irl:["Local card shop (LCS)","Regional card shows"]},
   trust:["The LCS owner who has handled his cards for years","Collectors who show their own returns in hand","Not brand ads. He trusts a slab he has held."],
-  voice:["\"Those are PC. They're not going anywhere.\"","\"PSA for the flips. The good-looking slab for the stuff I keep.\"","\"I want the card to be the star, not the label.\"","\"If you're gone in three years, my shelf looks silly.\""],
   quotes:[
-    {q:"It's official, I'm going to TAG. I'll take the value hit, particularly for the ones I plan to hold onto.", src:"r/sportscards · May 2026"},
-    {q:"I tend to PC SGC more and 'invest' in PSA. They are just more liquid. Certain cards though, look WAY better in SGC", src:"r/sportscards · Sep 2026"},
-    {q:"There's a good chance HGA will be out of business in the next 5-10 years so if you plan on holding the card a while, it might look silly down the line.", src:"r/baseballcards · 2023"}
+    {q:"It’s official, I’m going to TAG. I’ll take the value hit, particularly for the ones I plan to hold onto.", who:"rotoblueprint", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1td6f8p/grade_today_to_get_your_cards_back_in_2027/olt82jk/"},
+    {q:"I tend to PC SGC more and “invest” in PSA. They are just more liquid. Certain cards though, look WAY better in SGC", who:"catss777", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1wexgrm/sgc_vs_psa_value/paka6h4/"},
+    {q:"If the cards were for my PC, which these cards were, I would use them, I just like how their slabs look.", who:"rxpusher77", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1psh246/has_anyone_used_tag_to_grade_cards/nv9jjcg/"},
+    {q:"The reason why TAG slabs are elite is because of them being completely translucent. They keep the attention on the card, and don’t have any visual distraction at all.", who:"Qwerty0844", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1psh246/has_anyone_used_tag_to_grade_cards/nvb0l1e/"},
+    {q:"There’s a good chance HGA will be out of business in the next 5-10 years so if you plan on holding the the card a while, it might look silly down the line.", who:"kdiddy733", sub:"baseballcards", url:"https://www.reddit.com/r/baseballcards/comments/16kym3w/i_like_the_looks_of_hga_grading_companys_slabs/k0zayax/"}
   ],
-  needs:["\"Something that keeps the attention on the card.\"","\"It has to outlast me. That's the point.\"","\"Show me it on a shelf, not in a render.\""],
-  fears:["\"The slab looks dated in five years.\"","\"You fold like the 2021 guys and I'm stuck with orphan slabs.\"","\"Scratches. Every plastic slab I own is scuffed from the cabinet.\""],
-  objections:["\"Will HGA even be here when Mateo's grown?\"","\"Two hundred bucks is a lot for a case. It better feel like it.\"","\"Is glass going to crack if Sofia knocks it off?\""],
+  needs:["A slab that keeps the attention on the card.","Something built to outlast him; that is the point.","Proof on a real shelf, not in a render."],
+  fears:["The slab looks dated in five years.","HGA folds like the 2021 pop-ups and leaves him with orphan slabs.","Scratches: his plastic slabs are scuffed from the cabinet."],
+  objections:["Will HGA still exist when Mateo is grown?","~$200 is a lot for a case; it has to feel premium.","Will glass crack if it gets knocked off the shelf?"],
   switching:["Seeing Glass in hand, at a show or in a creator's unscripted video","Peers posting their own returns","A booked date, so the Wemby isn't gone for months","A straight answer on who stands behind HGA now"],
   price:"Low to moderate sensitivity, for the 3 to 5 cards he'll never sell. The ~$200 core Glass price is justified for grails and keepsakes, not for every card. He won't Glass his duplicates. Presale and Black Friday pricing is still under discussion, so don't quote promo numbers to him.",
   msg:{
@@ -355,18 +359,18 @@ PROFILES.push({
     segment:"Legacy-list members tagged sports + presale openers who clicked Glass content",
     creator:"Sports shelf-tour and display creators; slab-reveal YouTubers who show returns in hand",
     doSay:["Glass is scratch-resistant.","Vacuum-like seal.","Fits any card size; stacks with magnets.","Keep PSA for the cards you sell. Send us the cards you keep."],
-    dontSay:["Glass slabs sell for more / hold value better than PSA","UV protection","Made in USA (the frame is made in China; make no origin claim)","The only / first grader in glass","1M cards graded · up to 80% more resale value"]
+    dontSay:["Glass slabs sell for more / hold value better than PSA","UV protection","Made in USA (the frame is made in China; make no origin claim)","The only / first grader in glass","Up to 80% more resale value"]
   }
 });
 PROFILES.push({
   id:"jenna", persona:"p1", side:"tcg", hue:280,
   name:"Jenna Okafor", age:34, city:"Portland, OR", job:"Product designer at an outdoor-gear brand",
   family:"Lives with her partner Theo and a very judgmental cat. Her mom still has the Game Boy.",
-  essence:"My wall is a mood board of my childhood. I want every card to look like it's floating.",
+  essence:"Got these two graded cards on a whim at a recent show, cause I absolutely adore the artwork!", essenceSrc:{"who": "frouisthou", "sub": "PokemonTCG", "url": "https://www.reddit.com/r/PokemonTCG/comments/1nn7dy0/got_attitude_from_a_vendor_when_i_showed_them/"},
   evidence:"moderate",
   origin:"Jenna played Pokémon Red at eight and kept a Base Set binder that got lost in a move after college. She came back in 2021 when the alt-art wave hit her feed, and she collects for the illustrations, not the chase. Her studio has a lit floating shelf with a dozen slabs and frames, arranged by color. She has never sold a card she loved.",
   cards:[
-    {name:"Umbreon VMAX alt art, Evolving Skies (\"Moonbreon\")", why:"She saved for months to buy it. It's in a TAG slab because she loved how translucent it was, the card \"just hovers.\""},
+    {name:"Umbreon VMAX alt art, Evolving Skies (\"Moonbreon\")", why:"She saved for months to buy it. It's in a TAG slab because she loved how translucent it was, the card seems to hover."},
     {name:"Base Set Charmander from her childhood binder", why:"The only survivor of the lost binder. Whitened edges, a ding, and priceless to her. She wants it protected, not judged."},
     {name:"Gengar VMAX alt art, Fusion Strike", why:"Her favorite Pokémon, her favorite illustration. It's in a CGC slab that has scuffed from sliding in and out of a display stand."},
     {name:"Oversized Japanese Pikachu promo from a trip to Tokyo with Theo", why:"A life-moment card that no grader she knows will case properly, so it lives in a top-loader taped to the wall."}
@@ -382,15 +386,17 @@ PROFILES.push({
   ],
   hangouts:{online:["r/PokemonTCG","r/PokeGrading","An alt-art collectors' Discord"], creators:["Pokémon display-wall creators (TikTok, Instagram)","Art-focused Pokémon collectors","Big Pokémon collectibles creators, even ones who don't do grading content"], irl:["Local game store","Portland card show"]},
   trust:["Collectors who post in-hand photos in daylight","Illustrator-focused accounts","Friends at the game store"],
-  voice:["\"I collect for the art. The slab is the frame.\"","\"Flashy labels fight the illustration. Let it breathe.\"","\"I'll take the value hit on the ones I'm keeping. I'm never selling Moonbreon.\""],
   quotes:[
-    {q:"The reason why TAG slabs are elite is because of them being completely translucent. They keep the attention on the card, and don't have any visual distraction at all.", src:"r/sportscards · Dec 2025"},
-    {q:"IMO TAG had momentum and has ruined it with their backlog and shutting down submissions, feels like the hype died.", src:"r/sportscards · Aug 2026"},
-    {q:"AGS slabs sort of look pedestrian. It shouldn't matter, but it does", src:"r/sportscards · Dec 2025"}
+    {q:"Got these two graded cards on a whim at a recent show, cause I absolutely adore the artwork!", who:"frouisthou", sub:"PokemonTCG", url:"https://www.reddit.com/r/PokemonTCG/comments/1nn7dy0/got_attitude_from_a_vendor_when_i_showed_them/"},
+    {q:"I know the slab is not everyone’s cup of tea but these are cards that have art and the labels feel more complementary, cohesive, and less boring.", who:"jvengeanceh", sub:"PokeGrading", url:"https://www.reddit.com/r/PokeGrading/comments/1i56knq/my_2_of_3_gem_10_ace_slabs/"},
+    {q:"The TAG slab design was too hard to resist, at least for cards I intended to keep in my possession.", who:"Ponderous_Platypus11", sub:"PokeGrading", url:"https://www.reddit.com/r/PokeGrading/comments/1hoj97n/tag_has_some_real_promise_heres_the_best_of_my_pc/"},
+    {q:"These look really nice, especially with this alt art colors", who:"chebolo", sub:"PokemonTCG", url:"https://www.reddit.com/r/PokemonTCG/comments/u9zbop/anyone_have_hga_slabs_do_they_feel_cheap/i5urxci/"},
+    {q:"IMO TAG had momentum and has ruined it with their backlog and shutting down submissions, feels like the hype died.", who:"TBL_AM", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1vexb88/with_the_current_state_of_grading_where_is/p68m5a6/"},
+    {q:"AGS slabs sort of look pedestrian. It shouldn't matter, but it does", who:"RotrickP", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1pqw4tt/tag_founder_speaks_out/nuye420/"}
   ],
   needs:["Clarity: the card is the art, and the case should disappear.","A minimal label that doesn't clash.","Odd sizes, including the jumbo, handled like they matter."],
-  fears:["\"Glass that looks cheap in person.\"","\"Scratches again.\"","\"A label typo on a card I love.\" (old HGA had label errors)"],
-  objections:["\"Is glass heavy or fragile on a floating shelf?\"","\"~$200 per card adds up fast.\"","\"Who even is HGA now?\""],
+  fears:["Glass that looks cheap in person.","Scratches again.","A label typo on a card she loves (old HGA had label errors)."],
+  objections:["Is glass heavy or fragile on a floating shelf?","~$200 per card adds up fast.","Who is HGA now?"],
   switching:["A daylight, in-hand video of Glass with no music and no render","Seeing a jumbo or odd-size card fitted","A display creator she follows showing her own wall"],
   price:"Moderate. She'll choose 3 or 4 hero cards for Glass and keep the rest raw in binders. ~$200 is a \"frame\" purchase, not a grading fee, to her. Don't quote presale promo prices until they're final.",
   msg:{
@@ -414,16 +420,16 @@ PROFILES.push({
   id:"mia", persona:"p2", side:"tcg", hue:330,
   name:"Mia Torres", age:27, city:"Phoenix, AZ", job:"Dental hygienist",
   family:"Engaged to Chris; the wedding is in the spring. Chris plays casually at the local game store.",
-  essence:"We pulled it the week we got engaged. I just don't want to mess this up.",
+  essence:"My fiancée and I pulled these cards together shortly after getting engaged. We're new to the hobby and wanted to get these graded for the memories.", essenceSrc:{"who": "GUNDOM101", "sub": "PokeGrading", "url": "https://www.reddit.com/r/PokeGrading/comments/1q430r0/first_time_grading/"},
   evidence:"moderate",
   origin:"Mia's Pokémon was the app, never the cards. The week after Chris proposed, they bought an Elite Trainer Box on a whim to celebrate with something silly. It was her very first ETB, and the third pack had a Charizard. They screamed loud enough that the neighbor texted. Since then she's opened a few packs a month and watches rips on TikTok at night, but she has never sent a card anywhere.",
   cards:[
     {name:"Charizard ex special illustration rare, Pokémon 151", why:"The engagement-week pull. It lives in a penny sleeve inside a top-loader in her nightstand, because she doesn't trust the shelf, the cat or the sun."},
-    {name:"Pikachu illustration rare Chris pulled the same night", why:"\"His and hers.\" She wants the two cased together for their first home."},
+    {name:"Pikachu illustration rare Chris pulled the same night", why:"His and hers. She wants the two cased together for their first home."},
     {name:"A stack of commons and holos in a binder", why:"Not for grading. Proof that she's a collector now."}
   ],
-  trigger:"Wedding planning made her want \"something real\" from that week framed in their home. She posted the Charizard on r/PokemonTCG asking if she should grade it, and the post was removed because grading questions aren't allowed. On r/PokeGrading the top reply was \"If you find yourself questioning, the likely answer is no.\" She's more confused than when she started.",
-  history:"<b>None, which is the opportunity.</b> She has absorbed the horror stories secondhand: the thread where a first-timer's \"perfect\" card came back a 2 with no explanation, the \"Grade today to get your cards back in 2027\" thread, the advice to just use PSA because everyone does. She has no loyalty to anyone yet.",
+  trigger:"Wedding planning made her want something real from that week framed in their home. She posted the Charizard on r/PokemonTCG asking if she should grade it, and the post was removed because grading questions aren't allowed. On r/PokeGrading the top reply told her that if she had to ask, the answer was probably no. She's more confused than when she started.",
+  history:"<b>None, which is the opportunity.</b> She has absorbed the horror stories secondhand: the threads where a first-timer's clean-looking card came back low with no explanation, the \"Grade today to get your cards back in 2027\" thread, the advice to just use PSA because everyone does. She has no loyalty to anyone yet.",
   week:[
     "<b>Late nights:</b> TikTok pack openings and \"how to grade\" explainers.",
     "<b>Lunch:</b> lurks r/PokeGrading. Too intimidated to post again.",
@@ -432,16 +438,15 @@ PROFILES.push({
   ],
   hangouts:{online:["r/PokeGrading","r/PokemonTCG (art and pulls only, since grading posts get removed)","TikTok"], creators:["Beginner \"how to submit\" YouTube walkthroughs","Couple and casual collector TikTokers","Pack-opening creators"], irl:["Local game store owner","Big-box retail aisles"]},
   trust:["YouTube walkthrough creators who explain slowly","The game-store owner","Reddit veterans, though they intimidate her"],
-  voice:["\"I don't even know what 'centering' means, honestly.\"","\"It's not about the money. It's ours.\"","\"What if it gets lost in the mail?\"","\"I just want someone to tell me what to do, step by step.\""],
   quotes:[
-    {q:"Shortly after our engagement, my fiancée and I decided to pull these cards together.", src:"r/PokeGrading"},
-    {q:"As beginners in this hobby, we thought it would be nice to have them graded as keepsakes.", src:"r/PokeGrading"},
-    {q:"It's important to know its true value, but the thought of mailing it can be unsettling.", src:"r/PokemonTCG"},
-    {q:"I couldn't spot any flaws, and the centering looked pretty good to me.", src:"r/PokeGrading (before a grade of 2)"}
+    {q:"My fiancée and I pulled these cards together shortly after getting engaged. We're new to the hobby and wanted to get these graded for the memories.", who:"GUNDOM101", sub:"PokeGrading", url:"https://www.reddit.com/r/PokeGrading/comments/1q430r0/first_time_grading/"},
+    {q:"Really need to get this card graded so I know it's actual worth but I'm a little sketched out about putting it through the mail.", who:"Frankie_Wilde", sub:"PokemonTCG", url:"https://www.reddit.com/r/PokemonTCG/comments/19c8pi2/need_to_get_it_graded_but_im_scared_to_ship_it/"},
+    {q:"After close look, I thought the card looked pretty good! (I have no idea what I'm looking for)", who:"lilbigman1055", sub:"PokeGrading", url:"https://www.reddit.com/r/PokeGrading/comments/1wgjmuz/to_grade_our_family_chase_card/"},
+    {q:"I dont really have any experience with grading so it’s a hard decision for me", who:"unclearsignal", sub:"PokeGrading", url:"https://www.reddit.com/r/PokeGrading/comments/1x1vagy/centering_on_rgb_mew/"}
   ],
   needs:["Step-by-step: what to buy, how to pack it, when to ship, what happens next.","To know exactly where the card is.","A grade explained in plain English, especially if it isn't a 10.","Something beautiful to put in the new house."],
-  fears:["Mailing it and never seeing it again.","\"Getting a 2 and not knowing why.\"","Asking a dumb question and getting dunked on."],
-  objections:["\"Do I need an account, a membership, a minimum?\"","\"Everyone online says PSA. Why not PSA?\"","\"Is ~$200 too much for my first time?\""],
+  fears:["Mailing it and never seeing it again.","Getting a low grade and not knowing why.","Asking a dumb question and getting dunked on."],
+  objections:["Does it need an account, a membership or a minimum?","Everyone online says PSA, so why not PSA?","Is ~$200 too much for a first submission?"],
   switching:["A trusted creator walking through an HGA submission start to finish","A sample report that reads like a person explaining her card","A date she can count on before the wedding"],
   price:"Moderate. One Glass slab for the engagement card is a gift-level purchase, like a frame or a nice print. Two (his and hers) is a stretch. She'll never batch. Don't quote presale promo prices until they're final.",
   msg:{
@@ -465,7 +470,7 @@ PROFILES.push({
   id:"andre", persona:"p2", side:"sports", hue:30,
   name:"Andre Whitfield", age:41, city:"Charlotte, NC", job:"Logistics supervisor at a distribution center",
   family:"Married to Keisha. Son Jordan (11) is newly obsessed with football cards. His father passed last year.",
-  essence:"My dad kept these in a shoebox for decades. I'm not going to be the one who ruins them.",
+  essence:"He passed away almost 20 years ago so sadly I can’t ask him about the card.", essenceSrc:{"who": "Quiet_Secret8704", "sub": "baseballcards", "url": "https://www.reddit.com/r/baseballcards/comments/1u7q7sl/question_about_this_card/"},
   evidence:"thin",
   origin:"Andre collected in the late '80s junk-wax days and then forgot about it. When his father died, he found two shoeboxes in the closet: his own childhood cards, plus a stack his dad had kept since the '70s in rubber bands. Jordan started opening Panini packs around the same time. Now Andre is the reluctant custodian of a collection he doesn't fully understand.",
   cards:[
@@ -483,14 +488,16 @@ PROFILES.push({
   ],
   hangouts:{online:["r/baseballcards","r/footballcards","r/sportscards"], creators:["Vintage-ID and \"what's it worth\" YouTubers","Beginner submission walkthroughs"], irl:["Local card shop (the gatekeeper)"]},
   trust:["The LCS owner, cautiously","Long-time collectors in vintage threads","Anything that shows its work"],
-  voice:["\"I just want to know it's real.\"","\"I'm not selling Dad's cards. Period.\"","\"I don't want to look like a fool asking basic stuff.\"","\"Where exactly is it while it's gone?\""],
   quotes:[
-    {q:"Found my dad's old cards… should I get these graded?", src:"Pattern from r/baseballcards family-collection threads (paraphrased, not verbatim)"},
-    {q:"'75 Topps George Brett. Thread on a family-held vintage card", src:"r/baseballcards (thread title cited in P2 Cultural Quotes)"}
+    {q:"He passed away almost 20 years ago so sadly I can’t ask him about the card.", who:"Quiet_Secret8704", sub:"baseballcards", url:"https://www.reddit.com/r/baseballcards/comments/1u7q7sl/question_about_this_card/"},
+    {q:"They tried to immediately set me up with an auction house and co-sign the card, but after reading the comments I don’t think that’s what I want to do. I want to get the card graded.", who:"Quiet_Secret8704", sub:"baseballcards", url:"https://www.reddit.com/r/baseballcards/comments/1u7q7sl/question_about_this_card/"},
+    {q:"I hope he would be happy with what the card graded, and how much it is worth today.", who:"Quiet_Secret8704", sub:"baseballcards", url:"https://www.reddit.com/r/baseballcards/comments/1unmf0b/follow_up_on_my_dads_cobb_red_portrait/"},
+    {q:"Going through my dad’s old cards. Is this worth grading? I have no idea how to tell if it would get a good grade", who:"PinkmansChilliP", sub:"baseballcards", url:"https://www.reddit.com/r/baseballcards/comments/1wd26uy/going_through_my_dads_old_cards_is_this_worth/"},
+    {q:"Was wondering if this would be worth grading? I mean it could be worth really nothing but I have no idea.", who:"AvocadoMaximum2204", sub:"baseballcards", url:"https://www.reddit.com/r/baseballcards/comments/1tbj6zy/11_card_from_my_dads_collection/"}
   ],
   needs:["Authentication first: is it real?","Step-by-step help, including what to send and how to pack vintage.","Tracking at every stage.","Something Jordan can keep someday."],
   fears:["Fakes, and paying to grade a fake.","Damage or loss in the mail.","Being upsold or talked down to."],
-  objections:["\"Why not just let the shop send it to PSA?\"","\"Is a low grade on Dad's card going to feel like an insult?\""],
+  objections:["Why not just let the shop send it to PSA?","Will a low grade on Dad's card feel like an insult?"],
   switching:["A clear Authentic label and an explained report","Seeing the unboxing of his package on camera","A dated return"],
   price:"Moderate to high sensitivity on volume (he won't grade the whole shoebox). Low sensitivity on one or two heirloom cards. Glass fits the Aaron, not the junk-wax.",
   msg:{
@@ -514,7 +521,7 @@ PROFILES.push({
   id:"kayla", persona:"p3", side:"tcg", hue:160,
   name:"Kayla Brennan", age:29, city:"Columbus, OH", job:"Pharmacy technician",
   family:"Single, shares an apartment with her sister. Vends at a monthly local card show with a friend.",
-  essence:"I didn't quit grading. Grading quit me, on June 2nd.",
+  essence:"It seems like all grading companies are going through something, PSA and TAG pausing lower tier submission, CGC maybe increasing lead times and ACE increasing their prices massively.", essenceSrc:{"who": "Necto_gck", "sub": "PokeGrading", "url": "https://www.reddit.com/r/PokeGrading/comments/1tqdq5g/tag_grading_following_psa_lead_with_closing/"},
   evidence:"strong",
   origin:"Kayla started ripping during the 2020–21 Pokémon boom and got serious about modern hits. By 2024 she was sending a PSA Value batch every couple of months, mostly SIRs and alt arts, some to keep and some to sell at her friend's table. Then PSA Value paused on June 2, 2026. TAG paused its entry tiers in May. Her sub box has been sitting full ever since.",
   cards:[
@@ -534,14 +541,15 @@ PROFILES.push({
   ],
   hangouts:{online:["r/PokeGrading","r/PokemonTCG (art only)","Pokémon grading and vendor Discords","Whatnot"], creators:["Grading-reveal creators who post dates and results","Hobby-news and tier-tracking creators"], irl:["Monthly card show (vendor)","Local game store"]},
   trust:["Dated receipts from submitters she knows","Discord vendors","Creators who show their own returns, not sponsorship reads"],
-  voice:["\"I don't care about launch promises. Show me the first batch's dates.\"","\"Every fast grader gets slow. Prove you won't.\"","\"Tell me the cost per card, all-in.\"","\"If it's a 9, tell me what kept it from a 10.\""],
   quotes:[
-    {q:"Grade today to get your cards back in 2027", src:"r/PSAcard thread title (Competitor Sentiment)"},
-    {q:"IMO TAG had momentum and has ruined it with their backlog and shutting down submissions, feels like the hype died.", src:"r/sportscards · Aug 2026"}
+    {q:"It seems like all grading companies are going through something, PSA and TAG pausing lower tier submission, CGC maybe increasing lead times and ACE increasing their prices massively.", who:"Necto_gck", sub:"PokeGrading", url:"https://www.reddit.com/r/PokeGrading/comments/1tqdq5g/tag_grading_following_psa_lead_with_closing/"},
+    {q:"Submitted an order at the start of april that went into research & ID after a few weeks but hasn't budged since then :(", who:"iLordDeath", sub:"PokeGrading", url:"https://www.reddit.com/r/PokeGrading/comments/1v2tbti/how_long_is_value_bulk_tier_currently_taking/"},
+    {q:"I got a recent 40 card sub back and got enough big 10’s to profit but was disappointed to see the blatant laziness in the process.", who:"YogurtclosetOk5586", sub:"PokeGrading", url:"https://www.reddit.com/r/PokeGrading/comments/1v27wyb/psa_grading_conspiracy/"},
+    {q:"IMO TAG had momentum and has ruined it with their backlog and shutting down submissions, feels like the hype died.", who:"TBL_AM", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1vexb88/with_the_current_state_of_grading_where_is/p68m5a6/"}
   ],
   needs:["A booked return date, not an estimate.","A predictable all-in price per card.","A reason for every grade.","A volume-friendly tier. Poly status is unresolved and is her biggest open question."],
-  fears:["\"You'll be backlogged by March like everyone else.\"","\"$200 glass for every card? I'm out.\"","Unexplained grades and no recourse."],
-  objections:["\"What's the per-card cost for 40 cards?\"","\"What happens if you miss the date?\" (remedy undecided)","\"Will my buyers accept your slab?\""],
+  fears:["HGA gets backlogged by March like everyone else.","$200 glass for every card prices her out.","Unexplained grades and no recourse."],
+  objections:["What is the per-card cost for a 40-card batch?","What happens if the date is missed? (remedy undecided)","Will her buyers accept the slab?"],
   switching:["The first batch of booked dates holding, with receipts posted by people she knows","A clear volume option (pending the Poly decision)","Reports that actually explain subgrades"],
   price:"High sensitivity. She thinks in cost per card across 20–40 cards. ~$200 Glass is for 1 or 2 keepers (the Mew), not the batch. Whether HGA wins her volume depends on the open Poly / lower-tier decision.",
   msg:{
@@ -565,13 +573,13 @@ PROFILES.push({
   id:"derek", persona:"p3", side:"sports", hue:215,
   name:"Derek Huang", age:45, city:"Pittsburgh, PA", job:"Civil engineer (transportation)",
   family:"Married to Lauren; two daughters (15, 12) who think his hobby is \"a lot.\"",
-  essence:"I used to send a batch every season. Now I've got a box of cards and nowhere I'm willing to send them.",
+  essence:"Cost and turnaround time. I probably have 30+ cards I would normally send to PSA. I would only do it now for something super high-end, which I don't ever buy.", essenceSrc:{"who": "MOFNY", "sub": "sportscards", "url": "https://www.reddit.com/r/sportscards/comments/1wrw41i/grading_opinions_psa_vs_beckett/pcgnsxa/"},
   evidence:"strong",
   origin:"Derek has collected since the '90s. He got back into it hard in 2019 and built a rhythm: open baseball in spring, football in fall, and send a batch after each season. PSA for anything he might sell, SGC for the Pirates and Steelers PC. He keeps a spreadsheet of every submission, with dates in and out.",
   cards:[
     {name:"Paul Skenes Bowman Draft Chrome", why:"His hometown pitcher. He'll keep the best copy and sell a duplicate."},
     {name:"Steelers and Pirates numbered parallels", why:"His PC core. He had always sent them to SGC for the tuxedo look."},
-    {name:"A Stephen Curry rookie he bought in 2020", why:"His \"retirement card,\" sitting in a PSA slab. He'll never send it anywhere else."}
+    {name:"A Stephen Curry rookie he bought in 2020", why:"His retirement card, sitting in a PSA slab. He'll never send it anywhere else."}
   ],
   trigger:"SGC moved to a $50 floor with 40+ business days in September 2026, the last affordable option he liked. His spreadsheet shows his last PSA batch running past its estimate. He wants his rhythm back: a date and a price he can plan a season around.",
   history:"<b>PSA:</b> the sell-side default, at $59.99 and 90–100 business days now. He tracks the backlog (8.2M as of Oct 6). <b>SGC:</b> his PC grader until the $50 floor. <b>TAG:</b> curious about the report, but entry tiers have been paused since May. <b>Beckett:</b> once a fallback; paused, site offline around Sep 9. <b>Old HGA:</b> he remembers 2021 hype and missed dates.",
@@ -583,14 +591,16 @@ PROFILES.push({
   ],
   hangouts:{online:["r/sportscards","r/baseballcards","A Pittsburgh collectors' Facebook group"], creators:["Hobby-news YouTubers and podcasters","Return-time and value-comparison creators"], irl:["Local card shop","Regional card shows"]},
   trust:["His own spreadsheet","Dated receipts from other submitters","Shop owners who have seen returns"],
-  voice:["\"PSA for the sell pile, something else for my PC.\"","\"Give me a real date and I'll plan around it.\"","\"I've seen every 'fast' grader get slow.\"","\"Tell me why it's a 9.\""],
   quotes:[
-    {q:"I tend to PC SGC more and 'invest' in PSA. They are just more liquid.", src:"r/sportscards · Sep 2026"},
-    {q:"Grade today to get your cards back in 2027", src:"r/PSAcard thread title"}
+    {q:"Cost and turnaround time. I probably have 30+ cards I would normally send to PSA. I would only do it now for something super high-end, which I don't ever buy.", who:"MOFNY", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1wrw41i/grading_opinions_psa_vs_beckett/pcgnsxa/"},
+    {q:"I used to actually enjoy deciding what was worth sending in, but at these prices the math barely makes sense unless the card is already worth a decent amount raw.", who:"Flat_Commission4955", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1wbr432/psa_submission_tier_announcement/p8tavvr/"},
+    {q:"$60 for a 5 month wait and a $1k cap, that’s basically a donation with extra steps", who:"No-Yak5008", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1wbr432/psa_submission_tier_announcement/p8s26kb/"},
+    {q:"I use TAG for my personal stuff, I like the slabs there the most. I don't bother to grade things I sell anymore.", who:"ew73", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1vded58/is_it_worth_grading_cards_with_sgc/p1cbqg8/"},
+    {q:"I’ve been trying to switch the tag, but it’s like the world won’t let me leave PSA.", who:"Friendship_Numerous", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1td6f8p/grade_today_to_get_your_cards_back_in_2027/olutj1y/"}
   ],
   needs:["A booked date.","A clear per-card cost.","An explained grade.","A grader for his PC, since he won't move his sell pile."],
   fears:["Backlog creep.","Another grader collapsing.","Paying more for glass on cards he doesn't display."],
-  objections:["\"What happens if you miss the date?\"","\"Is ~$200 Glass the only option?\" (Poly undecided)","\"Who stands behind HGA now?\""],
+  objections:["What happens if the date is missed?","Is ~$200 Glass the only option? (Poly undecided)","Who stands behind HGA now?"],
   switching:["The first presale dates holding (30-day presale turnaround), shown with receipts","An explained report on a card he knows well","A volume-friendly option if one ships"],
   price:"Moderate to high on batches, low on his top 2–3 PC cards. He splits his spend: PSA for the sell pile, a challenger for keeps.",
   msg:{
@@ -614,7 +624,7 @@ PROFILES.push({
   id:"boz", persona:"p4", side:"sports", hue:15,
   name:"Brian \"Boz\" Kowalski", age:37, city:"Indianapolis, IN", job:"Insurance claims adjuster",
   family:"Married to Steph; son Luke (6). Pacers season-ticket split with his brother.",
-  essence:"I loved those slabs. Then you disappeared. Tell me what happened before you ask for my card.",
+  essence:"Those color match slabs are why I want my PC slabbed through HGA", essenceSrc:{"who": "Designer_Skirt2304", "sub": "baseballcards", "url": "https://www.reddit.com/r/baseballcards/comments/o34re3/just_got_my_first_hga_slabs_back/h29xkct/"},
   evidence:"moderate",
   origin:"Boz got hooked in the 2020–21 boom and was an early HGA customer. He loved the color-match labels: his Pacers refractors looked like no one else's. He had 20+ HGA slabs by 2022. Then came the delays, the 60-day order that took 95 days, a refractor sealed backwards, and finally twelve months of silence. Now he gets an email from \"uCollect\" and isn't sure who that is.",
   cards:[
@@ -622,7 +632,7 @@ PROFILES.push({
     {name:"Jonathan Taylor Prizm in a color-match HGA slab", why:"His favorite slab ever, the label matched the card. Proof of what HGA did right."},
     {name:"Fernando Tatis Jr. 2019 Topps Chrome Refractor", why:"Came back sealed backwards. His standing grudge."}
   ],
-  trigger:"A collector buddy mentioned \"HGA is back with glass.\" He's curious, but his first reaction was \"Who's HGA now, uCollect? Do they still do the labels?\"",
+  trigger:"A collector buddy mentioned that HGA is back with glass. He's curious, but his first questions were who HGA is now, what uCollect has to do with it, and whether the labels still exist.",
   history:"<b>Old HGA:</b> loved the look (net +0.76), suffered the delays, the label errors and the silence. The 2022 guarantee didn't help when the date slipped. <b>PSA:</b> moved his sell-pile cards there, with long waits. <b>SGC:</b> his fallback until the $50 floor.",
   week:[
     "<b>Lunch:</b> r/sportscards; posts his HGA slabs occasionally.",
@@ -632,14 +642,16 @@ PROFILES.push({
   ],
   hangouts:{online:["r/sportscards","r/basketballcards","A Pacers collectors' Discord"], creators:["Hobby-news YouTubers","Slab-reveal creators"], irl:["Local card shop","Indy card show"]},
   trust:["His own HGA slabs","Friends who were burned with him","Straight talk, not hype"],
-  voice:["\"Those labels were sick. Nobody else did that.\"","\"Just tell me what happened.\"","\"Who's uCollect? Is that you?\"","\"Do the custom labels come back?\""],
   quotes:[
-    {q:"…stabbed [sic] my 2019 Topps Chrome Fernando Tatis Refractor backwards", src:"R1 HGA legacy quotes"},
-    {q:"Ask everyone from the Covid era about HGA", src:"r/sportscards"}
+    {q:"Those color match slabs are why I want my PC slabbed through HGA", who:"Designer_Skirt2304", sub:"baseballcards", url:"https://www.reddit.com/r/baseballcards/comments/o34re3/just_got_my_first_hga_slabs_back/h29xkct/"},
+    {q:"I just got my first 5 cards back. And I love the slabs...except they stabbed my 2019 Topps Chrome Fernando Tatis Refractor backwards....guess it's a 1 of 1 now", who:"DJawnGudelski", sub:"baseballcards", url:"https://www.reddit.com/r/baseballcards/comments/odo57x/big_fan_of_how_these_hga_custom_slabs_came_out/h41kz2c/"},
+    {q:"HGA received my submission 8/2 and I opted for the 60 day service. If I am counting correctly, I got them back at 95 days.", who:"ThatBaseballDude", sub:"baseballcards", url:"https://www.reddit.com/r/baseballcards/comments/rdlize/just_got_back_my_first_hga_submission_slabs_look/ho1u2xh/"},
+    {q:"They said they received mine on 7/13 and still haven’t gotten them back. Made it sound like they couldn’t locate my order in their facility :/", who:"CobraPanther99", sub:"baseballcards", url:"https://www.reddit.com/r/baseballcards/comments/rdlize/just_got_back_my_first_hga_submission_slabs_look/hrqths5/"},
+    {q:"Ask everyone from the Covid era about HGA…", who:"formulaferrari5", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1qld0yg/checked_out_the_website_for_tag_gradingslabs/o1iocwf/"}
   ],
-  needs:["Acknowledgment: \"We went quiet.\"","Clarity on HGA vs uCollect.","An answer on custom labels.","A date he can hold us to."],
-  fears:["\"Same thing again.\"","\"My old slabs become orphans.\"","Payment confusion on his card statement."],
-  objections:["\"Why should I trust you this time?\"","\"Are the labels gone forever?\"","\"Will my old HGA slabs still verify?\""],
+  needs:["Acknowledgment that HGA went quiet.","Clarity on HGA vs uCollect.","An answer on custom labels.","A date he can hold us to."],
+  fears:["The same thing happening again.","His old slabs becoming orphans.","Payment confusion on his card statement."],
+  objections:["Why trust HGA this time?","Are the custom labels gone forever?","Will old HGA slabs still verify?"],
   switching:["An honest first email","A booked date","Seeing Glass in hand","An answer on legacy slabs and labels (open decision)"],
   price:"Moderate. He'll pay ~$200 for Glass on the Haliburton if trust is rebuilt. A legacy thank-you offer could help, but don't state promo prices until they're final.",
   msg:{
@@ -663,7 +675,7 @@ PROFILES.push({
   id:"nicole", persona:"p4", side:"tcg", hue:260, thin:true,
   name:"Nicole Tran", age:31, city:"Sacramento, CA", job:"School librarian",
   family:"Lives with her husband Danny; they play Pokémon GO on walks.",
-  essence:"I sent you my favorite Pokémon because your slabs were pretty. I'm curious, and cautious.",
+  essence:"I love how the TGA and HGA slabs look and how you can pick the banner color or they will match the card.", essenceSrc:{"who": "macconma", "sub": "PokemonTCG", "url": "https://www.reddit.com/r/PokemonTCG/comments/p7rbrl/does_anyone_have_a_tga_or_hga_graded_shining_mew/"},
   evidence:"thin",
   origin:"Nicole sent a handful of Pokémon cards to HGA in 2021 because she liked the colorful labels on Instagram. They came back late. She moved her few later submissions to CGC and stopped thinking about HGA until a new email arrived.",
   cards:[
@@ -675,11 +687,15 @@ PROFILES.push({
   week:["<b>Evenings:</b> Instagram Pokémon art accounts.","<b>Occasionally:</b> r/PokeGrading.","<b>Weekends:</b> Pokémon GO walks; a local game store now and then."],
   hangouts:{online:["Instagram","r/PokeGrading"], creators:["Pokémon art and display creators"], irl:["Local game store"]},
   trust:["Display creators","Friends who collect"],
-  voice:["\"Your slabs were the prettiest. Then I never heard from you.\"","\"Is HGA uCollect now?\""],
-  quotes:[{q:"(No verbatim TCG-specific HGA legacy quotes in the research. This profile is in-character narrative.)", src:"Thin evidence: survey the legacy list"}],
+  quotes:[
+    {q:"I love how the TGA and HGA slabs look and how you can pick the banner color or they will match the card.", who:"macconma", sub:"PokemonTCG", url:"https://www.reddit.com/r/PokemonTCG/comments/p7rbrl/does_anyone_have_a_tga_or_hga_graded_shining_mew/"},
+    {q:"Yeah there have been so many pop ups but I like the look of these if nothing else.", who:"r4violi", sub:"PokemonTCG", url:"https://www.reddit.com/r/PokemonTCG/comments/u9zbop/anyone_have_hga_slabs_do_they_feel_cheap/i5wt3nt/"},
+    {q:"HGA treated me like shit. I like the look of their slabs, but they’re an awful company to work with and screwed me out of $40.", who:"nlinn12", sub:"PokemonTCG", url:"https://www.reddit.com/r/PokemonTCG/comments/18j6jls/is_hga_a_respectable_grading_company/kdicuj6/"},
+    {q:"I've never heard of HGA. I wonder how long this one will last 🤷‍♂️", who:"Riding_Dragonites", sub:"PokemonTCG", url:"https://www.reddit.com/r/PokemonTCG/comments/u9zbop/anyone_have_hga_slabs_do_they_feel_cheap/i5upa8t/"}
+  ],
   needs:["An honest explanation.","Glass that looks as good as the old labels.","A clear date."],
   fears:["Delays again.","Confusion over who she's paying."],
-  objections:["\"Why come back when CGC is fine?\""],
+  objections:["Why come back when CGC is fine?"],
   switching:["Glass shown on Pokémon art cards","Candor email","Booked date"],
   price:"Moderate. One or two Glass slabs for favorites.",
   msg:{
@@ -703,7 +719,7 @@ PROFILES.push({
   id:"vince", persona:"p5", side:"both", hue:45, thin:true,
   name:"Vince Caruso", age:42, city:"Edison, NJ", job:"Runs a card business (eBay, Whatnot, shows)",
   family:"Married, two kids. His garage is inventory.",
-  essence:"I'm not here to fall in love. I want to know where my card is, when it's back, and that it's covered.",
+  essence:"But if your grading to resell most cards, PSA is still the best choice.", essenceSrc:{"who": "Why_cant_I_partake", "sub": "sportscards", "url": "https://www.reddit.com/r/sportscards/comments/1td6f8p/grade_today_to_get_your_cards_back_in_2027/olz9vya/"},
   evidence:"thin",
   origin:"Vince turned a pandemic side hustle into a full-time business: breaks, Whatnot streams and weekend shows. He grades to sell, mostly through PSA because buyers ask for it, with some CGC Pokémon. He's lived through every backlog and once had a high-value card stuck for months with no update.",
   cards:[
@@ -716,11 +732,16 @@ PROFILES.push({
   week:["<b>Nightly:</b> Whatnot streams.","<b>Daily:</b> eBay comps and listings.","<b>Weekends:</b> card shows (vendor).","<b>Discord:</b> dealer and breaker groups."],
   hangouts:{online:["Whatnot","eBay","Dealer Discords","r/sportscards"], creators:["Breakers","Hobby-business creators"], irl:["Card shows (vendor)"]},
   trust:["Money and dates","Other dealers' receipts"],
-  voice:["\"Buyers ask for PSA. That's the market.\"","\"Insure it, date it, document it, and I'll talk.\"","\"Don't tell me it sells for more. I'll check the comps.\""],
-  quotes:[{q:"Protect your asset", src:"Oct 19 persona call (internal frame)"}],
+  quotes:[
+    {q:"But if your grading to resell most cards, PSA is still the best choice.", who:"Why_cant_I_partake", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1td6f8p/grade_today_to_get_your_cards_back_in_2027/olz9vya/"},
+    {q:"PSA has a ton of inertia on the market, and vendors won't move away from what they feel gives them the best ROI.", who:"dc1999", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1sakqus/just_got_back_my_first_sub_from_tag_grading_here/odxlreb/"},
+    {q:"If you’re just keeping it, whatever. At least it’s protected. But if you ever want to sell, regrade with PSA.", who:"Recent_Bld", sub:"PokemonTCG", url:"https://www.reddit.com/r/PokemonTCG/comments/18j6jls/is_hga_a_respectable_grading_company/kdi20cx/"},
+    {q:"This did happen to me. I have a Steph Curry rookie card and it is coming back a 7. PSA also wants $150 to send it back, and I sent it in 3 months ago", who:"dhomzthee", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1wbr432/psa_submission_tier_announcement/p8seqs8/"},
+    {q:"I saw a fake PSA 10 Jordan where the seller had manipulated the PSA registry to build trust.", who:"ybot73", sub:"sportscards", url:"https://www.reddit.com/r/sportscards/comments/1v57t6w/comment/ozjm3rw/"}
+  ],
   needs:["A guaranteed date.","Insurance terms in writing.","A chip record.","Documented grade reasoning."],
   fears:["Inventory stuck.","Loss or damage with no coverage.","A slab his buyers won't accept."],
-  objections:["\"Your slab won't sell like PSA.\"","\"What exactly is the insurance?\" (terms undecided)"],
+  objections:["The slab won't sell like PSA.","What exactly is the insurance? (terms undecided)"],
   switching:["Insurance terms in writing","Dates that hold","A test on Pokémon inventory first"],
   price:"Moderate. He'll pay for protection on high-value cards. Insurance pricing is unresolved (2% vs $250 per $10K).",
   msg:{
@@ -737,7 +758,7 @@ PROFILES.push({
     segment:"Test segment only: dealers and high-value submitters (TCG first), capped spend",
     creator:"Hobby-business creators (test)",
     doSay:["Booked dates.","Insurance (once terms are final).","Every grade is documented."],
-    dontSay:["Sells for more than PSA","Up to 80% more resale value","1M cards graded","Specific insurance terms before they're final"]
+    dontSay:["Sells for more than PSA","Up to 80% more resale value","Specific insurance terms before they're final"]
   }
 });
 const OPEN_DECISIONS = [
@@ -782,7 +803,7 @@ const sidePill=s=>`<span class="pill ${s}">${sideLabel[s]}</span>`;
 // overview
 $('#ov').innerHTML=PROFILES.map(p=>{const P=PERSONAS.find(x=>x.id===p.persona);
   const larger=P.larger===p.side&&p.side!=='both';
-  return `<a href="#${p.id}" class="glass" data-side="${p.side}">${avatar(p,56)}<div><div class="meta">${P.num} · ${P.short}</div><div class="nm">${esc(p.name)}</div><div class="es">“${esc(p.essence)}”</div><div class="tags">${sidePill(p.side)}${larger?'<span class="pill">★ Larger audience</span>':''}${evPill(p.evidence)}</div></div></a>`}).join('');
+  return `<a href="#${p.id}" class="glass" data-side="${p.side}">${avatar(p,56)}<div><div class="meta">${P.num} · ${P.short}</div><div class="nm">${esc(p.name)}</div><div class="es">“${esc(p.essence)}”${p.essenceSrc?` <span style="color:var(--dim);font-size:12px">u/${esc(p.essenceSrc.who)}</span>`:''}</div><div class="tags">${sidePill(p.side)}${larger?'<span class="pill">★ Larger audience</span>':''}${evPill(p.evidence)}</div></div></a>`}).join('');
 
 // nav
 $('#navlinks').insertAdjacentHTML('beforeend',PERSONAS.map(P=>`<a href="#${P.id}">${P.num} ${P.short}</a>`).join('')+'<a href="#open">Open decisions</a>');
@@ -792,7 +813,7 @@ function panel(p,t){
   if(t==='story') return `<h4>Origin</h4><p>${p.origin}</p><h4>The trigger</h4><p>${p.trigger}</p><h4>Grading history</h4><p>${p.history}</p>`;
   if(t==='cards') return `<h4>The cards, and why they matter</h4><div class="cards">${p.cards.map(c=>`<div class="cardi"><b>${esc(c.name)}</b><span>${c.why}</span></div>`).join('')}</div>`;
   if(t==='life') return `<h4>A week in the hobby</h4>${li(p.week)}<div class="cols" style="margin-top:14px"><div><h4>Online</h4>${li(p.hangouts.online)}</div><div><h4>Creators</h4>${li(p.hangouts.creators)}</div><div><h4>In real life</h4>${li(p.hangouts.irl)}</div></div><h4>Who they trust</h4>${li(p.trust)}`;
-  if(t==='voice') return `<div class="mgrid"><div><h4>In their words (in-character)</h4><div class="voice">${p.voice.map(v=>`<q>${v}</q>`).join('')}</div></div><div><h4>From the sources (verbatim)</h4>${p.quotes.map(q=>`<div class="quote"><q>${q.q}</q><small>${q.src}</small></div>`).join('')}</div></div>
+  if(t==='voice') return `<div class="rcv"><h4>Real collector voices</h4><p class="rcv-note">Verbatim posts by real collectors whose situation matches this persona, linked to the source. ${esc(p.name)} is a composite; these people are not ${esc(p.name.split(' ')[0])} speaking.</p><div class="mgrid">${p.quotes.map(q=>`<div class="quote"><q>${esc(q.q)}</q><small>u/${esc(q.who)}, r/${esc(q.sub)} · <a href="${q.url}" target="_blank" rel="noopener">source</a></small></div>`).join('')}</div></div>
    <div class="cols" style="margin-top:8px"><div><h4>Needs</h4>${li(p.needs)}</div><div><h4>Fears</h4>${li(p.fears)}</div><div><h4>Objections</h4>${li(p.objections)}</div></div>
    <div class="mgrid" style="margin-top:8px"><div><h4>Switching triggers</h4>${li(p.switching)}</div><div><h4>Price sensitivity</h4><p>${p.price}</p></div></div>`;
   const m=p.msg;
@@ -808,7 +829,7 @@ function profileHTML(p){
   const larger=P.larger===p.side&&p.side!=='both';
   return `<article class="profile" id="${p.id}" data-side="${p.side}">
    <div class="pr-top">${avatar(p,96)}<div><div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px">${sidePill(p.side)}${larger?'<span class="pill">★ Larger audience</span>':''}${evPill(p.evidence)}</div>
-   <h3>${esc(p.name)}</h3><div class="facts2">${p.age} · ${p.city} · ${p.job}</div><div class="facts2">${p.family}</div><div class="ess">${p.essence}</div></div></div>
+   <h3>${esc(p.name)}</h3><div class="facts2">${p.age} · ${p.city} · ${p.job}</div><div class="facts2">${p.family}</div><div class="ess">${esc(p.essence)}</div>${p.essenceSrc?`<div class="ess-src">Real collector voice: u/${esc(p.essenceSrc.who)}, r/${esc(p.essenceSrc.sub)} · <a href="${p.essenceSrc.url}" target="_blank" rel="noopener">source</a></div>`:''}</div></div>
    ${p.thin||p.evidence==='thin'?`<div class="thinflag">⚠ <b>Thin evidence.</b> ${p.id==='nicole'?'There are almost no TCG-specific legacy HGA sources. This profile is kept short; survey the legacy list before investing.':p.id==='vince'?'This is a test persona: AVOID AT LAUNCH per the TAM sheet, capped-spend test only. Insurance terms are unresolved.':'SEG-6 Inherited is LOW confidence in S2, and "pass down" behavior was not measured. Validate before scaling.'}</div>`:''}
    <div class="tabs" role="tablist" aria-label="${esc(p.name)} sections">${TABS.map(([k,l],i)=>`<button role="tab" id="${p.id}-t-${k}" aria-controls="${p.id}-panel" aria-selected="${i===0}" tabindex="${i===0?0:-1}" data-k="${k}">${l}</button>`).join('')}</div>
    <div class="panel" role="tabpanel" id="${p.id}-panel" aria-labelledby="${p.id}-t-story">${panel(p,'story')}</div></article>`;
