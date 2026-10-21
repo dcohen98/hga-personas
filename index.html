@@ -9,240 +9,322 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#07090f;--bg2:#0d1220;--glass:rgba(255,255,255,.055);--glass2:rgba(255,255,255,.09);--line:rgba(255,255,255,.12);--txt:#eef2fb;--mut:#a9b3c9;--dim:#7f8aa3;--acc:#7cc4ff;--acc2:#b69cff;--good:#5fe0b0;--warn:#ffc866;--bad:#ff8a8a;--sports:#6fb6ff;--tcg:#d79bff;--both:#ffd27a;--r:18px}
+:root{--bg:#f5f4f0;--card:#fff;--soft:#faf9f6;--ink:#12151c;--mut:#454d5e;--dim:#7b8293;--line:#e3e1da;--line2:#d4d1c8;
+--sports:#1c5bbd;--sports-bg:#eaf1fd;--tcg:#7b3fc6;--tcg-bg:#f3ecfd;--both:#a15c00;--both-bg:#fdf3e2;
+--acc:#0d7a64;--acc-bg:#e6f4f0;--emp:#c2410c;--emp-bg:#fff1e9;--cut:#0e6f8f;--cut-bg:#e7f5fa;--hype:#b3175a;--hype-bg:#fdeaf2;
+--warn:#9a5b00;--warn-bg:#fff6e3;--bad:#b42323;--bad-bg:#fdeeee;--good:#0d7a4a;--lab:190px;--r:14px}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{margin:0;background:var(--bg);color:var(--txt);font:15.5px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:-20%;z-index:-1;background:radial-gradient(40% 35% at 15% 10%,rgba(124,196,255,.16),transparent 70%),radial-gradient(35% 30% at 85% 20%,rgba(182,156,255,.14),transparent 70%),radial-gradient(45% 40% at 50% 100%,rgba(95,224,176,.08),transparent 70%);animation:drift 30s ease-in-out infinite alternate}
-@keyframes drift{to{transform:translate3d(2%,-2%,0) scale(1.04)}}
-h1,h2,h3,h4{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
-a{color:var(--acc)}
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-.glass{background:linear-gradient(160deg,var(--glass2),var(--glass));border:1px solid var(--line);border-radius:var(--r);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);box-shadow:0 10px 40px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.08)}
-.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:#fff;color:#000;padding:8px 12px;border-radius:8px}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.2;margin:0;letter-spacing:-.01em}
+a{color:var(--sports)}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+.wrap{max-width:1320px;margin:0 auto;padding:0 32px}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:#000;color:#fff;padding:8px 12px;border-radius:8px}
+:focus-visible{outline:2px solid var(--sports);outline-offset:2px}
 /* nav */
-nav.top{position:sticky;top:0;z-index:50;background:rgba(7,9,15,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-nav.top .wrap{display:flex;align-items:center;gap:14px;height:60px}
-.brand{font-family:"Space Grotesk";font-weight:700;letter-spacing:.04em;white-space:nowrap}
+nav.top{position:sticky;top:0;z-index:50;background:rgba(245,244,240,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;gap:16px;height:58px}
+.brand{font-family:"Space Grotesk";font-weight:700;letter-spacing:.06em;white-space:nowrap;font-size:15px}
 .brand span{color:var(--acc)}
-.navlinks{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+.navlinks{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1}
 .navlinks::-webkit-scrollbar{display:none}
-.navlinks a{color:var(--mut);text-decoration:none;font-size:13.5px;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.2s}
-.navlinks a:hover,.navlinks a.on{color:var(--txt);background:var(--glass2)}
-.filter{display:flex;gap:4px;padding:3px;border-radius:999px;border:1px solid var(--line);background:var(--glass)}
-.filter button{all:unset;cursor:pointer;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;color:var(--mut)}
-.filter button[aria-pressed=true]{background:var(--txt);color:#0a0d16}
-.filter button:focus-visible,.tabs button:focus-visible,.toggle:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.navlinks a{color:var(--mut);text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:8px;white-space:nowrap}
+.navlinks a:hover,.navlinks a.on{color:var(--ink);background:#e9e7e0}
+.filter{display:flex;gap:2px;padding:3px;border-radius:10px;border:1px solid var(--line2);background:var(--card);flex:none}
+.filter button{all:unset;cursor:pointer;font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:7px;color:var(--mut)}
+.filter button[aria-pressed=true]{background:var(--ink);color:#fff}
 /* hero */
-.hero{padding:88px 0 40px}
-.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:600}
-.eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 12px var(--acc);animation:pulse 2.4s infinite}
-@keyframes pulse{50%{opacity:.35}}
-.hero h1{font-size:clamp(38px,6.4vw,76px);margin:18px 0 18px;background:linear-gradient(100deg,#fff 30%,#bfe2ff 55%,#d9c8ff 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.lede{font-size:clamp(16px,1.8vw,19px);color:var(--mut);max-width:780px}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:34px}
-.fact{padding:16px 18px}
-.fact b{display:block;font-family:"Space Grotesk";font-size:22px}
-.fact span{color:var(--mut);font-size:13px}
-section.block{padding:40px 0}
-.sec-h{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
-.sec-h h2{font-size:clamp(26px,3.2vw,36px);margin:0}
-.sec-h p{color:var(--mut);margin:0;max-width:620px}
-.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.pad{padding:22px 24px}
-.how ol{margin:0;padding-left:20px;color:var(--mut)}.how li{margin:6px 0}.how li b{color:var(--txt)}
-.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:var(--mut);white-space:nowrap}
-.pill.sports{color:var(--sports);border-color:rgba(111,182,255,.4)}
-.pill.tcg{color:var(--tcg);border-color:rgba(215,155,255,.4)}
-.pill.both{color:var(--both);border-color:rgba(255,210,122,.4)}
-.pill.strong{color:var(--good);border-color:rgba(95,224,176,.4)}
-.pill.moderate{color:var(--acc);border-color:rgba(124,196,255,.4)}
-.pill.thin{color:var(--warn);border-color:rgba(255,200,102,.5);background:rgba(255,200,102,.08)}
-.pillar-card h3{font-size:24px;display:flex;align-items:center;gap:10px}
-.pillar-card .ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(124,196,255,.35),rgba(182,156,255,.25));border:1px solid var(--line)}
-.pillar-card p{color:var(--mut);margin:.3em 0}
-.tone{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-.tone div{padding:16px}
-.tone b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc2)}
-.tone q{font-family:"Space Grotesk";font-size:19px;display:block;margin-top:6px;quotes:"“" "”"}
-.lock{font-size:12px;color:var(--warn);font-weight:600}
-.guard{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-ul.clean{list-style:none;margin:0;padding:0}ul.clean li{padding:6px 0 6px 24px;position:relative;color:var(--mut)}
-ul.do li:before{content:"✓";position:absolute;left:0;color:var(--good);font-weight:700}
-ul.dont li:before{content:"✕";position:absolute;left:0;color:var(--bad);font-weight:700}
-ul.dot li:before{content:"";position:absolute;left:6px;top:15px;width:6px;height:6px;border-radius:50%;background:var(--acc)}
+.hero{padding:22px 0 0;display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:start}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:700}
+.hero h1{font-size:clamp(28px,3vw,38px);margin:8px 0 8px;letter-spacing:-.02em}
+.hero .lede{font-size:15px;color:var(--mut);max-width:680px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.fact b{display:block;font-family:"Space Grotesk";font-size:18px}
+.fact span{color:var(--dim);font-size:12.5px;line-height:1.4;display:block}
+.note{margin-top:4px;font-size:13px;color:var(--mut);background:var(--card);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:8px;padding:9px 14px;max-width:680px}
+/* section headers */
+.block{padding:36px 0}
+#overview{padding-top:18px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.sec-h h2{font-size:26px}
+.sec-h p{color:var(--dim);font-size:14px;max-width:640px}
+/* pills */
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:999px;border:1px solid var(--line2);background:var(--card);color:var(--mut);white-space:nowrap;line-height:1.6}
+.pill.sports{color:var(--sports);background:var(--sports-bg);border-color:transparent}
+.pill.tcg{color:var(--tcg);background:var(--tcg-bg);border-color:transparent}
+.pill.both{color:var(--both);background:var(--both-bg);border-color:transparent}
+.pill.strong{color:var(--good);border-color:#bfe3d0}
+.pill.moderate{color:var(--sports);border-color:#c7d8f3}
+.pill.thin{color:var(--warn);background:var(--warn-bg);border-color:#f0d9a8}
+.pill.big{color:var(--ink);border-color:var(--line2)}
+a.pill{text-decoration:none}
 /* overview */
-.ov{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
-.ov a{text-decoration:none;color:inherit;display:flex;gap:14px;padding:16px;transition:transform .25s,border-color .25s}
-.ov a:hover{transform:translateY(-3px);border-color:rgba(124,196,255,.5)}
-.ov .meta{font-size:12.5px;color:var(--dim)}
-.ov .nm{font-weight:600;font-family:"Space Grotesk";font-size:17px}
-.ov .es{font-size:13.5px;color:var(--mut);margin-top:4px;font-style:italic}
-.ov .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.av{flex:none;border-radius:16px;overflow:hidden}
+.ov{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:repeat(6,auto);gap:0 12px}
+.ovc{grid-row:span 6;display:grid;grid-template-rows:subgrid;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;text-decoration:none;color:inherit;transition:border-color .2s,box-shadow .2s}
+.ovc:hover{border-color:var(--line2);box-shadow:0 6px 24px rgba(20,20,10,.07)}
+.ovc>div{padding:9px 14px;border-top:1px solid var(--line)}
+.ovc>div:first-child{border-top:0;padding-top:14px}
+.ov-num{font-family:"Space Grotesk";font-weight:700;font-size:12px;color:var(--acc);letter-spacing:.08em}
+.ov-t{font-family:"Space Grotesk";font-weight:700;font-size:17px;margin-top:2px;line-height:1.2}
+.ov-ppl{display:flex;flex-direction:column;gap:4px}
+.ov-p{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.ov-p .av{width:24px;height:24px}
+.ov-p small{font-weight:500;color:var(--dim)}
+.ov-one{font-size:13px;color:var(--mut);line-height:1.45}
+.ov-pil{font-size:12px;color:var(--dim);margin-top:6px;line-height:1.4}.ov-pil b{color:var(--ink);font-weight:600}
+.ov-tone{font-family:"Space Grotesk";font-size:14px;font-weight:600;line-height:1.3}
+.ov-tone .k{display:block;font-family:Inter;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:3px}
+.ov-tone.emp{background:var(--emp-bg)}.ov-tone.emp .k{color:var(--emp)}
+.ov-tone.cut{background:var(--cut-bg)}.ov-tone.cut .k{color:var(--cut)}
+.ov-tone.hype{background:var(--hype-bg)}.ov-tone.hype .k{color:var(--hype)}
+/* ground rules */
+.rules{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px}
+.card h3{font-size:15px;margin-bottom:8px}
+.card p{color:var(--mut);font-size:13.5px;margin:.25em 0}
+.tone3{display:grid;gap:8px}
+.tone3 div{border-radius:10px;padding:8px 12px;font-family:"Space Grotesk";font-weight:600;font-size:14.5px}
+.tone3 small{display:block;font-family:Inter;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.t-emp{background:var(--emp-bg)}.t-emp small{color:var(--emp)}
+.t-cut{background:var(--cut-bg)}.t-cut small{color:var(--cut)}
+.t-hype{background:var(--hype-bg)}.t-hype small{color:var(--hype)}
+.lock{font-size:12.5px;color:var(--warn);font-weight:600;margin-top:10px}
+/* lists */
+ul.l li{position:relative;padding:3px 0 3px 16px;color:var(--mut)}
+ul.l li:before{content:"";position:absolute;left:2px;top:12px;width:5px;height:5px;border-radius:50%;background:var(--line2)}
+ul.l li b,ul.l li em{color:var(--ink)}
+ul.do li:before,ul.dont li:before{background:none;width:auto;height:auto;top:3px;left:0;font-weight:700;font-size:12px}
+ul.do li{padding-left:20px}ul.dont li{padding-left:20px}
+ul.do li:before{content:"✓";color:var(--good)}
+ul.dont li:before{content:"✕";color:var(--bad)}
+ul.l.sm li{font-size:13.5px}
 /* persona */
-.persona{margin:28px 0;padding:0;overflow:hidden}
-.p-head{padding:26px 28px;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:start}
-.p-num{font-family:"Space Grotesk";font-size:44px;font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.35);line-height:1}
-.p-head h2{font-size:clamp(24px,3vw,34px);margin:0 0 6px}
-.p-head .sub{color:var(--mut);margin:0 0 10px}
-.p-head .tags{display:flex;gap:8px;flex-wrap:wrap}
-.toggle{all:unset;cursor:pointer;font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--glass);white-space:nowrap}
-.toggle:after{content:" ▾";display:inline-block;transition:transform .25s}
-.toggle[aria-expanded=false]:after{transform:rotate(-90deg)}
-.p-body{padding:0 28px 28px}
-.p-body[hidden]{display:none}
-.p-intro{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin-bottom:18px}
-.p-intro .box{padding:18px 20px;border-radius:14px;background:rgba(0,0,0,.22);border:1px solid var(--line)}
-.p-intro h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
-.p-intro p{margin:.2em 0;color:var(--mut)}
-.sd{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.sd h5{margin:0 0 6px;font-size:13px;color:var(--acc2);letter-spacing:.08em;text-transform:uppercase}
-.sd ul li b{color:var(--txt)}
-.profiles{display:grid;gap:18px}
-.profile{padding:0;border-radius:16px;background:rgba(255,255,255,.035);border:1px solid var(--line);overflow:hidden}
-.profile[hidden]{display:none}
-.pr-top{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:22px 22px 14px;align-items:center}
-.pr-top h3{font-size:24px;margin:0}
-.pr-top .facts2{color:var(--mut);font-size:13.5px}
-.pr-top .ess{font-family:"Space Grotesk";font-size:clamp(17px,2vw,21px);margin-top:10px;color:#fff;line-height:1.35}
-.pr-top .ess:before{content:"“";color:var(--acc)}.pr-top .ess:after{content:"”";color:var(--acc)}
-.thinflag{margin:0 22px 12px;padding:10px 14px;border-radius:12px;background:rgba(255,200,102,.08);border:1px dashed rgba(255,200,102,.5);color:#ffe2a8;font-size:13.5px}
-.tabs{display:flex;gap:4px;padding:0 22px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tabs button{all:unset;cursor:pointer;padding:10px 14px;font-size:13.5px;font-weight:600;color:var(--mut);border-bottom:2px solid transparent;white-space:nowrap}
-.tabs button[aria-selected=true]{color:var(--txt);border-color:var(--acc)}
-.panel{padding:20px 22px 24px;animation:fade .35s ease}
-@keyframes fade{from{opacity:0;transform:translateY(4px)}}
-.panel h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:18px 0 8px}
-.panel h4:first-child{margin-top:0}
-.panel p{color:var(--mut);margin:.3em 0}.panel p b,.panel li b{color:var(--txt)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.cardi{padding:14px 16px;border-radius:12px;background:rgba(0,0,0,.25);border:1px solid var(--line);position:relative;overflow:hidden}
-.cardi:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 40%,rgba(255,255,255,.06) 50%,transparent 60%);transform:translateX(-100%);transition:transform .8s}
-.cardi:hover:before{transform:translateX(100%)}
-.cardi b{display:block;color:var(--txt);margin-bottom:4px}
-.cardi span{color:var(--mut);font-size:14px}
-.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.quote{border-left:3px solid var(--acc);padding:8px 14px;margin:10px 0;background:rgba(124,196,255,.05);border-radius:0 10px 10px 0}
-.quote q{color:var(--txt);display:block}
-.quote small{color:var(--dim)}
-.voice q{display:block;color:#dfe6f5;font-style:italic;padding:4px 0}
-.rcv-note{color:var(--dim);font-size:13px;margin:.2em 0 .6em}
-.rcv .quote{margin:0}
-.pr-top .ess-src{font-size:12.5px;color:var(--dim);margin-top:4px}
-.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.mbox{padding:14px 16px;border-radius:12px;background:rgba(0,0,0,.22);border:1px solid var(--line)}
-.mbox h4{margin-top:0!important}
-.promise{font-family:"Space Grotesk";font-size:20px;color:#fff;margin:4px 0 12px}
-.hl li{font-family:"Space Grotesk";color:var(--txt)!important;font-size:16px}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chips span{font-size:12.5px;padding:3px 10px;border-radius:999px;background:rgba(95,224,176,.08);border:1px solid rgba(95,224,176,.3);color:#bff3df}
-.chips.no span{background:rgba(255,138,138,.07);border-color:rgba(255,138,138,.35);color:#ffc9c9;text-decoration:line-through;text-decoration-color:rgba(255,138,138,.6)}
-.route{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.route div{padding:12px 14px;border-radius:12px;background:rgba(124,196,255,.06);border:1px solid rgba(124,196,255,.25);font-size:14px;color:var(--mut)}
-.route b{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:4px}
-.od{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
-.od div{padding:12px 14px;border-radius:12px;background:rgba(255,200,102,.05);border:1px solid rgba(255,200,102,.25)}
-.od b{display:block;color:#ffe2a8;font-size:14px}.od span{color:var(--mut);font-size:13.5px}
-footer{padding:40px 0 60px;border-top:1px solid var(--line);margin-top:40px;color:var(--dim);font-size:13px}
-footer .src{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-footer .src code{font:12px ui-monospace,Menlo,monospace;padding:3px 8px;border-radius:6px;background:var(--glass);border:1px solid var(--line);color:var(--mut)}
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}.reveal.in{opacity:1;transform:none}
-@media (max-width:900px){.grid2,.grid3,.tone,.guard,.p-intro,.sd,.cols,.mgrid,.route{grid-template-columns:1fr}.p-head{grid-template-columns:1fr auto}.p-num{display:none}}
-@media (max-width:620px){.wrap{padding:0 16px}nav.top .wrap{height:auto;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}.navlinks{order:3;flex-basis:100%}.hero{padding:48px 0 24px}.p-head,.p-body{padding-left:18px;padding-right:18px}.pr-top{grid-template-columns:1fr}.pr-top .av{width:64px}}
-@media (prefers-reduced-motion:reduce){*,*:before{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+.persona{margin:28px 0 56px}
+.p-head{background:var(--ink);color:#fff;border-radius:18px 18px 0 0;padding:28px 32px 22px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 26px}
+.p-num{font-family:"Space Grotesk";font-size:56px;font-weight:700;line-height:.9;color:#6ee7c8}
+.p-head h2{font-size:clamp(26px,3vw,36px);color:#fff}
+.p-head .sum{color:#c9cfdb;font-size:15.5px;margin-top:8px;max-width:860px}
+.p-head .sum em{color:#fff}
+.p-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.p-head .pill{white-space:normal;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#e8ecf3}
+.p-head .pill.thin{color:#ffd58a;border-color:rgba(255,213,138,.4)}
+.p-meta{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12)}
+.p-meta h5{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8f98aa;margin-bottom:4px;font-family:Inter;font-weight:700}
+.p-meta p{font-size:13px;color:#b9c0ce;line-height:1.5}
+.p-jump{grid-column:2;display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.p-jump a{font-size:12.5px;color:#e8ecf3;text-decoration:none;padding:4px 10px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
+.p-jump a:hover{background:rgba(255,255,255,.16)}
+.p-body{background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 18px 18px}
+.sec{padding:28px 32px 30px;border-top:1px solid var(--line)}
+.sec:first-child{border-top:0}
+.sec>h3{display:flex;align-items:center;gap:12px;font-size:21px;margin-bottom:6px}
+.sec>h3 .n{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--acc-bg);color:var(--acc);font-size:15px;flex:none}
+.sec>.intro{color:var(--dim);font-size:13.5px;margin:0 0 18px 42px}
+/* people cards */
+.people{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:16px}
+.who{border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;background:var(--soft);position:relative}
+.who[data-side=sports]{border-top:4px solid var(--sports)}
+.who[data-side=tcg]{border-top:4px solid var(--tcg)}
+.who[data-side=both]{border-top:4px solid var(--both)}
+.who-top{display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;align-items:center}
+.who-top .av{width:72px;height:72px}
+.who h4{font-size:22px}
+.who .tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px}
+.who .facts2{color:var(--mut);font-size:13.5px;line-height:1.45}
+.who .fam{color:var(--dim);font-size:13px;margin-top:2px}
+.kv{display:grid;grid-template-columns:130px minmax(0,1fr);gap:10px 14px;margin-top:16px;font-size:14px}
+.kv dt{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:700;padding-top:3px}
+.kv dd{margin:0;color:var(--ink)}
+.kv ul.l li{padding-top:1px;padding-bottom:1px}
+.ess{margin-top:16px;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:8px}
+.ess q{display:block;font-family:"Space Grotesk";font-size:16.5px;font-weight:500;line-height:1.4;quotes:"“" "”" "‘" "’"}
+.ess small,.quote small{display:block;color:var(--dim);font-size:12px;margin-top:6px}
+.flagmini{margin-top:12px;font-size:12.5px;color:var(--warn);background:var(--warn-bg);border:1px dashed #e8c98a;border-radius:8px;padding:7px 10px}
+.flagmini a{color:var(--warn);font-weight:600}
+.share{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.share>div{border:1px solid var(--line);border-radius:var(--r);padding:16px 20px}
+.share h5,.sub-h{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-family:Inter;font-weight:700;margin-bottom:8px}
+/* comparison rows */
+.cmp{display:grid;grid-template-columns:var(--lab) repeat(var(--n),minmax(0,1fr));border:1px solid var(--line);border-radius:var(--r);overflow:clip}
+.cmp>*{padding:12px 16px;border-top:1px solid var(--line)}
+.cmp>.hd{border-top:0;background:var(--soft);display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px;position:sticky;top:58px;z-index:2}
+.cmp>.hd .av{width:26px;height:26px}
+.cmp>.hd.corner{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:700}
+.cmp>.hd[data-side=sports]{box-shadow:inset 0 3px 0 var(--sports)}
+.cmp>.hd[data-side=tcg]{box-shadow:inset 0 3px 0 var(--tcg)}
+.cmp>.hd[data-side=both]{box-shadow:inset 0 3px 0 var(--both)}
+.cmp>.lab{font-size:13px;font-weight:600;color:var(--ink);background:var(--soft)}
+.cmp>.lab small{display:block;font-weight:500;color:var(--dim);font-size:12px;margin-top:2px}
+.cmp>.cell{min-width:0}
+.cmp>.cell+.cell{border-left:1px solid var(--line)}
+.cmp .tag{display:none}
+.cmp p{color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chips span{font-size:12.5px;padding:2px 9px;border-radius:999px;background:var(--acc-bg);color:#0a5d4c}
+.chips.no span{background:var(--bad-bg);color:#8f1d1d;text-decoration:line-through;text-decoration-color:rgba(180,35,35,.45)}
+.promise{font-family:"Space Grotesk";font-size:17px;font-weight:600;line-height:1.35;color:var(--ink)}
+.hl li{font-family:"Space Grotesk";font-weight:500;color:var(--ink)!important}
+/* quotes */
+.quotes{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:16px;margin-top:18px}
+.qcol h5{display:flex;align-items:center;gap:8px;font-size:14px;margin-bottom:10px}
+.qcol h5 .av{width:24px;height:24px}
+.quote{border-left:3px solid var(--line2);padding:8px 14px;margin:0 0 10px;background:var(--soft);border-radius:0 8px 8px 0}
+.qcol[data-side=sports] .quote{border-left-color:var(--sports)}
+.qcol[data-side=tcg] .quote{border-left-color:var(--tcg)}
+.qcol[data-side=both] .quote{border-left-color:var(--both)}
+.quote q{display:block;color:var(--ink);font-size:14.5px;quotes:"“" "”" "‘" "’"}
+.rcv-note{color:var(--dim);font-size:13px;margin-top:6px}
+/* tone */
+.tones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tn{border-radius:var(--r);padding:18px 20px;border:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.tn.emp{background:var(--emp-bg);border-color:#f6d3bf}.tn.cut{background:var(--cut-bg);border-color:#c3e4ef}.tn.hype{background:var(--hype-bg);border-color:#f3c6d9}
+.tn .k{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.tn.emp .k{color:var(--emp)}.tn.cut .k{color:var(--cut)}.tn.hype .k{color:var(--hype)}
+.tn .anchor{font-size:12.5px;color:var(--dim);font-style:italic}
+.tn .means{font-size:13.5px;color:var(--mut)}
+.tn .means b{color:var(--ink)}
+.ad{background:var(--card);border-radius:10px;padding:14px 16px;box-shadow:0 1px 2px rgba(0,0,0,.05);flex:1}
+.ad .h{font-family:"Space Grotesk";font-size:19px;font-weight:700;line-height:1.25}
+.ad .c{font-size:14px;color:var(--mut);margin-top:8px}
+.tn .where{font-size:12.5px;color:var(--mut)}
+.tn .where b{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-right:4px}
+.tnote{font-size:12.5px;color:var(--warn);margin-top:10px}
+.kit-h{margin:26px 0 10px;font-size:15px}
+.claims{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.claims>div{border-radius:var(--r);padding:16px 20px;border:1px solid var(--line)}
+.claims .no{background:var(--bad-bg);border-color:#f2caca}
+.claims .yes{background:#f1f8f4;border-color:#cfe7da}
+.claims h4{font-size:15px;margin-bottom:4px}
+.claims p{font-size:12.5px;color:var(--dim);margin-bottom:8px}
+.claims .must{font-weight:600;color:var(--bad)!important}
+/* story */
+.story p{color:var(--mut);max-width:72ch}
+.story p+p{margin-top:.6em}
+.cardlist li{padding:8px 0;border-top:1px solid var(--line)}
+.cardlist li:first-child{border-top:0;padding-top:0}
+.cardlist b{display:block;color:var(--ink);font-size:14px}
+.cardlist span{color:var(--mut);font-size:13.5px}
+/* open decisions */
+.endgrid{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}
+.od{columns:2;column-gap:22px;counter-reset:od}
+.od li{break-inside:avoid;padding:6px 0 8px 30px;position:relative;font-size:13.5px;color:var(--mut)}
+.od li:before{counter-increment:od;content:counter(od);position:absolute;left:0;top:7px;width:20px;height:20px;border-radius:6px;background:var(--warn-bg);color:var(--warn);font-size:11px;font-weight:700;display:grid;place-items:center}
+.od li b{color:var(--ink);display:block;font-size:13.5px}
+.flags li{padding:8px 0;border-top:1px solid var(--line);font-size:13.5px;color:var(--mut)}
+.flags li:first-child,.od li:first-child{border-top:0}
+.flags b{color:var(--ink)}
+.flags a{text-decoration:none;font-weight:600}
+footer{padding:28px 0 50px;border-top:1px solid var(--line);color:var(--dim);font-size:12.5px}
+footer .src{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+footer code{font:11.5px ui-monospace,Menlo,monospace;padding:2px 7px;border-radius:5px;background:var(--card);border:1px solid var(--line);color:var(--mut)}
+/* filter */
+body[data-f=sports] [data-side=tcg],body[data-f=tcg] [data-side=sports]{display:none!important}
+body[data-f=sports] .two,body[data-f=tcg] .two{--n:1}
+.one{--n:1}.two{--n:2}
+/* responsive */
+@media (max-width:1180px){
+ .ov{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+ .rules{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+ .hero{grid-template-columns:1fr;gap:18px}
+ .ov{grid-template-columns:1fr 1fr}
+ .tones{grid-template-columns:1fr}
+ .endgrid{grid-template-columns:1fr}
+}
+@media (max-width:820px){
+ .wrap{padding:0 16px}
+ nav.top .wrap{height:auto;flex-wrap:wrap;padding-top:8px;padding-bottom:8px;gap:8px 12px}
+ .navlinks{order:3;flex-basis:100%}
+ .p-head{grid-template-columns:minmax(0,1fr);padding:22px 20px 18px}
+ html{scroll-padding-top:118px}
+ .p-num{font-size:40px}
+ .p-meta,.p-jump{grid-column:1}
+ .p-meta{grid-template-columns:1fr}
+ .sec{padding:22px 18px 24px}
+ .sec>.intro{margin-left:0}
+ .people,.quotes,.share,.claims{grid-template-columns:1fr}
+ .cmp{grid-template-columns:1fr;border:0;border-radius:0;gap:0}
+ .cmp>.hd{display:none}
+ .cmp>*{padding:10px 0;border-top:0}
+ .cmp>.lab{background:none;padding:16px 0 4px;border-top:1px solid var(--line);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
+ .cmp>.lab:first-of-type{border-top:0}
+ .cmp>.cell+.cell{border-left:0}
+ .cmp>.cell{padding:8px 12px;margin:4px 0;border-radius:10px;background:var(--soft)}
+ .cmp .tag{display:inline-flex;margin-bottom:6px}
+ .rules{grid-template-columns:1fr}
+ .od{columns:1}
+}
+@media (max-width:560px){
+ .facts{grid-template-columns:1fr 1fr}
+ .ov{grid-template-columns:1fr}
+ .who{padding:16px}
+ .who-top{grid-template-columns:56px minmax(0,1fr)}.who-top .av{width:56px;height:56px}
+ .kv{grid-template-columns:1fr;gap:2px}
+ .kv dd{margin-bottom:10px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
-<body>
+<body data-f="all">
 <a class="skip" href="#main">Skip to content</a>
 <nav class="top" aria-label="Primary">
   <div class="wrap">
     <div class="brand">HGA<span>·</span>PERSONAS</div>
-    <div class="navlinks" id="navlinks">
-      <a href="#how">How to use</a><a href="#pillars">Pillars</a><a href="#overview">Overview</a>
-    </div>
-    <div class="filter" role="group" aria-label="Filter profiles by side">
+    <div class="navlinks" id="navlinks"><a href="#overview">Overview</a></div>
+    <div class="filter" role="group" aria-label="Show Sports, TCG or both">
       <button data-f="all" aria-pressed="true">All</button><button data-f="sports" aria-pressed="false">Sports</button><button data-f="tcg" aria-pressed="false">TCG</button>
     </div>
   </div>
 </nav>
 <main id="main">
-<header class="hero wrap">
-  <div class="eyebrow">Internal · HGA launch team · Presale starts Nov 23, 2026</div>
-  <h1>Who we're building<br>the future of grading for.</h1>
-  <p class="lede">Five personas and nine people, built from Reddit threads, competitor pains, call notes and the TAM model. HGA (Hybrid Grading Approach) is the lead brand, and uCollect is the parent company and marketplace. Use this page to write copy, choose creators, segment email and decide which landing page each person sees.</p>
-  <div class="facts">
-    <div class="fact glass"><b>Nov 23</b><span>Presale starts · presale orders have a 30-day turnaround</span></div>
-    <div class="fact glass"><b>Jan 18</b><span>Grading calendar booking opens</span></div>
-    <div class="fact glass"><b>Feb 1</b><span>Grading starts</span></div>
-    <div class="fact glass"><b>~$200</b><span>Glass core price · promo pricing still under discussion</span></div>
+<header class="wrap hero">
+  <div>
+    <div class="eyebrow">Internal · HGA launch team · Oct 2026</div>
+    <h1>Who we're building the future of grading for.</h1>
+    <p class="lede">Five personas, nine people. Each persona reads in the same order: who they are, what they want and what's in the way, how they show up in the hobby, how we talk to them, then their full story. Where Sports and TCG differ, the two people sit side by side.</p>
   </div>
+  <div>
+  <p class="note"><b>Names are fictional, quotes are real.</b> Every name and story is a composite. Every quoted line is a verbatim post by a real collector, linked to its source. The quotes represent the persona; they are not the fictional person speaking. Numbers come only from the research files.</p>
+  <div class="facts">
+    <div class="fact"><b>Nov 23</b><span>Presale starts · 30-day turnaround on presale orders</span></div>
+    <div class="fact"><b>Jan 18</b><span>Grading calendar booking opens</span></div>
+    <div class="fact"><b>Feb 1</b><span>Grading starts</span></div>
+    <div class="fact"><b>~$200</b><span>Glass core price · promo pricing undecided</span></div>
+  </div></div>
 </header>
 
-<section class="block wrap reveal" id="how">
-  <div class="sec-h"><h2>How to use this</h2><p>Each persona has a Sports person and a TCG person, except the Reseller, a single test persona covering both.</p></div>
-  <div class="grid2">
-    <div class="glass pad how"><ol>
-      <li><b>Pick the side</b> with the filter (All / Sports / TCG). The Reseller always shows.</li>
-      <li><b>Read the persona header</b> for the larger audience, the evidence strength and what Sports and TCG share or don't.</li>
-      <li><b>Open a person</b> and move through the tabs: Story → Cards → Hobby life → Voice → Messaging.</li>
-      <li><b>Copy from Messaging</b>: promise, proofs, headlines, hooks, subjects, openers, plus the Do say / Don't say guardrails.</li>
-      <li><b>Check Open decisions</b> at the bottom before stating anything unresolved.</li>
-    </ol></div>
-    <div class="glass pad how"><h3 style="font-size:18px">Reading the badges</h3>
-      <p style="color:var(--mut);margin:.2em 0 .8em">Evidence: <span class="pill strong">strong</span> <span class="pill moderate">moderate</span> <span class="pill thin">thin evidence</span></p>
-      <p style="color:var(--mut);margin:.2em 0 .8em">Side: <span class="pill sports">Sports</span> <span class="pill tcg">TCG</span> <span class="pill both">Both</span> · <b style="color:var(--txt)">★ Larger audience</b> marks the bigger side.</p>
-      <p style="color:var(--mut);margin:0">Names and stories are fictional composites. Every quote on this page (the header line and <b style="color:var(--txt)">"Real collector voices"</b>) is a verbatim post by a real collector, linked to its source; they represent the persona, not the fictional person speaking. Numbers come only from the research files.</p>
-    </div>
-  </div>
-</section>
-
-<section class="block wrap reveal" id="pillars">
-  <div class="sec-h"><h2>Pillars, tone &amp; guardrails</h2><p>Set Oct 19. Show the process. Don't lead with the word "transparency," because competitors already own it.</p></div>
-  <div class="grid2">
-    <div class="glass pad pillar-card"><h3><span class="ic" aria-hidden="true">◇</span>Glass → collectors</h3>
-      <p>Preserve it. Pass it down through generations. Sentimental, built for display: <b style="color:var(--txt)">more than plastic</b>.</p>
-      <p>Key word: <b style="color:var(--txt)">relieved</b>.</p>
-      <p style="font-size:13.5px">Scratch-resistant · vacuum-like seal · fits any card size · stacks with magnets.</p></div>
-    <div class="glass pad pillar-card"><h3><span class="ic" aria-hidden="true">◎</span>Transparency → pain</h3>
-      <p>When does my card come back? Why did it get that grade? Is my asset protected?</p>
-      <p>Show it: a booked date, the package opened on camera, a report with subgrades, the chip, tracked stages.</p>
-      <p style="font-size:13.5px">Use it on pages and in proof points, never as the headline word.</p></div>
-  </div>
-  <div class="tone">
-    <div class="glass"><b>Empowering</b><q>This is the moment you've been waiting for.</q></div>
-    <div class="glass"><b>Cutting-edge</b><q>The future is here.</q></div>
-    <div class="glass"><b>Building hype</b><q>The biggest thing the industry has ever seen.</q></div>
-  </div>
-  <p class="lock" style="margin-top:10px">🔒 Tone is locked. Never soften it. The guardrails below apply to <u>claims</u>, not tone.</p>
-  <div class="guard">
-    <div class="glass pad"><h3 style="font-size:18px">Do say</h3><ul class="clean do">
-      <li>Glass is scratch-resistant, with a vacuum-like seal.</li><li>Fits any card size; stacks with magnets.</li>
-      <li>You book your return date (booking opens Jan 18; grading starts Feb 1).</li><li>Presale orders: 30-day turnaround.</li>
-      <li>Every grade is explained (confirm report and subgrades with ops).</li><li>"Chip" (not NFT, not RFID).</li></ul></div>
-    <div class="glass pad"><h3 style="font-size:18px">Don't say</h3><ul class="clean dont">
-      <li>Resale beats PSA / sells for more.</li><li>"Up to 80% more resale value."</li>
-      <li>"Made in USA" (the frame is made in China).</li><li>UV protection.</li><li>Final presale / Black Friday prices · Poly as confirmed · naming PSA without counsel.</li></ul></div>
-  </div>
-</section>
-
-<section class="block wrap reveal" id="overview">
-  <div class="sec-h"><h2>All nine people</h2><p>Click a card to jump to that person. The filter applies here too.</p></div>
+<section class="block wrap" id="overview">
+  <div class="sec-h"><h2>All five personas at a glance</h2><p>Click a column to jump in. Rows line up across all five, including the three tone lines.</p></div>
   <div class="ov" id="ov"></div>
+</section>
+
+<section class="block wrap" id="rules" style="padding-top:8px">
+  <div class="sec-h"><h2>Ground rules for every persona</h2><p>Pillars and tone were set Oct 19. Guardrails limit what we claim, never how loud we say it.</p></div>
+  <div class="rules">
+    <div class="card"><h3>Glass → collectors</h3><p>Preserve it. Pass it down through generations. Sentimental and built for display: <b>more than plastic</b>. Key word: <b>relieved</b>.</p><p style="color:var(--dim)">Scratch-resistant · vacuum-like seal · fits any card size · stacks with magnets.</p></div>
+    <div class="card"><h3>Transparency → pain</h3><p>When does my card come back? Why did it get that grade? Is my asset protected?</p><p>Show it: a booked date, the package opened on camera, a report with subgrades, the chip, tracked stages. <b>Never use the word as the headline</b>; competitors already own it.</p></div>
+    <div class="card"><h3>Tone (locked)</h3><div class="tone3"><div class="t-emp"><small>Empowering</small>This is the moment you've been waiting for.</div><div class="t-cut"><small>Cutting-edge</small>The future is here.</div><div class="t-hype"><small>Hype</small>The biggest thing the industry has ever seen.</div></div><p class="lock">🔒 Never soften the tone.</p></div>
+    <div class="card"><h3>Claims, everywhere</h3><ul class="l do sm" id="gdo"></ul><ul class="l dont sm" id="gdont" style="margin-top:8px"></ul></div>
+  </div>
 </section>
 
 <div class="wrap" id="personas"></div>
 
-<section class="block wrap reveal" id="open">
-  <div class="sec-h"><h2>Open decisions</h2><p>Treat each of these as unresolved in all copy until it's decided.</p></div>
-  <div class="od" id="od"></div>
+<section class="block wrap" id="open">
+  <div class="sec-h"><h2>Open decisions &amp; evidence flags</h2><p>Treat every open decision as unresolved in all copy until it's decided.</p></div>
+  <div class="endgrid">
+    <div class="card"><h3 style="margin-bottom:10px">16 open decisions</h3><ol class="od" id="od" style="margin:0;padding:0;list-style:none"></ol></div>
+    <div class="card"><h3 style="margin-bottom:6px">Where the evidence is thin</h3><ul class="flags" id="flags"></ul></div>
+  </div>
 </section>
 </main>
 <footer><div class="wrap">
-  <div><b style="color:var(--mut)">Internal — HGA launch team — Oct 2026</b>. Not for distribution. No real people depicted; avatars are abstract.</div>
-  <div style="margin-top:12px">Sources (research files):</div>
+  <div><b style="color:var(--mut)">Internal · HGA launch team · Oct 2026.</b> Not for distribution. Names and stories are fictional composites; quotes are verbatim from real collectors. No real people depicted; avatars are abstract.</div>
+  <div style="margin-top:10px">Sources (research files):</div>
   <div class="src" id="src"></div>
 </div></footer>
 <script>
@@ -780,90 +862,254 @@ const OPEN_DECISIONS = [
   ["\"Pass down\"","Not measured in research. Don't state it as a statistic."]
 ];
 const SOURCES = ["hga-research-deep-brief.md","oct19-persona-call.md","oct20-ryan-persona-notes.md","market-research.md (P2 Cultural Quotes, P4 Gatekeepers, R1 HGA legacy quotes)","S1 language research","S2 segments (SEG-1..6)","S3","S4 constellations","S5","Market State","Understanding Gap","Competitor Sentiment","Competitor Ad Analysis","TAM xlsx","Strategy Core","Creative Scaffolding","Pain Points & 50 Angles","Exec Summary","CORAS","Findings.md","Field Guide"];
+// ---- v3 additions: portraits, tone lines, evidence flags ----
+const NOW = {
+  marcus:"Twenty-plus years in, with a lit cabinet of keepers he never sells. His son's Wemby is sitting raw on his desk, waiting for a slab worth putting in the case.",
+  jenna:"Came back for the 2021 alt-art wave. Keeps a dozen slabs on a color-sorted floating shelf. Her TAG option is paused, her CGC slab is scuffed, and her Tokyo jumbo has no home.",
+  mia:"Brand new. She pulled a Charizard the week she got engaged and has never sent a card anywhere. Forum answers have already scared her off.",
+  andre:"The reluctant custodian of his late father's shoeboxes, with a son just getting into football cards. Has never graded and worries about fakes and the mail.",
+  kayla:"A committed modern-Pokémon submitter and part-time vendor. She sent a PSA Value batch every couple of months until June 2, and her sub box has been full ever since.",
+  derek:"A seasonal batch submitter with a spreadsheet of every sub: PSA for the sell pile, SGC for his PC, until SGC went to $50.",
+  boz:"An early HGA fan with 20+ color-match slabs. He lived through the delays and the year of silence, and now he's getting emails from a name he doesn't recognize.",
+  nicole:"Sent a handful of Pokémon cards to HGA in 2021 for the colorful labels. Moved to CGC after a late return, but her HGA Sylveon still sits on her desk at work.",
+  vince:"Runs a full-time card business: breaks, Whatnot streams, weekend shows. He grades to sell, mostly through PSA because buyers ask for it, and backlogs are holding his inventory hostage."
+};
+const ONE_LINE = {
+  p1:"Grades the cards they'll never sell. The slab has to look as good as the card.",
+  p2:"One card that marks a moment, and no idea what to do with it.",
+  p3:"Used to send batches all year. In 2026 the cheap tiers closed, and the sub box is full.",
+  p4:"Loved our slab, lived through our missed dates, then heard nothing for a year.",
+  p5:"Grades to sell. We test one narrow idea: protect your asset."
+};
+const TONE = {
+ p1:{
+  emp:{means:"Finally giving the card they'll never sell the home it deserves, instead of the slab that looks like everyone else's.",
+   head:"This is the moment your grail has been waiting for.",
+   copy:"The card you'd never sell. The one your kid pulled, the one your dad kept, the alt art you saved for. It's waited in a one-touch long enough. Give it glass.",
+   where:"Homepage Glass hero · /glass · presale email"},
+  cut:{means:"Glass itself. They see the future when they hold it up to the light and see nothing between them and the card.",
+   head:"The future of the display shelf is here.",
+   copy:"Scratch-resistant glass. A vacuum-like seal. Fits any card size, jumbos included, and stacks with magnets. Hold it up to the light: nothing between you and the card.",
+   where:"Daylight in-hand video · shelf-tour and display creators"},
+  hype:{means:"The moment the shelf changes, and they're the collectors whose cabinets show it first.",
+   head:"The biggest thing the industry has ever seen, and it's made of glass.",
+   copy:"Plastic had its run. On Nov 23 the shelf changes. Presale opens, and presale orders come back in glass with a 30-day turnaround.",
+   where:"Card shows (Glass in hand at the booth) · IG and TikTok display walls · slab-reveal YouTube"}
+ },
+ p2:{
+  emp:{means:"They get to do this right the first time, with no horror story, no jargon and nobody dunking on them.",
+   head:"This is the moment you've been waiting for. Your first grade, done right.",
+   copy:"You pulled something that matters. You don't need to learn the jargon or brave a forum. We walk you through every step, from packing it to the reveal, and explain your grade in plain English.",
+   where:"/first-grade · beginner walkthrough YouTube · creator-code email"},
+  cut:{means:"Seeing every step instead of mailing a card into the dark: the package opened on camera, tracked stages, a report that explains the grade.",
+   head:"The future of grading is here, and you can watch every step.",
+   copy:"Watch your package get opened on camera. Follow each stage as it happens. Get a report that shows why your card got its grade, then see it sealed in glass for the shelf at home.",
+   where:"TikTok explainers · /first-grade walkthrough"},
+  hype:{means:"Their first grade gets the same rush as their first pull, and they have a story to show off.",
+   head:"The biggest thing the industry has ever seen starts with your first card.",
+   copy:"Everyone remembers their first pull. Now your first grade gets its own moment: a reveal, a report that explains it, and a keepsake in glass you'll show everyone at the game store.",
+   where:"TikTok pack-opening and couple creators · local game stores · family-collection YouTube"}
+ },
+ p3:{
+  emp:{means:"Control back over their calendar and their math: a date they can plan a show or a season around.",
+   head:"This is the moment you've been waiting for: a date, not an estimate.",
+   copy:"Your sub box has waited long enough. Booking opens Jan 18. You pick the day your cards come back, and every grade comes with its reason.",
+   where:"Presale email · /booked-date"},
+  cut:{means:"A calendar instead of an estimate, and a reason behind every grade. Show the process; don't say the word \"transparency.\"",
+   head:"The future of grading is here, with a calendar.",
+   copy:"Pick your return date. Track every stage. Watch your package get opened on camera. Got a 9? Your report shows the four subgrades and exactly what kept it from a 10.",
+   where:"/booked-date calendar preview · return-time creators"},
+  hype:{means:"The talk of the vendor floor: the grader where people post their booked date and the date it actually came back.",
+   head:"The biggest thing the industry has ever seen: a grader that tells you when.",
+   copy:"Booking opens Jan 18. Grading starts Feb 1. Presale orders turn around in 30 days. Book it, then post your receipts.",
+   where:"Discord vendor servers · Whatnot streams · grading-reveal TikTok · card-show tables"}
+ },
+ p4:{
+  emp:{means:"Being treated like the early believers they were. The first touch says out loud that we went quiet, then shows them what's next.",
+   head:"This is the moment we've been working toward.",
+   copy:"We went quiet for a year, and that's on us. You were one of the first to trust HGA. Here's what we built, and how you'll know where your card is every day.",
+   where:"Legacy-list email (warm-up batches) · /were-back"},
+  cut:{means:"A better slab than the one they loved, plus a date they can hold us to. The future is proof, not promises.",
+   head:"The future of HGA is here, in glass.",
+   copy:"Glass: scratch-resistant, with a vacuum-like seal, and it fits any card size. A return date you book yourself. A straight answer on what changed.",
+   where:"/were-back · candor letter → Glass → booked date"},
+  hype:{means:"Big energy, but earned: the comeback story they get to tell the friends who were burned with them.",
+   head:"The biggest thing we've ever built.",
+   copy:"You loved our slabs in 2021. Wait until you hold Glass. Presale opens Nov 23.",
+   where:"Legacy email · hobby-news creators who covered 2021 HGA · local card shows"}
+ },
+ p5:{
+  emp:{means:"Taking their inventory back from other people's backlogs, so they know when stock is coming home.",
+   head:"This is the moment you take your inventory back.",
+   copy:"Your inventory shouldn't sit in someone else's backlog. Book the date it comes back, and know where every high-value card is at every stage.",
+   where:"/protect-your-asset · test segment email"},
+  cut:{means:"A record on everything: a chip, a documented grade, tracked stages, coverage. Show it; don't name it.",
+   head:"The future of protecting high-value cards is here.",
+   copy:"Dated. Insured. Documented. A booked return date, a chip record on every slab, and the reasoning behind every grade in writing.",
+   where:"/protect-your-asset · dealer one-pagers"},
+  hype:{means:"The thing dealers are talking about on the vendor floor and in stream chat, framed around protection, never resale.",
+   head:"The biggest thing the industry has ever seen for anyone moving high-value cards.",
+   copy:"Protect your asset. Know where your card is, when it's back, and that it's covered.",
+   where:"Whatnot streams · breaker and dealer Discords · card-show vendor floors"}
+ }
+};
+const TONE_NOTE = {
+  p5:"Run any \"insured\" or \"covered\" line only once insurance terms are final. Capped-spend test, TCG first.",
+  p4:"Every send leads with the candor line before any hype.",
+  p2:"Stages, on-camera unboxing and subgrades are pending ops confirmation of the Oct 10 feature set.",
+  p3:"Subgrades, tracked stages and on-camera unboxing are pending ops confirmation."
+};
+const FLAGS = [
+  {id:"andre", kind:"Thin evidence", text:"SEG-6 Inherited is LOW confidence in S2, and \"pass down\" behavior was not measured. Validate before scaling."},
+  {id:"nicole", kind:"Thin evidence", text:"There are almost no TCG-specific legacy HGA sources. This profile is kept short; survey the legacy list before investing."},
+  {id:"vince", kind:"Thin evidence · test persona", text:"AVOID AT LAUNCH per the TAM sheet, capped-spend test only. Insurance terms are unresolved."},
+  {id:"jenna", kind:"Thin quotes", text:"Two of her six real collector voices come from r/sportscards threads about TAG and AGS slabs, not from TCG display collectors. Look for more TCG display-wall voices."},
+  {id:"mia", kind:"Thin quotes", text:"Four real collector voices, and only one is a life-moment first grade; the rest are general first-timer nerves. Look for more keepsake-first-grade voices."}
+];
+const GLOBAL_DONT = ["Resale beats PSA / sells for more.","\"Up to 80% more resale value.\"","\"Made in USA\" (the frame is made in China).","UV protection.","Final presale / Black Friday prices · Poly as confirmed · naming PSA without counsel."];
+const GLOBAL_DO = ["Glass is scratch-resistant, with a vacuum-like seal.","Fits any card size; stacks with magnets.","You book your return date (booking opens Jan 18; grading starts Feb 1).","Presale orders: 30-day turnaround.","Every grade is explained (confirm report and subgrades with ops).","\"Chip\" (not NFT, not RFID)."];
 (function(){
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=s=>String(s).replace(/&(?!amp;|lt;|gt;|quot;)/g,'&amp;');
 const sideLabel={sports:"Sports",tcg:"TCG",both:"Sports + TCG"};
 function avatar(p,size){
   const ini=p.name.replace(/".*?"\s*/,'').split(/\s+/).map(w=>w[0]).join('').slice(0,2);
-  const h=p.hue, id='g'+p.id+size;
+  const h=p.hue, id='g'+p.id+size+Math.random().toString(36).slice(2,6);
   return `<svg class="av" width="${size}" height="${size}" viewBox="0 0 100 100" role="img" aria-label="Abstract avatar for ${esc(p.name)}">
-  <defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${h},80%,62%)"/><stop offset="1" stop-color="hsl(${(h+60)%360},70%,32%)"/></linearGradient>
-  <radialGradient id="${id}r" cx=".3" cy=".25" r=".8"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
-  <rect width="100" height="100" rx="22" fill="url(#${id})"/>
-  <circle cx="${70+(h%17)}" cy="${78-(h%23)}" r="${26+(h%9)}" fill="hsl(${(h+180)%360},70%,60%)" opacity=".28"/>
-  <rect x="58" y="10" width="30" height="42" rx="5" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2" transform="rotate(12 73 31)"/>
-  <rect width="100" height="100" rx="22" fill="url(#${id}r)"/>
-  <text x="50" y="62" text-anchor="middle" font-family="Space Grotesk,Inter,sans-serif" font-weight="700" font-size="34" fill="#fff">${ini}</text></svg>`;
+  <defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${h},70%,58%)"/><stop offset="1" stop-color="hsl(${(h+50)%360},60%,34%)"/></linearGradient></defs>
+  <rect width="100" height="100" rx="24" fill="url(#${id})"/>
+  <rect x="58" y="10" width="30" height="42" rx="5" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2.5" transform="rotate(12 73 31)"/>
+  <text x="50" y="63" text-anchor="middle" font-family="Space Grotesk,Inter,sans-serif" font-weight="700" font-size="34" fill="#fff">${ini}</text></svg>`;
 }
-const li=(a,cls='dot')=>`<ul class="clean ${cls}">${a.map(x=>`<li>${x}</li>`).join('')}</ul>`;
-const evPill=e=>`<span class="pill ${e}">${e==='thin'?'⚠ thin evidence':e+' evidence'}</span>`;
+const li=(a,cls='')=>`<ul class="l ${cls}">${a.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+const evPill=e=>`<span class="pill ${e}">${e==='thin'?'⚠ Thin evidence':e[0].toUpperCase()+e.slice(1)+' evidence'}</span>`;
 const sidePill=s=>`<span class="pill ${s}">${sideLabel[s]}</span>`;
+const first=p=>p.name.includes('"')?p.name.match(/"(.*?)"/)[1]:p.name.split(' ')[0];
+const flagFor=id=>FLAGS.find(f=>f.id===id);
+const sentences=t=>t.split(/(?<=[.!?])\s+(?=[A-Z~(\u201c"])/);
+const historyItems=h=>h.split(/(?=<b>)/).map(s=>s.trim()).filter(Boolean);
+const STOP=new Set(['glass','is','the','a','with','every','our']);
+const norm=s=>s.toLowerCase().replace(/<[^>]+>/g,'').replace(/[^a-z0-9]+/g,' ').trim().split(' ').filter(w=>!STOP.has(w)).join(' ');
+function union(lists){const seen=new Set(),out=[];lists.flat(3).forEach(x=>{const k=norm(x);if(!seen.has(k)){seen.add(k);out.push(x)}});return out}
+
+// global claims
+$('#gdo').innerHTML=GLOBAL_DO.map(x=>`<li>${x}</li>`).join('');
+$('#gdont').innerHTML=GLOBAL_DONT.map(x=>`<li>${x}</li>`).join('');
 
 // overview
-$('#ov').innerHTML=PROFILES.map(p=>{const P=PERSONAS.find(x=>x.id===p.persona);
-  const larger=P.larger===p.side&&p.side!=='both';
-  return `<a href="#${p.id}" class="glass" data-side="${p.side}">${avatar(p,56)}<div><div class="meta">${P.num} · ${P.short}</div><div class="nm">${esc(p.name)}</div><div class="es">“${esc(p.essence)}”${p.essenceSrc?` <span style="color:var(--dim);font-size:12px">u/${esc(p.essenceSrc.who)}</span>`:''}</div><div class="tags">${sidePill(p.side)}${larger?'<span class="pill">★ Larger audience</span>':''}${evPill(p.evidence)}</div></div></a>`}).join('');
+$('#ov').innerHTML=PERSONAS.map(P=>{const ps=PROFILES.filter(p=>p.persona===P.id);const T=TONE[P.id];
+  return `<a class="ovc" href="#${P.id}">
+  <div><div class="ov-num">${P.num}</div><div class="ov-t">${P.short==='Reseller · Test'?'Reseller (test)':P.short}</div></div>
+  <div class="ov-ppl">${ps.map(p=>`<div class="ov-p" data-side="${p.side}">${avatar(p,24)}<span>${esc(p.name.replace(/ ".*?"/,''))} <small>${sideLabel[p.side]}${P.larger===p.side&&p.side!=='both'?' ★':''}</small></span></div>`).join('')}</div>
+  <div><div class="ov-one">${ONE_LINE[P.id]}</div><div class="ov-pil">Pillar: <b>${P.pillar}</b></div></div>
+  <div class="ov-tone emp"><span class="k">Empowering</span>${T.emp.head}</div>
+  <div class="ov-tone cut"><span class="k">Cutting-edge</span>${T.cut.head}</div>
+  <div class="ov-tone hype"><span class="k">Hype</span>${T.hype.head}</div></a>`}).join('');
 
 // nav
-$('#navlinks').insertAdjacentHTML('beforeend',PERSONAS.map(P=>`<a href="#${P.id}">${P.num} ${P.short}</a>`).join('')+'<a href="#open">Open decisions</a>');
+$('#navlinks').insertAdjacentHTML('beforeend',PERSONAS.map(P=>`<a href="#${P.id}">${P.num} ${P.short.replace(' · Test','')}</a>`).join('')+'<a href="#open">Open decisions</a>');
 
-const TABS=[["story","Story"],["cards","Cards"],["life","Hobby life"],["voice","Voice"],["msg","Messaging"]];
-function panel(p,t){
-  if(t==='story') return `<h4>Origin</h4><p>${p.origin}</p><h4>The trigger</h4><p>${p.trigger}</p><h4>Grading history</h4><p>${p.history}</p>`;
-  if(t==='cards') return `<h4>The cards, and why they matter</h4><div class="cards">${p.cards.map(c=>`<div class="cardi"><b>${esc(c.name)}</b><span>${c.why}</span></div>`).join('')}</div>`;
-  if(t==='life') return `<h4>A week in the hobby</h4>${li(p.week)}<div class="cols" style="margin-top:14px"><div><h4>Online</h4>${li(p.hangouts.online)}</div><div><h4>Creators</h4>${li(p.hangouts.creators)}</div><div><h4>In real life</h4>${li(p.hangouts.irl)}</div></div><h4>Who they trust</h4>${li(p.trust)}`;
-  if(t==='voice') return `<div class="rcv"><h4>Real collector voices</h4><p class="rcv-note">Verbatim posts by real collectors whose situation matches this persona, linked to the source. ${esc(p.name)} is a composite; these people are not ${esc(p.name.split(' ')[0])} speaking.</p><div class="mgrid">${p.quotes.map(q=>`<div class="quote"><q>${esc(q.q)}</q><small>u/${esc(q.who)}, r/${esc(q.sub)} · <a href="${q.url}" target="_blank" rel="noopener">source</a></small></div>`).join('')}</div></div>
-   <div class="cols" style="margin-top:8px"><div><h4>Needs</h4>${li(p.needs)}</div><div><h4>Fears</h4>${li(p.fears)}</div><div><h4>Objections</h4>${li(p.objections)}</div></div>
-   <div class="mgrid" style="margin-top:8px"><div><h4>Switching triggers</h4>${li(p.switching)}</div><div><h4>Price sensitivity</h4><p>${p.price}</p></div></div>`;
-  const m=p.msg;
-  return `<div class="pill" style="margin-bottom:8px">Pillar: ${m.pillar}</div><div class="promise">${m.promise}</div>
-  <div class="mgrid"><div class="mbox"><h4>3 proof points</h4>${li(m.proofs,'do')}</div><div class="mbox"><h4>Headlines</h4><ul class="clean dot hl">${m.headlines.map(x=>`<li>${x}</li>`).join('')}</ul></div>
-  <div class="mbox"><h4>Hooks</h4>${li(m.hooks)}</div><div class="mbox"><h4>Email subjects</h4>${li(m.subjects)}</div>
-  <div class="mbox"><h4>Ad openers</h4>${li(m.openers)}</div><div class="mbox"><h4>Words</h4><div class="chips">${m.use.map(x=>`<span>${x}</span>`).join('')}</div><div class="chips no" style="margin-top:8px">${m.avoid.map(x=>`<span>${x}</span>`).join('')}</div></div></div>
-  <h4>Routing</h4><div class="route"><div><b>Landing page</b>${m.landing}</div><div><b>Email segment</b>${m.segment}</div><div><b>Creator type</b>${m.creator}</div></div>
-  <div class="mgrid" style="margin-top:14px"><div class="mbox"><h4>Do say (claims)</h4>${li(m.doSay,'do')}</div><div class="mbox"><h4>Don't say (claims)</h4>${li(m.dontSay,'dont')}</div></div>`;
+// comparison grid builder
+function cmp(ps,rows,corner='At a glance'){
+  let h=`<div class="hd corner">${corner}</div>`+ps.map(p=>`<div class="hd" data-side="${p.side}">${avatar(p,26)}${esc(p.name)} <span class="pill ${p.side}">${sideLabel[p.side]}</span></div>`).join('');
+  rows.forEach(([lab,sub,fn])=>{
+    h+=`<div class="lab">${lab}${sub?`<small>${sub}</small>`:''}</div>`;
+    h+=ps.map(p=>`<div class="cell" data-side="${p.side}"><span class="tag pill ${p.side}">${esc(first(p))} · ${sideLabel[p.side]}</span>${fn(p)}</div>`).join('');
+  });
+  return `<div class="cmp">${h}</div>`;
 }
-function profileHTML(p){
-  const P=PERSONAS.find(x=>x.id===p.persona);
-  const larger=P.larger===p.side&&p.side!=='both';
-  return `<article class="profile" id="${p.id}" data-side="${p.side}">
-   <div class="pr-top">${avatar(p,96)}<div><div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px">${sidePill(p.side)}${larger?'<span class="pill">★ Larger audience</span>':''}${evPill(p.evidence)}</div>
-   <h3>${esc(p.name)}</h3><div class="facts2">${p.age} · ${p.city} · ${p.job}</div><div class="facts2">${p.family}</div><div class="ess">${esc(p.essence)}</div>${p.essenceSrc?`<div class="ess-src">Real collector voice: u/${esc(p.essenceSrc.who)}, r/${esc(p.essenceSrc.sub)} · <a href="${p.essenceSrc.url}" target="_blank" rel="noopener">source</a></div>`:''}</div></div>
-   ${p.thin||p.evidence==='thin'?`<div class="thinflag">⚠ <b>Thin evidence.</b> ${p.id==='nicole'?'There are almost no TCG-specific legacy HGA sources. This profile is kept short; survey the legacy list before investing.':p.id==='vince'?'This is a test persona: AVOID AT LAUNCH per the TAM sheet, capped-spend test only. Insurance terms are unresolved.':'SEG-6 Inherited is LOW confidence in S2, and "pass down" behavior was not measured. Validate before scaling.'}</div>`:''}
-   <div class="tabs" role="tablist" aria-label="${esc(p.name)} sections">${TABS.map(([k,l],i)=>`<button role="tab" id="${p.id}-t-${k}" aria-controls="${p.id}-panel" aria-selected="${i===0}" tabindex="${i===0?0:-1}" data-k="${k}">${l}</button>`).join('')}</div>
-   <div class="panel" role="tabpanel" id="${p.id}-panel" aria-labelledby="${p.id}-t-story">${panel(p,'story')}</div></article>`;
-}
-$('#personas').innerHTML=PERSONAS.map(P=>{
-  const ps=PROFILES.filter(p=>p.persona===P.id);
-  return `<section class="persona glass reveal" id="${P.id}" data-larger="${P.larger}">
-  <div class="p-head"><div class="p-num">${P.num}</div><div><h2>${P.title}</h2><p class="sub">${P.summary}</p>
-  <div class="tags"><span class="pill">Pillar: ${P.pillar}</span><span class="pill">${P.pillarNote}</span>${P.larger==='both'?'<span class="pill both">One persona · both sides</span>':`<span class="pill ${P.larger}">★ Larger: ${sideLabel[P.larger]}</span>`}${evPill(P.evidence)}</div></div>
-  <button class="toggle" aria-expanded="true" aria-controls="${P.id}-body">Collapse</button></div>
-  <div class="p-body" id="${P.id}-body">
-   <div class="p-intro"><div class="box"><h4>Why this side is larger</h4><p>${P.largerWhy}</p></div><div class="box"><h4>Research basis</h4><p>${P.segments}</p></div></div>
-   <div class="p-intro" style="grid-template-columns:1fr"><div class="box"><h4>Sports vs TCG: shared vs different</h4><div class="sd"><div><h5>Shared</h5>${li(P.shared.same)}</div><div><h5>Different</h5>${li(P.shared.diff)}</div></div></div></div>
-   <div class="profiles">${ps.map(profileHTML).join('')}</div>
-  </div></section>`}).join('');
 
-// tabs
-$$('.profile').forEach(el=>{const p=PROFILES.find(x=>x.id===el.id);const btns=$$('[role=tab]',el),pan=$('.panel',el);
-  const sel=b=>{btns.forEach(x=>{x.setAttribute('aria-selected',x===b);x.tabIndex=x===b?0:-1});pan.setAttribute('aria-labelledby',b.id);pan.innerHTML=panel(p,b.dataset.k);pan.style.animation='none';pan.offsetHeight;pan.style.animation=''};
-  btns.forEach((b,i)=>{b.onclick=()=>sel(b);b.onkeydown=e=>{let j=i;if(e.key==='ArrowRight')j=(i+1)%btns.length;else if(e.key==='ArrowLeft')j=(i-1+btns.length)%btns.length;else return;e.preventDefault();btns[j].focus();sel(btns[j])}})});
-// collapse
-$$('.toggle').forEach(b=>b.onclick=()=>{const open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!open);b.textContent=open?'Expand':'Collapse';$('#'+b.getAttribute('aria-controls')).hidden=open});
+function personaHTML(P){
+  const ps=PROFILES.filter(p=>p.persona===P.id).sort((a,b)=>(a.side==='sports'?0:1)-(b.side==='sports'?0:1));
+  const n=ps.length>1?'two':'one';
+  const T=TONE[P.id];
+  const sec=(k,num,title,intro,body)=>`<section class="sec" id="${P.id}-${k}"><h3><span class="n">${num}</span>${title}</h3>${intro?`<p class="intro">${intro}</p>`:''}${body}</section>`;
+
+  // 1 who
+  const whoCards=`<div class="people">${ps.map(p=>{const f=flagFor(p.id);const larger=P.larger===p.side&&p.side!=='both';
+    return `<article class="who" id="${p.id}" data-side="${p.side}">
+    <div class="who-top">${avatar(p,72)}<div><div class="tags">${sidePill(p.side)}${larger?'<span class="pill big">★ Larger audience</span>':''}${evPill(p.evidence)}</div>
+    <h4>${esc(p.name)}</h4><div class="facts2">${p.age} · ${p.city} · ${p.job}</div><div class="fam">${p.family}</div></div></div>
+    <dl class="kv"><dt>Where they are</dt><dd>${NOW[p.id]}</dd><dt>What they collect</dt><dd>${li(p.cards.map(c=>esc(c.name)))}</dd></dl>
+    <div class="ess"><q>${esc(p.essence)}</q>${p.essenceSrc?`<small>Real collector voice: u/${esc(p.essenceSrc.who)}, r/${esc(p.essenceSrc.sub)} · <a href="${p.essenceSrc.url}" target="_blank" rel="noopener">source</a></small>`:''}</div>
+    ${f?`<div class="flagmini">⚠ <b>${f.kind}.</b> ${f.text}</div>`:''}
+    </article>`}).join('')}</div>
+    <div class="share"><div><h5>What they share</h5>${li(P.shared.same)}</div><div><h5>${ps.length>1?'How Sports and TCG differ':'Sports vs TCG'}</h5>${li(P.shared.diff)}</div></div>`;
+
+  // 2 wants
+  const wants=cmp(ps,[
+    ["What they need","goals",p=>li(p.needs)],
+    ["What scares them","frustrations",p=>li(p.fears)],
+    ["What stops them grading","objections",p=>li(p.objections)],
+    ["Where grading has let them down","history",p=>li(historyItems(p.history))],
+    ["What would make them switch","how they decide",p=>li(p.switching)],
+    ["Price sensitivity","",p=>li(sentences(p.price))]
+  ],'Wants & blockers');
+
+  // 3 hobby
+  const hobby=cmp(ps,[
+    ["A week in the hobby","",p=>li(p.week)],
+    ["Online","",p=>li(p.hangouts.online)],
+    ["Creators they watch","",p=>li(p.hangouts.creators)],
+    ["In real life","",p=>li(p.hangouts.irl)],
+    ["Who they trust","",p=>li(p.trust)],
+    ["How they talk","words that land",p=>`<div class="chips">${p.msg.use.map(x=>`<span>${x}</span>`).join('')}</div>`]
+  ],'In the hobby')+`<h4 class="kit-h">Real collector voices</h4><p class="rcv-note" style="margin-top:-4px">Verbatim posts by real collectors whose situation matches this persona, linked to the source. The people named above are composites; these collectors are not them speaking.</p>
+  <div class="quotes">${ps.map(p=>`<div class="qcol" data-side="${p.side}"><h5>${avatar(p,24)}Voices for ${esc(first(p))} <span class="pill ${p.side}">${sideLabel[p.side]}</span></h5>${p.quotes.map(q=>`<div class="quote"><q>${esc(q.q)}</q><small>u/${esc(q.who)}, r/${esc(q.sub)} · <a href="${q.url}" target="_blank" rel="noopener">source</a></small></div>`).join('')}</div>`).join('')}</div>`;
+
+  // 4 talk
+  const tcard=(k,cls,label,anchor)=>{const t=T[k];return `<div class="tn ${cls}"><div class="k">${label}</div><div class="anchor">“${anchor}”</div><div class="means"><b>For them:</b> ${t.means}</div><div class="ad"><div class="h">${t.head}</div><div class="c">${t.copy}</div></div><div class="where"><b>Where</b>${t.where}</div></div>`};
+  const claimsNo=union([["<b>Never claim HGA slabs resell for more than PSA</b> (or sell for more, or hold value better)."],ps.map(p=>p.msg.dontSay)]);
+  const claimsYes=union([ps.map(p=>p.msg.doSay)]);
+  const talk=`<div class="tones">${tcard('emp','emp','Empowering',"This is the moment you've been waiting for")}${tcard('cut','cut','Cutting-edge','The future is here')}${tcard('hype','hype','Hype','The biggest thing the industry has ever seen')}</div>
+  ${TONE_NOTE[P.id]?`<p class="tnote">Note: ${TONE_NOTE[P.id]}</p>`:''}
+  <div class="claims"><div class="no"><h4>Claims we can't make</h4><p>Guardrails limit claims, not the volume of the tone.</p>${li(claimsNo,'dont')}</div><div class="yes"><h4>Claims we can stand behind</h4><p>Literal, checkable, safe at full volume.</p>${li(claimsYes,'do')}</div></div>
+  <h4 class="kit-h">Messaging kit</h4>`+cmp(ps,[
+    ["Promise","",p=>`<div class="promise">${p.msg.promise}</div>`],
+    ["Pillar","",p=>`<p>${p.msg.pillar}</p>`],
+    ["Proof points","",p=>li(p.msg.proofs,'do')],
+    ["Headlines","",p=>li(p.msg.headlines,'hl')],
+    ["Hooks","",p=>li(p.msg.hooks)],
+    ["Email subjects","",p=>li(p.msg.subjects)],
+    ["Ad openers","",p=>li(p.msg.openers)],
+    ["Words to avoid","",p=>`<div class="chips no">${p.msg.avoid.map(x=>`<span>${x}</span>`).join('')}</div>`],
+    ["Landing page","",p=>`<p>${p.msg.landing}</p>`],
+    ["Email segment","",p=>`<p>${p.msg.segment}</p>`],
+    ["Creator type","",p=>`<p>${p.msg.creator}</p>`]
+  ],'Per person');
+
+  // 5 story
+  const story=cmp(ps,[
+    ["How they got here","origin",p=>`<div class="story"><p>${p.origin}</p></div>`],
+    ["What set them off","the trigger",p=>`<div class="story"><p>${p.trigger}</p></div>`],
+    ["The cards, and why they matter","",p=>`<ul class="cardlist">${p.cards.map(c=>`<li><b>${esc(c.name)}</b><span>${c.why}</span></li>`).join('')}</ul>`]
+  ],'Story');
+
+  return `<section class="persona ${n}" id="${P.id}">
+  <header class="p-head"><div class="p-num">${P.num}</div><div><h2>${P.title}</h2><p class="sum">${P.summary}</p>
+   <div class="p-tags"><span class="pill">Pillar: ${P.pillar}</span><span class="pill">${P.pillarNote}</span>${P.larger==='both'?'<span class="pill">One persona · both sides</span>':`<span class="pill">★ Larger: ${sideLabel[P.larger]}</span>`}${evPill(P.evidence)}</div></div>
+   <div class="p-meta"><div><h5>${P.larger==='both'?'Why one persona':'Why '+sideLabel[P.larger]+' is larger'}</h5><p>${P.largerWhy}</p></div><div><h5>Research basis</h5><p>${P.segments}</p></div></div>
+   <nav class="p-jump" aria-label="${P.title} sections"><a href="#${P.id}-who">1 Who they are</a><a href="#${P.id}-want">2 Wants &amp; blockers</a><a href="#${P.id}-hobby">3 In the hobby</a><a href="#${P.id}-talk">4 How we talk to them</a><a href="#${P.id}-story">5 Full story</a></nav>
+  </header>
+  <div class="p-body">
+   ${sec('who',1,'Who they are',ps.length>1?'Two people, one persona. Sports on the left, TCG on the right.':'One test persona covering both sides.',whoCards)}
+   ${sec('want',2,"What they want and what's in the way",'Goals, frustrations, what stops them grading and how they decide.',wants)}
+   ${sec('hobby',3,'How they show up in the hobby','Where they spend time, who they trust, how they talk, and what real collectors like them are saying.',hobby)}
+   ${sec('talk',4,'How we talk to them','The locked tone, made concrete for this persona. Full strength; the guardrails apply to claims only.',talk)}
+   ${sec('story',5,'Full story','',story)}
+  </div></section>`;
+}
+$('#personas').innerHTML=PERSONAS.map(personaHTML).join('');
+
 // filter
-$$('.filter button').forEach(b=>b.onclick=()=>{const f=b.dataset.f;$$('.filter button').forEach(x=>x.setAttribute('aria-pressed',x===b));
-  $$('[data-side]').forEach(el=>{const s=el.dataset.side;el.hidden=!(f==='all'||s===f||s==='both')})});
-// open decisions + sources
-$('#od').innerHTML=OPEN_DECISIONS.map(([a,b])=>`<div><b>${a}</b><span>${b}</span></div>`).join('');
+$$('.filter button').forEach(b=>b.onclick=()=>{const f=b.dataset.f;$$('.filter button').forEach(x=>x.setAttribute('aria-pressed',x===b));document.body.dataset.f=f});
+// open decisions, flags, sources
+$('#od').innerHTML=OPEN_DECISIONS.map(([a,b])=>`<li><b>${a}</b>${b}</li>`).join('');
+$('#flags').innerHTML=FLAGS.map(f=>{const p=PROFILES.find(x=>x.id===f.id);return `<li><a href="#${p.id}">${esc(p.name)}</a> <span class="pill ${f.kind.startsWith('Thin evidence')?'thin':'moderate'}">${f.kind}</span><br>${f.text}</li>`}).join('');
 $('#src').innerHTML=SOURCES.map(s=>`<code>${s}</code>`).join('');
-// reveal + active nav
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.05});
-$$('.reveal').forEach(el=>io.observe(el));
-const links=$$('#navlinks a');const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
-$$('section[id]').forEach(s=>so.observe(s));
-if(location.search.includes('static'))$$('.reveal').forEach(el=>el.classList.add('in'));
+// active nav
+const links=$$('#navlinks a');const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-30% 0px -65% 0px'});
+$$('#overview,.persona,#open').forEach(s=>so.observe(s));
 })();
 </script>
 </body></html>
