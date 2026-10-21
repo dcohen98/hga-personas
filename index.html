@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HGA Customer Personas · Internal · Oct 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090f;--bg2:#0d1220;--glass:rgba(255,255,255,.055);--glass2:rgba(255,255,255,.09);--line:rgba(255,255,255,.12);--txt:#eef2fb;--mut:#a9b3c9;--dim:#7f8aa3;--acc:#7cc4ff;--acc2:#b69cff;--good:#5fe0b0;--warn:#ffc866;--bad:#ff8a8a;--sports:#6fb6ff;--tcg:#d79bff;--both:#ffd27a;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--txt);font:15.5px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:-20%;z-index:-1;background:radial-gradient(40% 35% at 15% 10%,rgba(124,196,255,.16),transparent 70%),radial-gradient(35% 30% at 85% 20%,rgba(182,156,255,.14),transparent 70%),radial-gradient(45% 40% at 50% 100%,rgba(95,224,176,.08),transparent 70%);animation:drift 30s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate3d(2%,-2%,0) scale(1.04)}}
+h1,h2,h3,h4{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+a{color:var(--acc)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.glass{background:linear-gradient(160deg,var(--glass2),var(--glass));border:1px solid var(--line);border-radius:var(--r);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);box-shadow:0 10px 40px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.08)}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:#fff;color:#000;padding:8px 12px;border-radius:8px}
+/* nav */
+nav.top{position:sticky;top:0;z-index:50;background:rgba(7,9,15,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;gap:14px;height:60px}
+.brand{font-family:"Space Grotesk";font-weight:700;letter-spacing:.04em;white-space:nowrap}
+.brand span{color:var(--acc)}
+.navlinks{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{color:var(--mut);text-decoration:none;font-size:13.5px;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.2s}
+.navlinks a:hover,.navlinks a.on{color:var(--txt);background:var(--glass2)}
+.filter{display:flex;gap:4px;padding:3px;border-radius:999px;border:1px solid var(--line);background:var(--glass)}
+.filter button{all:unset;cursor:pointer;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;color:var(--mut)}
+.filter button[aria-pressed=true]{background:var(--txt);color:#0a0d16}
+.filter button:focus-visible,.tabs button:focus-visible,.toggle:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+/* hero */
+.hero{padding:88px 0 40px}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:600}
+.eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 12px var(--acc);animation:pulse 2.4s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.hero h1{font-size:clamp(38px,6.4vw,76px);margin:18px 0 18px;background:linear-gradient(100deg,#fff 30%,#bfe2ff 55%,#d9c8ff 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lede{font-size:clamp(16px,1.8vw,19px);color:var(--mut);max-width:780px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:34px}
+.fact{padding:16px 18px}
+.fact b{display:block;font-family:"Space Grotesk";font-size:22px}
+.fact span{color:var(--mut);font-size:13px}
+section.block{padding:40px 0}
+.sec-h{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.sec-h h2{font-size:clamp(26px,3.2vw,36px);margin:0}
+.sec-h p{color:var(--mut);margin:0;max-width:620px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pad{padding:22px 24px}
+.how ol{margin:0;padding-left:20px;color:var(--mut)}.how li{margin:6px 0}.how li b{color:var(--txt)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:var(--mut);white-space:nowrap}
+.pill.sports{color:var(--sports);border-color:rgba(111,182,255,.4)}
+.pill.tcg{color:var(--tcg);border-color:rgba(215,155,255,.4)}
+.pill.both{color:var(--both);border-color:rgba(255,210,122,.4)}
+.pill.strong{color:var(--good);border-color:rgba(95,224,176,.4)}
+.pill.moderate{color:var(--acc);border-color:rgba(124,196,255,.4)}
+.pill.thin{color:var(--warn);border-color:rgba(255,200,102,.5);background:rgba(255,200,102,.08)}
+.pillar-card h3{font-size:24px;display:flex;align-items:center;gap:10px}
+.pillar-card .ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(124,196,255,.35),rgba(182,156,255,.25));border:1px solid var(--line)}
+.pillar-card p{color:var(--mut);margin:.3em 0}
+.tone{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.tone div{padding:16px}
+.tone b{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc2)}
+.tone q{font-family:"Space Grotesk";font-size:19px;display:block;margin-top:6px;quotes:"“" "”"}
+.lock{font-size:12px;color:var(--warn);font-weight:600}
+.guard{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+ul.clean{list-style:none;margin:0;padding:0}ul.clean li{padding:6px 0 6px 24px;position:relative;color:var(--mut)}
+ul.do li:before{content:"✓";position:absolute;left:0;color:var(--good);font-weight:700}
+ul.dont li:before{content:"✕";position:absolute;left:0;color:var(--bad);font-weight:700}
+ul.dot li:before{content:"";position:absolute;left:6px;top:15px;width:6px;height:6px;border-radius:50%;background:var(--acc)}
+/* overview */
+.ov{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.ov a{text-decoration:none;color:inherit;display:flex;gap:14px;padding:16px;transition:transform .25s,border-color .25s}
+.ov a:hover{transform:translateY(-3px);border-color:rgba(124,196,255,.5)}
+.ov .meta{font-size:12.5px;color:var(--dim)}
+.ov .nm{font-weight:600;font-family:"Space Grotesk";font-size:17px}
+.ov .es{font-size:13.5px;color:var(--mut);margin-top:4px;font-style:italic}
+.ov .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.av{flex:none;border-radius:16px;overflow:hidden}
+/* persona */
+.persona{margin:28px 0;padding:0;overflow:hidden}
+.p-head{padding:26px 28px;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:start}
+.p-num{font-family:"Space Grotesk";font-size:44px;font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.35);line-height:1}
+.p-head h2{font-size:clamp(24px,3vw,34px);margin:0 0 6px}
+.p-head .sub{color:var(--mut);margin:0 0 10px}
+.p-head .tags{display:flex;gap:8px;flex-wrap:wrap}
+.toggle{all:unset;cursor:pointer;font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--glass);white-space:nowrap}
+.toggle:after{content:" ▾";display:inline-block;transition:transform .25s}
+.toggle[aria-expanded=false]:after{transform:rotate(-90deg)}
+.p-body{padding:0 28px 28px}
+.p-body[hidden]{display:none}
+.p-intro{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin-bottom:18px}
+.p-intro .box{padding:18px 20px;border-radius:14px;background:rgba(0,0,0,.22);border:1px solid var(--line)}
+.p-intro h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.p-intro p{margin:.2em 0;color:var(--mut)}
+.sd{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.sd h5{margin:0 0 6px;font-size:13px;color:var(--acc2);letter-spacing:.08em;text-transform:uppercase}
+.sd ul li b{color:var(--txt)}
+.profiles{display:grid;gap:18px}
+.profile{padding:0;border-radius:16px;background:rgba(255,255,255,.035);border:1px solid var(--line);overflow:hidden}
+.profile[hidden]{display:none}
+.pr-top{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:22px 22px 14px;align-items:center}
+.pr-top h3{font-size:24px;margin:0}
+.pr-top .facts2{color:var(--mut);font-size:13.5px}
+.pr-top .ess{font-family:"Space Grotesk";font-size:clamp(17px,2vw,21px);margin-top:10px;color:#fff;line-height:1.35}
+.pr-top .ess:before{content:"“";color:var(--acc)}.pr-top .ess:after{content:"”";color:var(--acc)}
+.thinflag{margin:0 22px 12px;padding:10px 14px;border-radius:12px;background:rgba(255,200,102,.08);border:1px dashed rgba(255,200,102,.5);color:#ffe2a8;font-size:13.5px}
+.tabs{display:flex;gap:4px;padding:0 22px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{all:unset;cursor:pointer;padding:10px 14px;font-size:13.5px;font-weight:600;color:var(--mut);border-bottom:2px solid transparent;white-space:nowrap}
+.tabs button[aria-selected=true]{color:var(--txt);border-color:var(--acc)}
+.panel{padding:20px 22px 24px;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}}
+.panel h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:18px 0 8px}
+.panel h4:first-child{margin-top:0}
+.panel p{color:var(--mut);margin:.3em 0}.panel p b,.panel li b{color:var(--txt)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.cardi{padding:14px 16px;border-radius:12px;background:rgba(0,0,0,.25);border:1px solid var(--line);position:relative;overflow:hidden}
+.cardi:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 40%,rgba(255,255,255,.06) 50%,transparent 60%);transform:translateX(-100%);transition:transform .8s}
+.cardi:hover:before{transform:translateX(100%)}
+.cardi b{display:block;color:var(--txt);margin-bottom:4px}
+.cardi span{color:var(--mut);font-size:14px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.quote{border-left:3px solid var(--acc);padding:8px 14px;margin:10px 0;background:rgba(124,196,255,.05);border-radius:0 10px 10px 0}
+.quote q{color:var(--txt);display:block}
+.quote small{color:var(--dim)}
+.voice q{display:block;color:#dfe6f5;font-style:italic;padding:4px 0}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mbox{padding:14px 16px;border-radius:12px;background:rgba(0,0,0,.22);border:1px solid var(--line)}
+.mbox h4{margin-top:0!important}
+.promise{font-family:"Space Grotesk";font-size:20px;color:#fff;margin:4px 0 12px}
+.hl li{font-family:"Space Grotesk";color:var(--txt)!important;font-size:16px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:12.5px;padding:3px 10px;border-radius:999px;background:rgba(95,224,176,.08);border:1px solid rgba(95,224,176,.3);color:#bff3df}
+.chips.no span{background:rgba(255,138,138,.07);border-color:rgba(255,138,138,.35);color:#ffc9c9;text-decoration:line-through;text-decoration-color:rgba(255,138,138,.6)}
+.route{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.route div{padding:12px 14px;border-radius:12px;background:rgba(124,196,255,.06);border:1px solid rgba(124,196,255,.25);font-size:14px;color:var(--mut)}
+.route b{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:4px}
+.od{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.od div{padding:12px 14px;border-radius:12px;background:rgba(255,200,102,.05);border:1px solid rgba(255,200,102,.25)}
+.od b{display:block;color:#ffe2a8;font-size:14px}.od span{color:var(--mut);font-size:13.5px}
+footer{padding:40px 0 60px;border-top:1px solid var(--line);margin-top:40px;color:var(--dim);font-size:13px}
+footer .src{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+footer .src code{font:12px ui-monospace,Menlo,monospace;padding:3px 8px;border-radius:6px;background:var(--glass);border:1px solid var(--line);color:var(--mut)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}.reveal.in{opacity:1;transform:none}
+@media (max-width:900px){.grid2,.grid3,.tone,.guard,.p-intro,.sd,.cols,.mgrid,.route{grid-template-columns:1fr}.p-head{grid-template-columns:1fr auto}.p-num{display:none}}
+@media (max-width:620px){.wrap{padding:0 16px}nav.top .wrap{height:auto;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}.navlinks{order:3;flex-basis:100%}.hero{padding:48px 0 24px}.p-head,.p-body{padding-left:18px;padding-right:18px}.pr-top{grid-template-columns:1fr}.pr-top .av{width:64px}}
+@media (prefers-reduced-motion:reduce){*,*:before{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="top" aria-label="Primary">
+  <div class="wrap">
+    <div class="brand">HGA<span>·</span>PERSONAS</div>
+    <div class="navlinks" id="navlinks">
+      <a href="#how">How to use</a><a href="#pillars">Pillars</a><a href="#overview">Overview</a>
+    </div>
+    <div class="filter" role="group" aria-label="Filter profiles by side">
+      <button data-f="all" aria-pressed="true">All</button><button data-f="sports" aria-pressed="false">Sports</button><button data-f="tcg" aria-pressed="false">TCG</button>
+    </div>
+  </div>
+</nav>
+<main id="main">
+<header class="hero wrap">
+  <div class="eyebrow">Internal · HGA launch team · Presale starts Nov 23, 2026</div>
+  <h1>Who we're building<br>the future of grading for.</h1>
+  <p class="lede">Five personas and nine people, built from Reddit threads, competitor pains, call notes and the TAM model. HGA (Hybrid Grading Approach) is the lead brand, and uCollect is the parent company and marketplace. Use this page to write copy, choose creators, segment email and decide which landing page each person sees.</p>
+  <div class="facts">
+    <div class="fact glass"><b>Nov 23</b><span>Presale starts · presale orders have a 30-day turnaround</span></div>
+    <div class="fact glass"><b>Jan 18</b><span>Grading calendar booking opens</span></div>
+    <div class="fact glass"><b>Feb 1</b><span>Grading starts</span></div>
+    <div class="fact glass"><b>~$200</b><span>Glass core price · promo pricing still under discussion</span></div>
+  </div>
+</header>
+
+<section class="block wrap reveal" id="how">
+  <div class="sec-h"><h2>How to use this</h2><p>Each persona has a Sports person and a TCG person, except the Reseller, a single test persona covering both.</p></div>
+  <div class="grid2">
+    <div class="glass pad how"><ol>
+      <li><b>Pick the side</b> with the filter (All / Sports / TCG). The Reseller always shows.</li>
+      <li><b>Read the persona header</b> for the larger audience, the evidence strength and what Sports and TCG share or don't.</li>
+      <li><b>Open a person</b> and move through the tabs: Story → Cards → Hobby life → Voice → Messaging.</li>
+      <li><b>Copy from Messaging</b>: promise, proofs, headlines, hooks, subjects, openers, plus the Do say / Don't say guardrails.</li>
+      <li><b>Check Open decisions</b> at the bottom before stating anything unresolved.</li>
+    </ol></div>
+    <div class="glass pad how"><h3 style="font-size:18px">Reading the badges</h3>
+      <p style="color:var(--mut);margin:.2em 0 .8em">Evidence: <span class="pill strong">strong</span> <span class="pill moderate">moderate</span> <span class="pill thin">thin evidence</span></p>
+      <p style="color:var(--mut);margin:.2em 0 .8em">Side: <span class="pill sports">Sports</span> <span class="pill tcg">TCG</span> <span class="pill both">Both</span> · <b style="color:var(--txt)">★ Larger audience</b> marks the bigger side.</p>
+      <p style="color:var(--mut);margin:0">Quotes under <b style="color:var(--txt)">"From the sources"</b> are verbatim, with their source. Everything under <b style="color:var(--txt)">"In their words"</b> is in-character narrative. Numbers come only from the research files.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap reveal" id="pillars">
+  <div class="sec-h"><h2>Pillars, tone &amp; guardrails</h2><p>Set Oct 19. Show the process. Don't lead with the word "transparency," because competitors already own it.</p></div>
+  <div class="grid2">
+    <div class="glass pad pillar-card"><h3><span class="ic" aria-hidden="true">◇</span>Glass → collectors</h3>
+      <p>Preserve it. Pass it down through generations. Sentimental, built for display: <b style="color:var(--txt)">more than plastic</b>.</p>
+      <p>Key word: <b style="color:var(--txt)">relieved</b>.</p>
+      <p style="font-size:13.5px">Scratch-resistant · vacuum-like seal · fits any card size · stacks with magnets.</p></div>
+    <div class="glass pad pillar-card"><h3><span class="ic" aria-hidden="true">◎</span>Transparency → pain</h3>
+      <p>When does my card come back? Why did it get that grade? Is my asset protected?</p>
+      <p>Show it: a booked date, the package opened on camera, a report with subgrades, the chip, tracked stages.</p>
+      <p style="font-size:13.5px">Use it on pages and in proof points, never as the headline word.</p></div>
+  </div>
+  <div class="tone">
+    <div class="glass"><b>Empowering</b><q>This is the moment you've been waiting for.</q></div>
+    <div class="glass"><b>Cutting-edge</b><q>The future is here.</q></div>
+    <div class="glass"><b>Building hype</b><q>The biggest thing the industry has ever seen.</q></div>
+  </div>
+  <p class="lock" style="margin-top:10px">🔒 Tone is locked. Never soften it. The guardrails below apply to <u>claims</u>, not tone.</p>
+  <div class="guard">
+    <div class="glass pad"><h3 style="font-size:18px">Do say</h3><ul class="clean do">
+      <li>Glass is scratch-resistant, with a vacuum-like seal.</li><li>Fits any card size; stacks with magnets.</li>
+      <li>You book your return date (booking opens Jan 18; grading starts Feb 1).</li><li>Presale orders: 30-day turnaround.</li>
+      <li>Every grade is explained (confirm report and subgrades with ops).</li><li>"Chip" (not NFT, not RFID).</li></ul></div>
+    <div class="glass pad"><h3 style="font-size:18px">Don't say</h3><ul class="clean dont">
+      <li>Resale beats PSA / sells for more.</li><li>"1M cards graded."</li><li>"Up to 80% more resale value."</li>
+      <li>"Made in USA" (the frame is made in China).</li><li>UV protection.</li><li>Final presale / Black Friday prices · Poly as confirmed · naming PSA without counsel.</li></ul></div>
+  </div>
+</section>
+
+<section class="block wrap reveal" id="overview">
+  <div class="sec-h"><h2>All nine people</h2><p>Click a card to jump to that person. The filter applies here too.</p></div>
+  <div class="ov" id="ov"></div>
+</section>
+
+<div class="wrap" id="personas"></div>
+
+<section class="block wrap reveal" id="open">
+  <div class="sec-h"><h2>Open decisions</h2><p>Treat each of these as unresolved in all copy until it's decided.</p></div>
+  <div class="od" id="od"></div>
+</section>
+</main>
+<footer><div class="wrap">
+  <div><b style="color:var(--mut)">Internal — HGA launch team — Oct 2026</b>. Not for distribution. No real people depicted; avatars are abstract.</div>
+  <div style="margin-top:12px">Sources (research files):</div>
+  <div class="src" id="src"></div>
+</div></footer>
+<script>
+const PERSONAS = [
+{
+  id:"p1", num:"01", title:"The Display Collector", short:"Display Collector",
+  pillar:"Glass", pillarNote:"Core Glass buyer",
+  larger:"sports", largerWhy:"Display and sentimental keepers skew sports in the research. The PC Display Collector segment (SEG-2) is built mostly from r/sportscards and r/baseballcards, and the TAM sheet sizes the sports PC keeper as its own persona. TCG display evidence is moderate: it comes mainly from TAG's Pokémon users and from Pokémon PC collectors.",
+  segments:"S2 SEG-2 PC Display Collector · TAM Persona 2 (sports PC keeper) and Persona 4 (Glass buyer) · S4 Constellation 2, white space: luxury materials like glass",
+  evidence:"strong",
+  summary:"Grades the cards they will never sell and picks the slab that looks best on the shelf. They already take the value hit for looks. Glass is the reason they look at us, and <em>relieved</em> is the feeling we want them to have.",
+  shared:{
+    same:["Grades cards to keep, not to sell (\"it's for my PC\"). Already uses a second grader for looks and accepts the value hit.","Judges a slab by photos other collectors post of their returns and by how it feels in the hand.","Worries the grader will disappear and leave the slab looking silly (BL-07).","Wants the card to be the star. The phrase they use is \"keeps the attention on the card.\""],
+    diff:["<b>Sports</b> is about family, team and legacy: a parent's card, a son's pull, a hometown player. The shelf holds PSA and SGC tuxedo slabs, and handing cards down is part of the plan.","<b>TCG</b> is about art and nostalgia: alt arts, Japanese promos, jumbo cards. They want minimal labels and odd-size fits, they have tried TAG and CGC, and the hobby lives on Instagram and TikTok display walls."]
+  }
+},
+{
+  id:"p2", num:"02", title:"The First-Time Grader", short:"First-Time Grader",
+  pillar:"Glass + guided process", pillarNote:"Glass as keepsake · step-by-step guidance · the 20-year bet",
+  larger:"tcg", largerWhy:"S2 says the first-time keepsake grader is \"often in Pokémon and other TCGs\", and most P2 first-timer quotes come from r/PokeGrading and r/PokemonTCG. The sports first-timer evidence leans on SEG-6, the Inherited Collection Owner, which S2 marks as LOW confidence.",
+  segments:"S2 SEG-4 First Time Keepsake Grader (+ SEG-6 Inherited, low confidence) · S4 Constellation 5 Guided Preservation · Strategy Core Territory E · Dylan Oct 19: \"This is a 20-year bet.\"",
+  evidence:"moderate",
+  summary:"Has one card that marks a moment and no idea what to do with it. They have heard the horror stories without living them yet. If HGA is their first grader, we skip the trauma every other grader handed out and could keep them for 10 to 20 years.",
+  shared:{
+    same:["Grades for meaning, not money (BL-04: attachment beats the math).","Afraid to mail the card. Afraid of a harsh grade with no reason. Afraid of looking dumb in public.","Asks peers before acting, and peers default to PSA (BL-05).","A first grade that is explained keeps them in grading. One that isn't explained pushes them out (DCT-07)."],
+    diff:["<b>TCG</b> first-timers pulled the card themselves, often at a life moment (an engagement, a first ETB). They ask Reddit and TikTok, worry about centering, and get removed from r/PokemonTCG for asking.","<b>Sports</b> first-timers are often inheriting cards, from a parent's shoebox for example. They worry the cards are fake, they treat the local card shop as the gatekeeper, and handing the card down a generation is literal."]
+  }
+},
+{
+  id:"p3", num:"03", title:"The Priced-Out Regular Submitter", short:"Priced-Out Submitter",
+  pillar:"Transparency, shown as process", pillarNote:"A booked date and an explained grade",
+  larger:"tcg", largerWhy:"Priced-out regular submitters skew Pokémon/TCG. The TAM sheet's primary persona is the modern Pokémon and TCG submitter priced out of PSA Value, about 3.6M cards a year (T3). TCG and non-sport cards passed sports in 2025, and Pokémon was about 60% of all cards graded.",
+  segments:"S2 SEG-3 Squeezed Regular Submitter · TAM Persona 1 (PRIMARY) · S4 Constellations 3 + 4 · Creative Territory T1 The Booked Date and T2 Why This Grade",
+  evidence:"strong",
+  summary:"A committed hobbyist who used to send batches several times a year. In 2026 the cheap end of grading closed: PSA Value was paused on June 2, SGC went to $50, and TAG and Beckett paused their entry tiers. The cards are sleeved and waiting. This person is Level-4 cynical and believes only promises that get kept.",
+  shared:{
+    same:["Tracks tier changes, pauses and turnaround at every grader in real time. Trusts dated return reports from other submitters, not announcements.","Wants a predictable cost per card, a known return date and a reason for each grade.","Has a protest identity (\"I'm done with PSA\") but keeps PSA for cards headed to sale.","Expects every fast grader to fill up, and will judge HGA on whether its first dates hold."],
+    diff:["<b>TCG</b> submitters grade volume: modern Pokémon hits. Resale gaps are smaller there, CGC is already accepted, and the community lives on Discord, TikTok and Whatnot.","<b>Sports</b> submitters run seasonal batches and split PSA (for sale) from a challenger (for keeps). They lost SGC as the cheap, fast option and read tier news on r/sportscards."]
+  }
+},
+{
+  id:"p4", num:"04", title:"The Lapsed HGA Customer", short:"Lapsed HGA Customer",
+  pillar:"Candor first → Glass + booked date", pillarNote:"First touch acknowledges the silence",
+  larger:"sports", largerWhy:"The original HGA was a sports grader. Its users were modern sports and some Pokémon PC collectors, and football and basketball collectors liked the flashy labels most. The TCG side of the legacy list has almost no direct evidence.",
+  segments:"TAM Persona 5 (78,468 mailable · PRIMARY, owned) · Drew's three sources of doubt: 12 months of silence, the HGA/uCollect split (payment confusion), custom labels gone · Creative T5 Straight Answers, KM6",
+  evidence:"moderate",
+  summary:"They liked our slab more than anything else we did (net +0.76, 2021 to 2023). They lived through our missed dates. Then they heard nothing for twelve months, then a message under a new name, and the custom labels they loved are gone. They are not angry. They are <em>absent</em>. The first touch has to say out loud that we went quiet.",
+  shared:{
+    same:["Loved the old slab and labels. Remembers missed dates and the silence.","Confused by HGA vs uCollect, at checkout and on their card statement.","Needs a straight answer before any offer: what happened, who owns HGA, what changed, what happens to old slabs.","Owned channel: email to the legacy list, sent in warm-up batches."],
+    diff:["<b>Sports</b> has the deeper record: color-match labels on football and basketball refractors, 2021 return threads, the 60-day orders that ran to 95 days.","<b>TCG</b> is barely in the evidence. This side may have moved to CGC or TAG and needs the survey before we invest in it. Profile kept short."]
+  }
+},
+{
+  id:"p5", num:"05", title:"The Reseller (Test Persona)", short:"Reseller · Test",
+  pillar:"Transparency → \"Protect your asset\"", pillarNote:"Date · insurance · chip · documented reasoning",
+  larger:"both", largerWhy:"One test persona covering both sides. The sports resale premium for PSA is larger (vendor ranges: PSA 10 over CGC 10 runs 30 to 50% on modern sports vs 15 to 25% on Pokémon, T3, not matched sales). Challengers do better in TCG, where resale gaps are smaller, so the TCG side is the less hostile place to test.",
+  segments:"S2 SEG-1 Resale Grader · TAM Persona 3 (AVOID AT LAUNCH) · Dylan Oct 19: \"We're probably not going to win this market\" · \"Protect your asset\"",
+  evidence:"thin",
+  summary:"Grades to sell, and the next buyer picks the grader, which means PSA. We cannot win this person on resale and we will not try. The test is narrow: does \"protect your asset\" (a date, insurance, the chip, a documented grade) move them on any card at all? Capped spend, no resale claims.",
+  shared:{
+    same:["One persona: the same operator sells sports and Pokémon."],
+    diff:["<b>Sports</b> side: biggest PSA premium and the hardest sell.","<b>TCG</b> side: smaller resale gaps and CGC Pristines already trade, so it is the less hostile side to test."]
+  }
+}
+];
+const PROFILES = [];
+PROFILES.push({
+  id:"marcus", persona:"p1", side:"sports", hue:200,
+  name:"Marcus Delgado", age:46, city:"San Antonio, TX", job:"Facilities operations manager at a hospital",
+  family:"Married to Elena. Son Mateo (13), daughter Sofia (9). Lifelong Spurs household.",
+  essence:"Some cards aren't for sale. They're for the wall, and someday they're for Mateo.",
+  evidence:"strong",
+  origin:"Marcus started with gas-station packs as a kid and quit when college and bills took over. In 2020, stuck at home, he bought a retail blaster to give Mateo something to do. They opened it at the kitchen table, Mateo screamed at a Spurs rookie, and Saturday-morning card runs have been their thing ever since. Marcus doesn't flip much. He sells the occasional duplicate to fund the hobby. The rest goes in what he calls \"the case,\" a lit cabinet in the den that Elena tolerates because the kids love it.",
+  cards:[
+    {name:"1997-98 Topps Chrome Tim Duncan Refractor rookie", why:"The first serious card he ever bought for himself, at a show in a convention hall. It's in a PSA slab he describes as \"fine, but it looks like every other slab on every other shelf.\""},
+    {name:"2023-24 Panini Prizm Victor Wembanyama Silver rookie", why:"Mateo pulled it from a blaster. It sits raw in a one-touch on Marcus's desk because he refuses to mail it \"into a five-month black hole.\" It's the card the whole family associates with the hobby."},
+    {name:"His late father's 1971 Topps Roberto Clemente", why:"Creased, soft corners, worth more to him than anything in the case. He'd grade it even knowing it comes back low. His words: \"I'd send it in if it came back a 1, it's about keeping it safe.\""},
+    {name:"Two Manu Ginóbili rookies in SGC tuxedo slabs", why:"He picked SGC for the black label because it looked right. Then in September 2026 SGC's floor went to $50 and the cheap, good-looking option was gone."}
+  ],
+  trigger:"Mateo asked when the Wemby could go \"in the case for real.\" The same week, a collector Marcus follows posted a shelf of clear slabs that \"looked like the cards were floating.\" He wants the moment of putting his son's card on display, and he wants it to survive long enough for Mateo to own it.",
+  history:"<b>PSA:</b> the Duncan came back with a fine grade after a long wait, in a slab he finds sterile. He keeps PSA for the rare card he might sell. <b>SGC:</b> his go-to for looks until the $50 floor in September 2026. <b>TAG:</b> he wanted the translucent slab, but TAG's Basic, Standard and Express tiers have been paused since May 2026. <b>Old HGA:</b> he never submitted, but he remembers the 2021 color-match labels and the threads that came after (\"Ask everyone from the Covid era about HGA\"). That is the root of his worry about whether we'll last.",
+  week:[
+    "<b>Saturday AM:</b> card shop run with Mateo, the local LCS off the highway. He talks slabs with the owner more than he buys.",
+    "<b>Lunch breaks:</b> scrolls r/sportscards for \"PC\" posts and return reveals. Mostly lurks, sometimes posts his case.",
+    "<b>Spurs game nights:</b> sorts cards at the coffee table with Sofia, who has claimed the \"pretty ones.\"",
+    "<b>Monthly:</b> a regional card show. Card show searches doubled year over year (+104%, TAM sheet), and he's part of that crowd.",
+    "<b>Evenings:</b> YouTube shelf tours and slab-reveal videos, plus Instagram display-case accounts."
+  ],
+  hangouts:{online:["r/sportscards","r/baseballcards (for his dad's vintage)","A Spurs collectors' Discord"], creators:["Slab-reveal / return-day YouTubers","Shelf-tour and display creators","Card-show vloggers"], irl:["Local card shop (LCS)","Regional card shows"]},
+  trust:["The LCS owner who has handled his cards for years","Collectors who show their own returns in hand","Not brand ads. He trusts a slab he has held."],
+  voice:["\"Those are PC. They're not going anywhere.\"","\"PSA for the flips. The good-looking slab for the stuff I keep.\"","\"I want the card to be the star, not the label.\"","\"If you're gone in three years, my shelf looks silly.\""],
+  quotes:[
+    {q:"It's official, I'm going to TAG. I'll take the value hit, particularly for the ones I plan to hold onto.", src:"r/sportscards · May 2026"},
+    {q:"I tend to PC SGC more and 'invest' in PSA. They are just more liquid. Certain cards though, look WAY better in SGC", src:"r/sportscards · Sep 2026"},
+    {q:"There's a good chance HGA will be out of business in the next 5-10 years so if you plan on holding the card a while, it might look silly down the line.", src:"r/baseballcards · 2023"}
+  ],
+  needs:["\"Something that keeps the attention on the card.\"","\"It has to outlast me. That's the point.\"","\"Show me it on a shelf, not in a render.\""],
+  fears:["\"The slab looks dated in five years.\"","\"You fold like the 2021 guys and I'm stuck with orphan slabs.\"","\"Scratches. Every plastic slab I own is scuffed from the cabinet.\""],
+  objections:["\"Will HGA even be here when Mateo's grown?\"","\"Two hundred bucks is a lot for a case. It better feel like it.\"","\"Is glass going to crack if Sofia knocks it off?\""],
+  switching:["Seeing Glass in hand, at a show or in a creator's unscripted video","Peers posting their own returns","A booked date, so the Wemby isn't gone for months","A straight answer on who stands behind HGA now"],
+  price:"Low to moderate sensitivity, for the 3 to 5 cards he'll never sell. The ~$200 core Glass price is justified for grails and keepsakes, not for every card. He won't Glass his duplicates. Presale and Black Friday pricing is still under discussion, so don't quote promo numbers to him.",
+  msg:{
+    pillar:"Glass",
+    promise:"The card you'll never sell, preserved in glass, ready to hand down.",
+    proofs:["Glass is scratch-resistant, with a vacuum-like seal. It's built for the cabinet he opens every day.","Fits any card size, and stackable magnets build the shelf.","The look never stands alone. Every Glass slab comes with a booked date, a grade report and a chip record (confirm report and chip with ops)."],
+    headlines:["Your best card deserves more than plastic.","This is the moment you've been waiting for. Your grail, in glass.","Some cards are never for sale. Give them glass.","The future of the display shelf is here.","The biggest thing the industry has ever seen, built for the card you'll hand down."],
+    hooks:["Hold it up to the light. Nothing between you and the card.","Your kid's first pull deserves better than a one-touch on your desk.","Keep PSA for the cards you sell. Glass is for the ones you keep."],
+    subjects:["Glass. Finally.","The case your grail has been waiting for","Reply: what's the one card you'd never sell?","Nov 23: the shelf changes"],
+    openers:["That slab on your shelf looks exactly like everyone else's.","You've looked at that card every day for years. Now see it in glass.","Your dad's card. Your kid's someday. Here's how it gets there."],
+    use:["PC","grail","the card you keep","display","shelf","glass","preserve","hand down","relieved","keeps the attention on the card"],
+    avoid:["investment","ROI","worth more","flip","only grader in glass","unbreakable","UV protection","made in USA","transparency (as a headline)"],
+    landing:"Homepage Glass hero → /glass (\"glass only\" page, per Ryan's per-tone page plan)",
+    segment:"Legacy-list members tagged sports + presale openers who clicked Glass content",
+    creator:"Sports shelf-tour and display creators; slab-reveal YouTubers who show returns in hand",
+    doSay:["Glass is scratch-resistant.","Vacuum-like seal.","Fits any card size; stacks with magnets.","Keep PSA for the cards you sell. Send us the cards you keep."],
+    dontSay:["Glass slabs sell for more / hold value better than PSA","UV protection","Made in USA (the frame is made in China; make no origin claim)","The only / first grader in glass","1M cards graded · up to 80% more resale value"]
+  }
+});
+PROFILES.push({
+  id:"jenna", persona:"p1", side:"tcg", hue:280,
+  name:"Jenna Okafor", age:34, city:"Portland, OR", job:"Product designer at an outdoor-gear brand",
+  family:"Lives with her partner Theo and a very judgmental cat. Her mom still has the Game Boy.",
+  essence:"My wall is a mood board of my childhood. I want every card to look like it's floating.",
+  evidence:"moderate",
+  origin:"Jenna played Pokémon Red at eight and kept a Base Set binder that got lost in a move after college. She came back in 2021 when the alt-art wave hit her feed, and she collects for the illustrations, not the chase. Her studio has a lit floating shelf with a dozen slabs and frames, arranged by color. She has never sold a card she loved.",
+  cards:[
+    {name:"Umbreon VMAX alt art, Evolving Skies (\"Moonbreon\")", why:"She saved for months to buy it. It's in a TAG slab because she loved how translucent it was, the card \"just hovers.\""},
+    {name:"Base Set Charmander from her childhood binder", why:"The only survivor of the lost binder. Whitened edges, a ding, and priceless to her. She wants it protected, not judged."},
+    {name:"Gengar VMAX alt art, Fusion Strike", why:"Her favorite Pokémon, her favorite illustration. It's in a CGC slab that has scuffed from sliding in and out of a display stand."},
+    {name:"Oversized Japanese Pikachu promo from a trip to Tokyo with Theo", why:"A life-moment card that no grader she knows will case properly, so it lives in a top-loader taped to the wall."}
+  ],
+  trigger:"TAG's entry tiers went dark in May 2026, her CGC slab got scuffed, and the Tokyo jumbo still has no home. When she heard Glass fits any card size, she pictured the whole wall matching for the first time.",
+  history:"<b>TAG:</b> loved the slab, but Basic, Standard and Express have been paused since May. \"Feels like the hype died\" is how the subreddit put it. <b>CGC:</b> fine and affordable, but the slab scuffs, and she's read the fake-prototype threads. <b>AGS:</b> tried once for speed. Her verdict matched the thread: the slab \"looks pedestrian.\" <b>PSA:</b> one card she might sell someday. The label distracts from the art.",
+  week:[
+    "<b>Weeknights:</b> Instagram and TikTok display-wall and alt-art accounts, saving shelf layouts.",
+    "<b>r/PokemonTCG:</b> for art threads. She learned the hard way that grading questions get removed there.",
+    "<b>r/PokeGrading:</b> for grading questions, mostly lurking.",
+    "<b>Fridays:</b> prerelease or casual night at her local game store, more for the people than the packs.",
+    "<b>A few times a year:</b> a Portland card show, hunting Japanese promos."
+  ],
+  hangouts:{online:["r/PokemonTCG","r/PokeGrading","An alt-art collectors' Discord"], creators:["Pokémon display-wall creators (TikTok, Instagram)","Art-focused Pokémon collectors","Big Pokémon collectibles creators, even ones who don't do grading content"], irl:["Local game store","Portland card show"]},
+  trust:["Collectors who post in-hand photos in daylight","Illustrator-focused accounts","Friends at the game store"],
+  voice:["\"I collect for the art. The slab is the frame.\"","\"Flashy labels fight the illustration. Let it breathe.\"","\"I'll take the value hit on the ones I'm keeping. I'm never selling Moonbreon.\""],
+  quotes:[
+    {q:"The reason why TAG slabs are elite is because of them being completely translucent. They keep the attention on the card, and don't have any visual distraction at all.", src:"r/sportscards · Dec 2025"},
+    {q:"IMO TAG had momentum and has ruined it with their backlog and shutting down submissions, feels like the hype died.", src:"r/sportscards · Aug 2026"},
+    {q:"AGS slabs sort of look pedestrian. It shouldn't matter, but it does", src:"r/sportscards · Dec 2025"}
+  ],
+  needs:["Clarity: the card is the art, and the case should disappear.","A minimal label that doesn't clash.","Odd sizes, including the jumbo, handled like they matter."],
+  fears:["\"Glass that looks cheap in person.\"","\"Scratches again.\"","\"A label typo on a card I love.\" (old HGA had label errors)"],
+  objections:["\"Is glass heavy or fragile on a floating shelf?\"","\"~$200 per card adds up fast.\"","\"Who even is HGA now?\""],
+  switching:["A daylight, in-hand video of Glass with no music and no render","Seeing a jumbo or odd-size card fitted","A display creator she follows showing her own wall"],
+  price:"Moderate. She'll choose 3 or 4 hero cards for Glass and keep the rest raw in binders. ~$200 is a \"frame\" purchase, not a grading fee, to her. Don't quote presale promo prices until they're final.",
+  msg:{
+    pillar:"Glass",
+    promise:"Gallery clarity for the art you love, in any size.",
+    proofs:["Scratch-resistant glass with a vacuum-like seal. The scuffing stops.","Fits any card size, jumbos and Japanese promos included.","Stackable magnets let the wall build itself. Every slab carries its report and chip record (confirm with ops)."],
+    headlines:["Let the art breathe.","Your alt art deserves more than plastic.","This is the moment your wall has been waiting for.","Every size. Every card. Glass.","The future of display is here."],
+    hooks:["The card floats. The case disappears.","That jumbo taped to your wall? It finally has a home.","Never selling it? Then frame it like it."],
+    subjects:["Your jumbo finally has a home","Reply with a photo of your wall","Glass, in any size"],
+    openers:["You collect the illustration. Why is the case the loudest thing on your shelf?","Moonbreon deserves better than a scuffed slab.","The future of display is here, and it fits every card you own."],
+    use:["art","illustration","floating","clear","frame","keep","any size","glass","relieved"],
+    avoid:["Pristine-beating","investment","flip","gem rate","only grader in glass","UV-safe","transparency (as a headline)"],
+    landing:"/glass with a TCG/art variant (alt arts, jumbos, odd sizes)",
+    segment:"Presale openers tagged Pokémon/TCG who engaged with Glass or display content",
+    creator:"Pokémon display-wall and alt-art creators; large Pokémon collectibles creators (Natalia's list, including ones JD declined)",
+    doSay:["Scratch-resistant glass.","Fits any card size.","Stacks with magnets.","Every grade comes with its report."],
+    dontSay:["Sells for more than other slabs","UV protection / sun-safe","Made in USA","The only grader in glass","\"Most transparent ever\""]
+  }
+});
+PROFILES.push({
+  id:"mia", persona:"p2", side:"tcg", hue:330,
+  name:"Mia Torres", age:27, city:"Phoenix, AZ", job:"Dental hygienist",
+  family:"Engaged to Chris; the wedding is in the spring. Chris plays casually at the local game store.",
+  essence:"We pulled it the week we got engaged. I just don't want to mess this up.",
+  evidence:"moderate",
+  origin:"Mia's Pokémon was the app, never the cards. The week after Chris proposed, they bought an Elite Trainer Box on a whim to celebrate with something silly. It was her very first ETB, and the third pack had a Charizard. They screamed loud enough that the neighbor texted. Since then she's opened a few packs a month and watches rips on TikTok at night, but she has never sent a card anywhere.",
+  cards:[
+    {name:"Charizard ex special illustration rare, Pokémon 151", why:"The engagement-week pull. It lives in a penny sleeve inside a top-loader in her nightstand, because she doesn't trust the shelf, the cat or the sun."},
+    {name:"Pikachu illustration rare Chris pulled the same night", why:"\"His and hers.\" She wants the two cased together for their first home."},
+    {name:"A stack of commons and holos in a binder", why:"Not for grading. Proof that she's a collector now."}
+  ],
+  trigger:"Wedding planning made her want \"something real\" from that week framed in their home. She posted the Charizard on r/PokemonTCG asking if she should grade it, and the post was removed because grading questions aren't allowed. On r/PokeGrading the top reply was \"If you find yourself questioning, the likely answer is no.\" She's more confused than when she started.",
+  history:"<b>None, which is the opportunity.</b> She has absorbed the horror stories secondhand: the thread where a first-timer's \"perfect\" card came back a 2 with no explanation, the \"Grade today to get your cards back in 2027\" thread, the advice to just use PSA because everyone does. She has no loyalty to anyone yet.",
+  week:[
+    "<b>Late nights:</b> TikTok pack openings and \"how to grade\" explainers.",
+    "<b>Lunch:</b> lurks r/PokeGrading. Too intimidated to post again.",
+    "<b>Saturdays:</b> tags along to Chris's league at the local game store and asks the owner questions.",
+    "<b>Errands:</b> checks the trading-card aisle at big-box stores for restocks."
+  ],
+  hangouts:{online:["r/PokeGrading","r/PokemonTCG (art and pulls only, since grading posts get removed)","TikTok"], creators:["Beginner \"how to submit\" YouTube walkthroughs","Couple and casual collector TikTokers","Pack-opening creators"], irl:["Local game store owner","Big-box retail aisles"]},
+  trust:["YouTube walkthrough creators who explain slowly","The game-store owner","Reddit veterans, though they intimidate her"],
+  voice:["\"I don't even know what 'centering' means, honestly.\"","\"It's not about the money. It's ours.\"","\"What if it gets lost in the mail?\"","\"I just want someone to tell me what to do, step by step.\""],
+  quotes:[
+    {q:"Shortly after our engagement, my fiancée and I decided to pull these cards together.", src:"r/PokeGrading"},
+    {q:"As beginners in this hobby, we thought it would be nice to have them graded as keepsakes.", src:"r/PokeGrading"},
+    {q:"It's important to know its true value, but the thought of mailing it can be unsettling.", src:"r/PokemonTCG"},
+    {q:"I couldn't spot any flaws, and the centering looked pretty good to me.", src:"r/PokeGrading (before a grade of 2)"}
+  ],
+  needs:["Step-by-step: what to buy, how to pack it, when to ship, what happens next.","To know exactly where the card is.","A grade explained in plain English, especially if it isn't a 10.","Something beautiful to put in the new house."],
+  fears:["Mailing it and never seeing it again.","\"Getting a 2 and not knowing why.\"","Asking a dumb question and getting dunked on."],
+  objections:["\"Do I need an account, a membership, a minimum?\"","\"Everyone online says PSA. Why not PSA?\"","\"Is ~$200 too much for my first time?\""],
+  switching:["A trusted creator walking through an HGA submission start to finish","A sample report that reads like a person explaining her card","A date she can count on before the wedding"],
+  price:"Moderate. One Glass slab for the engagement card is a gift-level purchase, like a frame or a nice print. Two (his and hers) is a stretch. She'll never batch. Don't quote presale promo prices until they're final.",
+  msg:{
+    pillar:"Glass (keepsake) + guided process",
+    promise:"Your first grade, explained step by step, and preserved in glass for the home you're building.",
+    proofs:["Step-by-step guidance and tracked stages from \"your box arrived\" to the reveal, with your package opened on camera (confirm stages with ops).","A plain-language grade report with four subgrades. If it isn't a 10, you see why.","Glass: scratch-resistant, vacuum-like seal, a keepsake for the shelf."],
+    headlines:["The card that marks a moment belongs in glass.","Sending your first card? You'll know exactly how we graded it.","This is the moment you've been waiting for.","Your first grade, done right from day one.","The future of grading starts with your first card."],
+    hooks:["Pulled it the week you got engaged? That card is your story.","Step 1: breathe. We'll walk you through the rest.","No more horror stories. Watch exactly what happens to your card."],
+    subjects:["New to grading? Start here","What happens to your card, step by step","Reply: tell us about your first pull"],
+    openers:["You pulled something special. Now what?","The scariest part of grading is not knowing. So we show you every step.","Your first pull. Your first grade. Your keepsake, in glass."],
+    use:["keepsake","preserve","safe","step by step","first pull","your story","explained","we'll walk you through it"],
+    avoid:["ROI","comps","pop report","gem rate","flip","investment","chase","unexplained jargon (define subgrades, centering)"],
+    landing:"/first-grade, a guided \"how it works\" page that is informational and SEO-friendly, with the keepsake Glass CTA",
+    segment:"New subscribers from creator codes and organic content who self-identify as \"new to grading\" (TCG)",
+    creator:"Beginner Pokémon grading-walkthrough YouTubers; couple and casual collector TikTokers",
+    doSay:["We explain every grade in plain language.","You'll see each step your card goes through.","Glass is scratch-resistant with a vacuum-like seal."],
+    dontSay:["Guaranteed 10 / you'll get a high grade","Grading makes your card worth more","UV protection","\"Safest in the world\" or any absolute safety claim"]
+  }
+});
+PROFILES.push({
+  id:"andre", persona:"p2", side:"sports", hue:30,
+  name:"Andre Whitfield", age:41, city:"Charlotte, NC", job:"Logistics supervisor at a distribution center",
+  family:"Married to Keisha. Son Jordan (11) is newly obsessed with football cards. His father passed last year.",
+  essence:"My dad kept these in a shoebox for decades. I'm not going to be the one who ruins them.",
+  evidence:"thin",
+  origin:"Andre collected in the late '80s junk-wax days and then forgot about it. When his father died, he found two shoeboxes in the closet: his own childhood cards, plus a stack his dad had kept since the '70s in rubber bands. Jordan started opening Panini packs around the same time. Now Andre is the reluctant custodian of a collection he doesn't fully understand.",
+  cards:[
+    {name:"1989 Upper Deck Ken Griffey Jr. rookie", why:"His own childhood card. Everyone online says to grade it. He's heard there are fakes and wants to know it's real."},
+    {name:"His father's 1975 Topps Hank Aaron", why:"Rubber-band dents and all. This is the one he'd hand down to Jordan. Its value means nothing to him next to the fact that his father kept it."},
+    {name:"Jordan's 2023 Panini Prizm Bryce Young rookie", why:"A Panthers card from the local team, pulled by his son. Jordan wants it \"in a real case\" like the ones on YouTube."}
+  ],
+  trigger:"Jordan asked whether Grandpa's cards were \"real.\" Andre searched online and found PSA quoting long waits and Beckett's site offline. He wants to protect the box before something happens to it, and to know what he actually has.",
+  history:"<b>None.</b> The local card shop owner said \"just send to PSA\" and offered to submit through his account. Andre balked when he heard months-long turnaround and didn't like the idea of his dad's cards leaving his hands with no tracking. He's seen counterfeit Griffey warnings online.",
+  week:[
+    "<b>Sunday:</b> Panthers games, then opening a pack with Jordan at halftime.",
+    "<b>Weeknights:</b> YouTube \"is my card worth anything\" and vintage-identification videos.",
+    "<b>Occasionally:</b> asks on r/baseballcards and r/footballcards, and reads the \"what should I do with my dad's collection\" threads.",
+    "<b>Monthly:</b> drops by the local card shop to ask questions."
+  ],
+  hangouts:{online:["r/baseballcards","r/footballcards","r/sportscards"], creators:["Vintage-ID and \"what's it worth\" YouTubers","Beginner submission walkthroughs"], irl:["Local card shop (the gatekeeper)"]},
+  trust:["The LCS owner, cautiously","Long-time collectors in vintage threads","Anything that shows its work"],
+  voice:["\"I just want to know it's real.\"","\"I'm not selling Dad's cards. Period.\"","\"I don't want to look like a fool asking basic stuff.\"","\"Where exactly is it while it's gone?\""],
+  quotes:[
+    {q:"Found my dad's old cards… should I get these graded?", src:"Pattern from r/baseballcards family-collection threads (paraphrased, not verbatim)"},
+    {q:"'75 Topps George Brett. Thread on a family-held vintage card", src:"r/baseballcards (thread title cited in P2 Cultural Quotes)"}
+  ],
+  needs:["Authentication first: is it real?","Step-by-step help, including what to send and how to pack vintage.","Tracking at every stage.","Something Jordan can keep someday."],
+  fears:["Fakes, and paying to grade a fake.","Damage or loss in the mail.","Being upsold or talked down to."],
+  objections:["\"Why not just let the shop send it to PSA?\"","\"Is a low grade on Dad's card going to feel like an insult?\""],
+  switching:["A clear Authentic label and an explained report","Seeing the unboxing of his package on camera","A dated return"],
+  price:"Moderate to high sensitivity on volume (he won't grade the whole shoebox). Low sensitivity on one or two heirloom cards. Glass fits the Aaron, not the junk-wax.",
+  msg:{
+    pillar:"Glass (heirloom) + guided process",
+    promise:"Know it's real, see every step, and hand it down in glass.",
+    proofs:["An Authentic label plus a grade report with four subgrades (confirm the Oct 10 feature set with ops).","Package unboxing on camera, plus tracked stages.","Glass: scratch-resistant, with a vacuum-like seal."],
+    headlines:["Know it's real before you pass it down.","Your dad kept it for 50 years. Keep it for the next 50.","This is the moment that shoebox has been waiting for.","Some cards are a family story. Preserve yours in glass."],
+    hooks:["Found the shoebox? Start here.","Is Grandpa's card real? Here's exactly how we check.","Watch your package get opened, on camera."],
+    subjects:["Found a family collection? Start here","Is it real? How we check, step by step","The card you'll hand down"],
+    openers:["Every family has a shoebox. Here's what to do with yours.","You're not selling it. You're protecting it.","Before you mail anything, watch what happens to your card."],
+    use:["heirloom","family","authentic","hand down","step by step","explained","safe"],
+    avoid:["worth","flip","investment","\"pass down\" as a statistic (unmeasured)","fear-mongering about fakes"],
+    landing:"/first-grade with a family/vintage variant",
+    segment:"New sports subscribers from search and creator content (\"inherited,\" \"family collection\")",
+    creator:"Vintage-ID and beginner sports-card YouTubers",
+    doSay:["Every card is checked for authenticity.","Every grade is explained.","Glass is scratch-resistant."],
+    dontSay:["We guarantee your card is valuable","\"We catch every fake\" or any absolute claim","UV protection","Made in USA"]
+  }
+});
+PROFILES.push({
+  id:"kayla", persona:"p3", side:"tcg", hue:160,
+  name:"Kayla Brennan", age:29, city:"Columbus, OH", job:"Pharmacy technician",
+  family:"Single, shares an apartment with her sister. Vends at a monthly local card show with a friend.",
+  essence:"I didn't quit grading. Grading quit me, on June 2nd.",
+  evidence:"strong",
+  origin:"Kayla started ripping during the 2020–21 Pokémon boom and got serious about modern hits. By 2024 she was sending a PSA Value batch every couple of months, mostly SIRs and alt arts, some to keep and some to sell at her friend's table. Then PSA Value paused on June 2, 2026. TAG paused its entry tiers in May. Her sub box has been sitting full ever since.",
+  cards:[
+    {name:"Iono special illustration rare, Paldea Evolved", why:"A personal favorite and a solid seller. Sitting raw in her \"to grade\" box since June."},
+    {name:"Mew ex SIR, Pokémon 151", why:"She keeps it. She wants it graded and displayed, not sold."},
+    {name:"A top-loader box of ~40 modern hits", why:"Her usual batch. At $50–60 a card it no longer pencils out."},
+    {name:"A few One Piece alt arts", why:"Her newer obsession. She's watching which grader the One Piece community picks."}
+  ],
+  trigger:"PSA Value paused, the backlog was reported at 8.2M cards as of Oct 6, and SGC is now $50 with 40+ business days. CGC Bulk is $17 but needs a 25-card minimum, and that tier's stated turnaround runs about 150 working days, \"not guaranteed.\" Her math broke. She wants a date she can plan a show around and a price per card she can predict.",
+  history:"<b>PSA:</b> years of Value batches until the June 2 pause. Higher tiers ($59.99 at 90–100 business days) kill her margins. <b>TAG:</b> tried it, loved the report, then Basic, Standard and Express paused in May, and the Pokémon drops at $59/$79 are too rich for volume. <b>CGC:</b> her backup, but Bulk is slow and dates are \"not guaranteed.\" <b>Arena Club:</b> tempted at $14–15. Her community still doesn't trust the resale. <b>Beckett:</b> paused; the site went offline around Sep 9.",
+  week:[
+    "<b>Daily:</b> checks the tier-status thread and r/PokeGrading return-time posts.",
+    "<b>Discord:</b> her local vendor server and a Pokémon grading Discord trading return dates.",
+    "<b>Evenings:</b> Whatnot streams, where she watches what slabs sell for.",
+    "<b>Monthly:</b> vends at a card show with a friend and fields \"who are you grading with now?\" all day.",
+    "<b>TikTok:</b> follows grading-reveal creators, mostly for return-time receipts."
+  ],
+  hangouts:{online:["r/PokeGrading","r/PokemonTCG (art only)","Pokémon grading and vendor Discords","Whatnot"], creators:["Grading-reveal creators who post dates and results","Hobby-news and tier-tracking creators"], irl:["Monthly card show (vendor)","Local game store"]},
+  trust:["Dated receipts from submitters she knows","Discord vendors","Creators who show their own returns, not sponsorship reads"],
+  voice:["\"I don't care about launch promises. Show me the first batch's dates.\"","\"Every fast grader gets slow. Prove you won't.\"","\"Tell me the cost per card, all-in.\"","\"If it's a 9, tell me what kept it from a 10.\""],
+  quotes:[
+    {q:"Grade today to get your cards back in 2027", src:"r/PSAcard thread title (Competitor Sentiment)"},
+    {q:"IMO TAG had momentum and has ruined it with their backlog and shutting down submissions, feels like the hype died.", src:"r/sportscards · Aug 2026"}
+  ],
+  needs:["A booked return date, not an estimate.","A predictable all-in price per card.","A reason for every grade.","A volume-friendly tier. Poly status is unresolved and is her biggest open question."],
+  fears:["\"You'll be backlogged by March like everyone else.\"","\"$200 glass for every card? I'm out.\"","Unexplained grades and no recourse."],
+  objections:["\"What's the per-card cost for 40 cards?\"","\"What happens if you miss the date?\" (remedy undecided)","\"Will my buyers accept your slab?\""],
+  switching:["The first batch of booked dates holding, with receipts posted by people she knows","A clear volume option (pending the Poly decision)","Reports that actually explain subgrades"],
+  price:"High sensitivity. She thinks in cost per card across 20–40 cards. ~$200 Glass is for 1 or 2 keepers (the Mew), not the batch. Whether HGA wins her volume depends on the open Poly / lower-tier decision.",
+  msg:{
+    pillar:"Transparency, shown as process (never say the word in the headline)",
+    promise:"Book your date. Know your grade's reason.",
+    proofs:["Calendar booking opens Jan 18 and grading starts Feb 1. You pick your date.","Every grade comes with a report and four subgrades (confirm with ops).","Tracked stages and your package opened on camera."],
+    headlines:["Book your date. Hold us to it.","Got a 9? Your report shows exactly what kept it from a 10.","The waiting is over. The future of grading is here.","Your sub box has waited long enough.","This is the moment you've been waiting for: a date, not an estimate."],
+    hooks:["Still sitting on your June sub box?","Pick the day your cards come back.","Every grade, with its reason."],
+    subjects:["Booking opens Jan 18","Your date, your call","Reply: how many cards are in your sub box?"],
+    openers:["You didn't quit grading. Grading quit you.","Estimated turnaround is a guess. A booked date is a promise.","Here's exactly what happens to your cards, and when."],
+    use:["booked date","return date","per card","report","subgrades","explained","tracked"],
+    avoid:["transparency (headline)","\"fastest ever\" unless measured","beats PSA","resale value","Poly as confirmed","specific promo prices"],
+    landing:"/booked-date (Ryan's \"transparency is everything\" page) with a calendar preview",
+    segment:"Pokémon/TCG presale signups + legacy-list members flagged as frequent submitters",
+    creator:"Pokémon grading-reveal creators who post dates; vendor and Whatnot hosts",
+    doSay:["You book your return date.","Every grade is explained.","Booking opens Jan 18; grading starts Feb 1; presale orders: 30-day turnaround."],
+    dontSay:["Faster than PSA (don't name PSA without counsel)","Our slabs resell for more","Guaranteed date with a specific remedy (undecided)","Poly as a confirmed option","Final presale or Black Friday prices"]
+  }
+});
+PROFILES.push({
+  id:"derek", persona:"p3", side:"sports", hue:215,
+  name:"Derek Huang", age:45, city:"Pittsburgh, PA", job:"Civil engineer (transportation)",
+  family:"Married to Lauren; two daughters (15, 12) who think his hobby is \"a lot.\"",
+  essence:"I used to send a batch every season. Now I've got a box of cards and nowhere I'm willing to send them.",
+  evidence:"strong",
+  origin:"Derek has collected since the '90s. He got back into it hard in 2019 and built a rhythm: open baseball in spring, football in fall, and send a batch after each season. PSA for anything he might sell, SGC for the Pirates and Steelers PC. He keeps a spreadsheet of every submission, with dates in and out.",
+  cards:[
+    {name:"Paul Skenes Bowman Draft Chrome", why:"His hometown pitcher. He'll keep the best copy and sell a duplicate."},
+    {name:"Steelers and Pirates numbered parallels", why:"His PC core. He had always sent them to SGC for the tuxedo look."},
+    {name:"A Stephen Curry rookie he bought in 2020", why:"His \"retirement card,\" sitting in a PSA slab. He'll never send it anywhere else."}
+  ],
+  trigger:"SGC moved to a $50 floor with 40+ business days in September 2026, the last affordable option he liked. His spreadsheet shows his last PSA batch running past its estimate. He wants his rhythm back: a date and a price he can plan a season around.",
+  history:"<b>PSA:</b> the sell-side default, at $59.99 and 90–100 business days now. He tracks the backlog (8.2M as of Oct 6). <b>SGC:</b> his PC grader until the $50 floor. <b>TAG:</b> curious about the report, but entry tiers have been paused since May. <b>Beckett:</b> once a fallback; paused, site offline around Sep 9. <b>Old HGA:</b> he remembers 2021 hype and missed dates.",
+  week:[
+    "<b>Mornings:</b> r/sportscards, scanning tier changes and the \"PSA vs SGC\" debates (that search hit 4,400 in August).",
+    "<b>Lunch:</b> updates his submission spreadsheet.",
+    "<b>Weekends:</b> local card shop and the occasional regional show.",
+    "<b>Evenings:</b> hobby-news YouTube and podcast recaps."
+  ],
+  hangouts:{online:["r/sportscards","r/baseballcards","A Pittsburgh collectors' Facebook group"], creators:["Hobby-news YouTubers and podcasters","Return-time and value-comparison creators"], irl:["Local card shop","Regional card shows"]},
+  trust:["His own spreadsheet","Dated receipts from other submitters","Shop owners who have seen returns"],
+  voice:["\"PSA for the sell pile, something else for my PC.\"","\"Give me a real date and I'll plan around it.\"","\"I've seen every 'fast' grader get slow.\"","\"Tell me why it's a 9.\""],
+  quotes:[
+    {q:"I tend to PC SGC more and 'invest' in PSA. They are just more liquid.", src:"r/sportscards · Sep 2026"},
+    {q:"Grade today to get your cards back in 2027", src:"r/PSAcard thread title"}
+  ],
+  needs:["A booked date.","A clear per-card cost.","An explained grade.","A grader for his PC, since he won't move his sell pile."],
+  fears:["Backlog creep.","Another grader collapsing.","Paying more for glass on cards he doesn't display."],
+  objections:["\"What happens if you miss the date?\"","\"Is ~$200 Glass the only option?\" (Poly undecided)","\"Who stands behind HGA now?\""],
+  switching:["The first presale dates holding (30-day presale turnaround), shown with receipts","An explained report on a card he knows well","A volume-friendly option if one ships"],
+  price:"Moderate to high on batches, low on his top 2–3 PC cards. He splits his spend: PSA for the sell pile, a challenger for keeps.",
+  msg:{
+    pillar:"Transparency, shown as process",
+    promise:"Your season's batch back on the date you booked, every grade explained.",
+    proofs:["Book your date on the calendar (opens Jan 18; grading starts Feb 1).","A report with four subgrades for every card (confirm with ops).","Six tracked stages and your package opened on camera (confirm with ops)."],
+    headlines:["Book your date. Hold us to it.","Your season deserves a real return date.","The future of grading is here, with a calendar.","Got a 9? See exactly what kept it from a 10.","Get your rhythm back."],
+    hooks:["Your spreadsheet has a column for 'actual return.' Fill it in on day one.","Keep PSA for the sell pile. Send us your PC.","Pick the day. We'll show every step."],
+    subjects:["A return date you choose","Your PC, explained","Jan 18: booking opens"],
+    openers:["Every grader says 'estimated.' We say 'booked.'","Your batch has been sitting since September.","Here's what happens to every card, and when."],
+    use:["booked date","PC","explained","subgrades","tracked","per card"],
+    avoid:["beats PSA","resale premium","transparency (headline)","fastest","made in USA"],
+    landing:"/booked-date (sports variant)",
+    segment:"Sports-tagged presale signups + legacy-list members who submitted more than once",
+    creator:"Hobby-news YouTubers; return-time comparison creators",
+    doSay:["You book your date.","Every grade is explained.","Keep PSA for the cards you sell."],
+    dontSay:["Faster than PSA / beats PSA (no PSA naming without counsel)","Higher resale value","A specific missed-date remedy (undecided)"]
+  }
+});
+PROFILES.push({
+  id:"boz", persona:"p4", side:"sports", hue:15,
+  name:"Brian \"Boz\" Kowalski", age:37, city:"Indianapolis, IN", job:"Insurance claims adjuster",
+  family:"Married to Steph; son Luke (6). Pacers season-ticket split with his brother.",
+  essence:"I loved those slabs. Then you disappeared. Tell me what happened before you ask for my card.",
+  evidence:"moderate",
+  origin:"Boz got hooked in the 2020–21 boom and was an early HGA customer. He loved the color-match labels: his Pacers refractors looked like no one else's. He had 20+ HGA slabs by 2022. Then came the delays, the 60-day order that took 95 days, a refractor sealed backwards, and finally twelve months of silence. Now he gets an email from \"uCollect\" and isn't sure who that is.",
+  cards:[
+    {name:"Tyrese Haliburton Prizm rookie, raw", why:"His most important card. It's been raw since 2022 because he's not sure where to send it."},
+    {name:"Jonathan Taylor Prizm in a color-match HGA slab", why:"His favorite slab ever, the label matched the card. Proof of what HGA did right."},
+    {name:"Fernando Tatis Jr. 2019 Topps Chrome Refractor", why:"Came back sealed backwards. His standing grudge."}
+  ],
+  trigger:"A collector buddy mentioned \"HGA is back with glass.\" He's curious, but his first reaction was \"Who's HGA now, uCollect? Do they still do the labels?\"",
+  history:"<b>Old HGA:</b> loved the look (net +0.76), suffered the delays, the label errors and the silence. The 2022 guarantee didn't help when the date slipped. <b>PSA:</b> moved his sell-pile cards there, with long waits. <b>SGC:</b> his fallback until the $50 floor.",
+  week:[
+    "<b>Lunch:</b> r/sportscards; posts his HGA slabs occasionally.",
+    "<b>Pacers nights:</b> with his brother, talking cards.",
+    "<b>Weekends:</b> local card shop and an Indy show.",
+    "<b>Email:</b> still on the HGA list. He opens HGA emails out of curiosity, and on our first send he'll be deciding whether this is real."
+  ],
+  hangouts:{online:["r/sportscards","r/basketballcards","A Pacers collectors' Discord"], creators:["Hobby-news YouTubers","Slab-reveal creators"], irl:["Local card shop","Indy card show"]},
+  trust:["His own HGA slabs","Friends who were burned with him","Straight talk, not hype"],
+  voice:["\"Those labels were sick. Nobody else did that.\"","\"Just tell me what happened.\"","\"Who's uCollect? Is that you?\"","\"Do the custom labels come back?\""],
+  quotes:[
+    {q:"…stabbed [sic] my 2019 Topps Chrome Fernando Tatis Refractor backwards", src:"R1 HGA legacy quotes"},
+    {q:"Ask everyone from the Covid era about HGA", src:"r/sportscards"}
+  ],
+  needs:["Acknowledgment: \"We went quiet.\"","Clarity on HGA vs uCollect.","An answer on custom labels.","A date he can hold us to."],
+  fears:["\"Same thing again.\"","\"My old slabs become orphans.\"","Payment confusion on his card statement."],
+  objections:["\"Why should I trust you this time?\"","\"Are the labels gone forever?\"","\"Will my old HGA slabs still verify?\""],
+  switching:["An honest first email","A booked date","Seeing Glass in hand","An answer on legacy slabs and labels (open decision)"],
+  price:"Moderate. He'll pay ~$200 for Glass on the Haliburton if trust is rebuilt. A legacy thank-you offer could help, but don't state promo prices until they're final.",
+  msg:{
+    pillar:"Candor first → Glass + booked date",
+    promise:"We went quiet. Here's what we built, and how you'll know where your card is every day.",
+    proofs:["A straight answer on what changed: who's behind HGA, the HGA/uCollect relationship (final wording undecided).","Booked dates on the calendar (opens Jan 18).","Glass: scratch-resistant, vacuum-like seal, fits any card size."],
+    headlines:["We went quiet for a year. Here's what we built.","You loved our slabs. Here's what's next.","This is the moment we've been working toward.","The future of HGA is here, in glass.","The biggest thing we've ever built."],
+    hooks:["You deserved an explanation. Here it is.","Still have your HGA slabs? We do too.","Your Haliburton has waited long enough."],
+    subjects:["We owe you an explanation","What happened to HGA (and what's next)","Reply: which HGA slab is your favorite?"],
+    openers:["We went quiet. You noticed.","You were one of the first. You deserved better communication.","Here's exactly what changed, and what didn't."],
+    use:["we went quiet","here's what changed","your old slabs","booked date","glass","straight answer"],
+    avoid:["\"we're back!\" with no acknowledgment","blaming","glossing over the delays","promising custom labels (undecided)","specific promo prices"],
+    landing:"/were-back (candor letter → Glass → booked date)",
+    segment:"Legacy list (78,468 mailable), sent in warm-up batches; sports-tagged first",
+    creator:"Hobby-news creators who covered 2021 HGA, briefed with the candor story",
+    doSay:["We went quiet, and that's on us.","Here's what's changed.","You book your date."],
+    dontSay:["Nothing changed / it wasn't our fault","Custom labels are back (undecided)","\"HGA powered by uCollect\" as final (undecided)","Resale claims"]
+  }
+});
+PROFILES.push({
+  id:"nicole", persona:"p4", side:"tcg", hue:260, thin:true,
+  name:"Nicole Tran", age:31, city:"Sacramento, CA", job:"School librarian",
+  family:"Lives with her husband Danny; they play Pokémon GO on walks.",
+  essence:"I sent you my favorite Pokémon because your slabs were pretty. I'm curious, and cautious.",
+  evidence:"thin",
+  origin:"Nicole sent a handful of Pokémon cards to HGA in 2021 because she liked the colorful labels on Instagram. They came back late. She moved her few later submissions to CGC and stopped thinking about HGA until a new email arrived.",
+  cards:[
+    {name:"Sylveon card in an HGA color-match slab", why:"Her favorite Pokémon. It still sits on her desk at work."},
+    {name:"A few modern alt arts, raw", why:"Waiting on a grader she likes the look of."}
+  ],
+  trigger:"Curiosity about Glass. Wariness from the delays and the silence.",
+  history:"<b>Old HGA:</b> liked the look, but the return ran late. <b>CGC:</b> where she went after. <b>TAG:</b> considered it, then the tiers paused.",
+  week:["<b>Evenings:</b> Instagram Pokémon art accounts.","<b>Occasionally:</b> r/PokeGrading.","<b>Weekends:</b> Pokémon GO walks; a local game store now and then."],
+  hangouts:{online:["Instagram","r/PokeGrading"], creators:["Pokémon art and display creators"], irl:["Local game store"]},
+  trust:["Display creators","Friends who collect"],
+  voice:["\"Your slabs were the prettiest. Then I never heard from you.\"","\"Is HGA uCollect now?\""],
+  quotes:[{q:"(No verbatim TCG-specific HGA legacy quotes in the research. This profile is in-character narrative.)", src:"Thin evidence: survey the legacy list"}],
+  needs:["An honest explanation.","Glass that looks as good as the old labels.","A clear date."],
+  fears:["Delays again.","Confusion over who she's paying."],
+  objections:["\"Why come back when CGC is fine?\""],
+  switching:["Glass shown on Pokémon art cards","Candor email","Booked date"],
+  price:"Moderate. One or two Glass slabs for favorites.",
+  msg:{
+    pillar:"Candor → Glass",
+    promise:"We went quiet. Here's what we built for the cards you love most.",
+    proofs:["Candor about the silence.","Glass for Pokémon art: scratch-resistant, fits any size.","Booked dates."],
+    headlines:["We went quiet for a year. Here's what we built.","Your favorite Pokémon deserves more than plastic.","This is the moment we've been waiting for."],
+    hooks:["Still have your HGA Pokémon slab?","Your favorite card, in glass."],
+    subjects:["We owe you an explanation","Your favorite Pokémon, in glass"],
+    openers:["You trusted us with your favorite card. Then we went quiet."],
+    use:["we went quiet","glass","your favorite","art"],
+    avoid:["glossing over the silence","resale","custom labels promised"],
+    landing:"/were-back (TCG variant)",
+    segment:"Legacy list tagged Pokémon/TCG (tag accuracy to be validated)",
+    creator:"Pokémon display creators",
+    doSay:["We went quiet, and that's on us.","Glass is scratch-resistant."],
+    dontSay:["Custom labels are back (undecided)","Resale claims","UV protection"]
+  }
+});
+PROFILES.push({
+  id:"vince", persona:"p5", side:"both", hue:45, thin:true,
+  name:"Vince Caruso", age:42, city:"Edison, NJ", job:"Runs a card business (eBay, Whatnot, shows)",
+  family:"Married, two kids. His garage is inventory.",
+  essence:"I'm not here to fall in love. I want to know where my card is, when it's back, and that it's covered.",
+  evidence:"thin",
+  origin:"Vince turned a pandemic side hustle into a full-time business: breaks, Whatnot streams and weekend shows. He grades to sell, mostly through PSA because buyers ask for it, with some CGC Pokémon. He's lived through every backlog and once had a high-value card stuck for months with no update.",
+  cards:[
+    {name:"High-end modern sports rookies (for sale)", why:"PSA by default because buyers want PSA."},
+    {name:"Modern Pokémon SIRs", why:"CGC and PSA both trade, so he's open to options here."},
+    {name:"The occasional big deal", why:"The research cites a $70K–$100K deal example (Oct 19 call). At that size, his question is protection, not looks."}
+  ],
+  trigger:"Backlogs and paused tiers are holding his inventory hostage. He wants a guaranteed date, insurance and a documented grade on high-value cards.",
+  history:"<b>PSA:</b> his default for sales; long waits. <b>CGC:</b> for Pokémon. <b>SGC:</b> used to be fast; now $50 and 40+ business days. <b>TAG/Beckett:</b> paused.",
+  week:["<b>Nightly:</b> Whatnot streams.","<b>Daily:</b> eBay comps and listings.","<b>Weekends:</b> card shows (vendor).","<b>Discord:</b> dealer and breaker groups."],
+  hangouts:{online:["Whatnot","eBay","Dealer Discords","r/sportscards"], creators:["Breakers","Hobby-business creators"], irl:["Card shows (vendor)"]},
+  trust:["Money and dates","Other dealers' receipts"],
+  voice:["\"Buyers ask for PSA. That's the market.\"","\"Insure it, date it, document it, and I'll talk.\"","\"Don't tell me it sells for more. I'll check the comps.\""],
+  quotes:[{q:"Protect your asset", src:"Oct 19 persona call (internal frame)"}],
+  needs:["A guaranteed date.","Insurance terms in writing.","A chip record.","Documented grade reasoning."],
+  fears:["Inventory stuck.","Loss or damage with no coverage.","A slab his buyers won't accept."],
+  objections:["\"Your slab won't sell like PSA.\"","\"What exactly is the insurance?\" (terms undecided)"],
+  switching:["Insurance terms in writing","Dates that hold","A test on Pokémon inventory first"],
+  price:"Moderate. He'll pay for protection on high-value cards. Insurance pricing is unresolved (2% vs $250 per $10K).",
+  msg:{
+    pillar:"Transparency → \"Protect your asset\"",
+    promise:"Know where your card is, when it's back, and that it's covered.",
+    proofs:["A booked date on the calendar.","Insurance (terms to be confirmed).","A chip record and a documented grade report."],
+    headlines:["Protect your asset.","Your card. Your date. Covered.","The future of protecting high-value cards is here."],
+    hooks:["High-value card? Here's exactly where it is, every day.","Dated. Insured. Documented."],
+    subjects:["Protect your asset","Insured, dated, documented"],
+    openers:["You don't need a pretty slab. You need to know your card is covered."],
+    use:["protect","insured","date","documented","chip","record"],
+    avoid:["sells for more","beats PSA","resale value","investment returns"],
+    landing:"/protect-your-asset",
+    segment:"Test segment only: dealers and high-value submitters (TCG first), capped spend",
+    creator:"Hobby-business creators (test)",
+    doSay:["Booked dates.","Insurance (once terms are final).","Every grade is documented."],
+    dontSay:["Sells for more than PSA","Up to 80% more resale value","1M cards graded","Specific insurance terms before they're final"]
+  }
+});
+const OPEN_DECISIONS = [
+  ["Poly status","Disputed. Mention only as an open decision. It decides whether HGA can win P3 volume."],
+  ["Chip naming","Unresolved (NFT vs RFID framing). Say \"chip.\""],
+  ["Presale / Black Friday prices","Under discussion. Glass core is ~$200; don't state promo prices."],
+  ["Guarantee remedy and clock start","What happens if a booked date is missed, and when the clock starts."],
+  ["Insurance terms","2% above $10K (earlier) vs $250 per $10K (JD's tier). Reconcile before P5 copy."],
+  ["\"HGA powered by uCollect\"","Proposed, undecided. Affects P4 candor copy."],
+  ["Custom labels for legacy customers","No answer yet. P4 will ask first."],
+  ["Facility secrecy vs process messaging","How much of the process we can show."],
+  ["Pass transferability","Unconfirmed."],
+  ["Hype tone vs research no-superlative guidance","Tone is locked. Claims stay literal."],
+  ["Expert walkthrough call with JD","Sugitha's idea. Possible post-launch email for P2."],
+  ["\"Only / first in glass\"","Rare Edition exists. Don't claim it."],
+  ["Oct 10 feature set","Confirm four subgrades, report, unboxing on camera, six tracking stages, chip, Authentic label."],
+  ["Naming PSA","Needs counsel before any hook or ad names PSA."],
+  ["Glass vs process split","What share of the market comes for glass vs for the process (Ryan, Oct 20)."],
+  ["\"Pass down\"","Not measured in research. Don't state it as a statistic."]
+];
+const SOURCES = ["hga-research-deep-brief.md","oct19-persona-call.md","oct20-ryan-persona-notes.md","market-research.md (P2 Cultural Quotes, P4 Gatekeepers, R1 HGA legacy quotes)","S1 language research","S2 segments (SEG-1..6)","S3","S4 constellations","S5","Market State","Understanding Gap","Competitor Sentiment","Competitor Ad Analysis","TAM xlsx","Strategy Core","Creative Scaffolding","Pain Points & 50 Angles","Exec Summary","CORAS","Findings.md","Field Guide"];
+(function(){
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/&(?!amp;|lt;|gt;|quot;)/g,'&amp;');
+const sideLabel={sports:"Sports",tcg:"TCG",both:"Sports + TCG"};
+function avatar(p,size){
+  const ini=p.name.replace(/".*?"\s*/,'').split(/\s+/).map(w=>w[0]).join('').slice(0,2);
+  const h=p.hue, id='g'+p.id+size;
+  return `<svg class="av" width="${size}" height="${size}" viewBox="0 0 100 100" role="img" aria-label="Abstract avatar for ${esc(p.name)}">
+  <defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${h},80%,62%)"/><stop offset="1" stop-color="hsl(${(h+60)%360},70%,32%)"/></linearGradient>
+  <radialGradient id="${id}r" cx=".3" cy=".25" r=".8"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+  <rect width="100" height="100" rx="22" fill="url(#${id})"/>
+  <circle cx="${70+(h%17)}" cy="${78-(h%23)}" r="${26+(h%9)}" fill="hsl(${(h+180)%360},70%,60%)" opacity=".28"/>
+  <rect x="58" y="10" width="30" height="42" rx="5" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2" transform="rotate(12 73 31)"/>
+  <rect width="100" height="100" rx="22" fill="url(#${id}r)"/>
+  <text x="50" y="62" text-anchor="middle" font-family="Space Grotesk,Inter,sans-serif" font-weight="700" font-size="34" fill="#fff">${ini}</text></svg>`;
+}
+const li=(a,cls='dot')=>`<ul class="clean ${cls}">${a.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+const evPill=e=>`<span class="pill ${e}">${e==='thin'?'⚠ thin evidence':e+' evidence'}</span>`;
+const sidePill=s=>`<span class="pill ${s}">${sideLabel[s]}</span>`;
+
+// overview
+$('#ov').innerHTML=PROFILES.map(p=>{const P=PERSONAS.find(x=>x.id===p.persona);
+  const larger=P.larger===p.side&&p.side!=='both';
+  return `<a href="#${p.id}" class="glass" data-side="${p.side}">${avatar(p,56)}<div><div class="meta">${P.num} · ${P.short}</div><div class="nm">${esc(p.name)}</div><div class="es">“${esc(p.essence)}”</div><div class="tags">${sidePill(p.side)}${larger?'<span class="pill">★ Larger audience</span>':''}${evPill(p.evidence)}</div></div></a>`}).join('');
+
+// nav
+$('#navlinks').insertAdjacentHTML('beforeend',PERSONAS.map(P=>`<a href="#${P.id}">${P.num} ${P.short}</a>`).join('')+'<a href="#open">Open decisions</a>');
+
+const TABS=[["story","Story"],["cards","Cards"],["life","Hobby life"],["voice","Voice"],["msg","Messaging"]];
+function panel(p,t){
+  if(t==='story') return `<h4>Origin</h4><p>${p.origin}</p><h4>The trigger</h4><p>${p.trigger}</p><h4>Grading history</h4><p>${p.history}</p>`;
+  if(t==='cards') return `<h4>The cards, and why they matter</h4><div class="cards">${p.cards.map(c=>`<div class="cardi"><b>${esc(c.name)}</b><span>${c.why}</span></div>`).join('')}</div>`;
+  if(t==='life') return `<h4>A week in the hobby</h4>${li(p.week)}<div class="cols" style="margin-top:14px"><div><h4>Online</h4>${li(p.hangouts.online)}</div><div><h4>Creators</h4>${li(p.hangouts.creators)}</div><div><h4>In real life</h4>${li(p.hangouts.irl)}</div></div><h4>Who they trust</h4>${li(p.trust)}`;
+  if(t==='voice') return `<div class="mgrid"><div><h4>In their words (in-character)</h4><div class="voice">${p.voice.map(v=>`<q>${v}</q>`).join('')}</div></div><div><h4>From the sources (verbatim)</h4>${p.quotes.map(q=>`<div class="quote"><q>${q.q}</q><small>${q.src}</small></div>`).join('')}</div></div>
+   <div class="cols" style="margin-top:8px"><div><h4>Needs</h4>${li(p.needs)}</div><div><h4>Fears</h4>${li(p.fears)}</div><div><h4>Objections</h4>${li(p.objections)}</div></div>
+   <div class="mgrid" style="margin-top:8px"><div><h4>Switching triggers</h4>${li(p.switching)}</div><div><h4>Price sensitivity</h4><p>${p.price}</p></div></div>`;
+  const m=p.msg;
+  return `<div class="pill" style="margin-bottom:8px">Pillar: ${m.pillar}</div><div class="promise">${m.promise}</div>
+  <div class="mgrid"><div class="mbox"><h4>3 proof points</h4>${li(m.proofs,'do')}</div><div class="mbox"><h4>Headlines</h4><ul class="clean dot hl">${m.headlines.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+  <div class="mbox"><h4>Hooks</h4>${li(m.hooks)}</div><div class="mbox"><h4>Email subjects</h4>${li(m.subjects)}</div>
+  <div class="mbox"><h4>Ad openers</h4>${li(m.openers)}</div><div class="mbox"><h4>Words</h4><div class="chips">${m.use.map(x=>`<span>${x}</span>`).join('')}</div><div class="chips no" style="margin-top:8px">${m.avoid.map(x=>`<span>${x}</span>`).join('')}</div></div></div>
+  <h4>Routing</h4><div class="route"><div><b>Landing page</b>${m.landing}</div><div><b>Email segment</b>${m.segment}</div><div><b>Creator type</b>${m.creator}</div></div>
+  <div class="mgrid" style="margin-top:14px"><div class="mbox"><h4>Do say (claims)</h4>${li(m.doSay,'do')}</div><div class="mbox"><h4>Don't say (claims)</h4>${li(m.dontSay,'dont')}</div></div>`;
+}
+function profileHTML(p){
+  const P=PERSONAS.find(x=>x.id===p.persona);
+  const larger=P.larger===p.side&&p.side!=='both';
+  return `<article class="profile" id="${p.id}" data-side="${p.side}">
+   <div class="pr-top">${avatar(p,96)}<div><div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px">${sidePill(p.side)}${larger?'<span class="pill">★ Larger audience</span>':''}${evPill(p.evidence)}</div>
+   <h3>${esc(p.name)}</h3><div class="facts2">${p.age} · ${p.city} · ${p.job}</div><div class="facts2">${p.family}</div><div class="ess">${p.essence}</div></div></div>
+   ${p.thin||p.evidence==='thin'?`<div class="thinflag">⚠ <b>Thin evidence.</b> ${p.id==='nicole'?'There are almost no TCG-specific legacy HGA sources. This profile is kept short; survey the legacy list before investing.':p.id==='vince'?'This is a test persona: AVOID AT LAUNCH per the TAM sheet, capped-spend test only. Insurance terms are unresolved.':'SEG-6 Inherited is LOW confidence in S2, and "pass down" behavior was not measured. Validate before scaling.'}</div>`:''}
+   <div class="tabs" role="tablist" aria-label="${esc(p.name)} sections">${TABS.map(([k,l],i)=>`<button role="tab" id="${p.id}-t-${k}" aria-controls="${p.id}-panel" aria-selected="${i===0}" tabindex="${i===0?0:-1}" data-k="${k}">${l}</button>`).join('')}</div>
+   <div class="panel" role="tabpanel" id="${p.id}-panel" aria-labelledby="${p.id}-t-story">${panel(p,'story')}</div></article>`;
+}
+$('#personas').innerHTML=PERSONAS.map(P=>{
+  const ps=PROFILES.filter(p=>p.persona===P.id);
+  return `<section class="persona glass reveal" id="${P.id}" data-larger="${P.larger}">
+  <div class="p-head"><div class="p-num">${P.num}</div><div><h2>${P.title}</h2><p class="sub">${P.summary}</p>
+  <div class="tags"><span class="pill">Pillar: ${P.pillar}</span><span class="pill">${P.pillarNote}</span>${P.larger==='both'?'<span class="pill both">One persona · both sides</span>':`<span class="pill ${P.larger}">★ Larger: ${sideLabel[P.larger]}</span>`}${evPill(P.evidence)}</div></div>
+  <button class="toggle" aria-expanded="true" aria-controls="${P.id}-body">Collapse</button></div>
+  <div class="p-body" id="${P.id}-body">
+   <div class="p-intro"><div class="box"><h4>Why this side is larger</h4><p>${P.largerWhy}</p></div><div class="box"><h4>Research basis</h4><p>${P.segments}</p></div></div>
+   <div class="p-intro" style="grid-template-columns:1fr"><div class="box"><h4>Sports vs TCG: shared vs different</h4><div class="sd"><div><h5>Shared</h5>${li(P.shared.same)}</div><div><h5>Different</h5>${li(P.shared.diff)}</div></div></div></div>
+   <div class="profiles">${ps.map(profileHTML).join('')}</div>
+  </div></section>`}).join('');
+
+// tabs
+$$('.profile').forEach(el=>{const p=PROFILES.find(x=>x.id===el.id);const btns=$$('[role=tab]',el),pan=$('.panel',el);
+  const sel=b=>{btns.forEach(x=>{x.setAttribute('aria-selected',x===b);x.tabIndex=x===b?0:-1});pan.setAttribute('aria-labelledby',b.id);pan.innerHTML=panel(p,b.dataset.k);pan.style.animation='none';pan.offsetHeight;pan.style.animation=''};
+  btns.forEach((b,i)=>{b.onclick=()=>sel(b);b.onkeydown=e=>{let j=i;if(e.key==='ArrowRight')j=(i+1)%btns.length;else if(e.key==='ArrowLeft')j=(i-1+btns.length)%btns.length;else return;e.preventDefault();btns[j].focus();sel(btns[j])}})});
+// collapse
+$$('.toggle').forEach(b=>b.onclick=()=>{const open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!open);b.textContent=open?'Expand':'Collapse';$('#'+b.getAttribute('aria-controls')).hidden=open});
+// filter
+$$('.filter button').forEach(b=>b.onclick=()=>{const f=b.dataset.f;$$('.filter button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  $$('[data-side]').forEach(el=>{const s=el.dataset.side;el.hidden=!(f==='all'||s===f||s==='both')})});
+// open decisions + sources
+$('#od').innerHTML=OPEN_DECISIONS.map(([a,b])=>`<div><b>${a}</b><span>${b}</span></div>`).join('');
+$('#src').innerHTML=SOURCES.map(s=>`<code>${s}</code>`).join('');
+// reveal + active nav
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.05});
+$$('.reveal').forEach(el=>io.observe(el));
+const links=$$('#navlinks a');const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
+$$('section[id]').forEach(s=>so.observe(s));
+if(location.search.includes('static'))$$('.reveal').forEach(el=>el.classList.add('in'));
+})();
+</script>
+</body></html>
